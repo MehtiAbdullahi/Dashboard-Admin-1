@@ -1,0 +1,143 @@
+@import "./reset.css";
+
+@font-face {
+  font-family: nunito;
+  src: url(../public/font/nunito-sans.light.ttf) format(woff2);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(../public/font/nunito-sans.regular.ttf) format(woff2);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(../public/font/nunito-sans.semibold.ttf) format(woff2);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(../public/font/nunito-sans.bold.ttf) format(woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(../public/font/nunito-sans.black.ttf) format(woff2);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: AzarMehr;
+  src: url(../public/font/AzarMehr-SemiBold.woff2) format(woff2);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: AzarMehr;
+  src: url(../public/font/AzarMehr-Bold.woff2) format(woff2);
+  font-weight: 700;
+}
+
+:root {
+  --bg: #f5f6fa;
+  --text-white: #ffffff;
+  --text: #202224;
+  --text-2: #f93c65;
+  --text-3: #00b69b;
+  --text-4: #606060;
+  --text-5: #2b3034;
+  --text-6: #afafaf;
+  --text-7: #2121214d;
+  --text-8: #5a8cff;
+  --text-9: #b5b5b5;
+  --card-bg: #ffffff;
+  --card-bg-hover: #eaeaea;
+  --card-bg2: #f1f4f9;
+  --card-bg3: #e2eaf8;
+  --card-bg4: #f9f9f9;
+  --card-bg5: #fafbfd;
+  --card-bg6: #fcfdfd;
+  --card-bg7: #fbfcff;
+  --input-bg: #f5f6fa;
+  --input-border: #d5d5d5;
+  --border: #2731422e;
+  --border2: #e0e0e0;
+  --border3: #b9b9b9;
+  --border4: #d8d8d8;
+  --primary: #4880ff;
+  --delivered: #00b69b;
+  --shadow1: rgba(0, 0, 0, 0.1);
+
+  --primary2: #00b69b;
+  --social: #d456fd;
+  --work: #fd9a56;
+  --friends: #5a8cff;
+}
+
+body.dark {
+  --bg: #1b2431;
+  --text-white: #ffffff;
+  --text: #ffffff;
+  --text-4: #ffffff;
+  --text-5: #ffffff;
+  --text-6: #636363;
+  --text-7: rgba(255, 255, 255, 0.4);
+  --card-bg: #273142;
+  --card-bg2: #323d4e;
+  --card-bg3: #3b465a;
+  --card-bg4: #4b5668;
+  --card-bg5: #323d4e;
+  --card-bg6: #323d4e;
+  --card-bg7: #273142;
+  --input-bg: #323d4e;
+  --border: #979797;
+  --border3: #313d4f;
+  --input-border: #313d4f;
+}
+
+[dir="ltr"] {
+  font-family: nunito;
+}
+
+[dir="rtl"] {
+  font-family: AzarMehr;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* اسکرول کل سایت بسته می‌شود */
+}
+
+body {
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border3);
+}
+
+.loader {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.201);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

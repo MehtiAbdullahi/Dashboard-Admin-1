@@ -1,0 +1,22 @@
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-box__wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.team-header a span {
+  font-size: 16px;
+  color: var(--card-bg);
+  background-color: #4379ee;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 200;
+}

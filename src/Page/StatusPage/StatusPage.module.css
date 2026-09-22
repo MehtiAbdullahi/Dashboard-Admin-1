@@ -1,0 +1,58 @@
+.not-access__wrapper {
+  background: url("/public/image/Bg/Shape.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  font-weight: 300;
+}
+
+.not-access {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.not-access__box {
+  background-color: var(--bg);
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  width: 400px;
+  max-width: 350px;
+}
+
+.not-access__box img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 10%);
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.not-access__box-bottom {
+  /* width: 100%; */
+}
+
+.not-access__title {
+  font-size: 2rem;
+  margin: 3rem 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.not-access__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--text-white);
+  padding: 1rem 0;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all ease-in 0.1s;
+}
+
+.not-access__btn:hover {
+  opacity: 85%;
+}

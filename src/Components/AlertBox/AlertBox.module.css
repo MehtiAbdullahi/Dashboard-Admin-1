@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap");
+
+.aa-root,
+.aa-root * {
+  box-sizing: border-box;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+}
+
+.aa-root {
+  position: fixed;
+  left: 22px;
+  z-index: 999999;
+  direction: ltr;
+  transition: top 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.aa-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  max-width: 380px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 0 26px var(--glow);
+  animation: aa-in 0.55s cubic-bezier(0.22, 1.15, 0.36, 1) both;
+}
+
+.aa-box.aa-closing {
+  animation: aa-out 0.38s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+@keyframes aa-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-46px) scale(0.92);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(6px) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes aa-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.94);
+  }
+}
+
+/* ---------- نوار نور بالا ---------- */
+.aa-box::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background-size: 200% 100%;
+  animation: aa-sheen 2.4s linear infinite;
+  opacity: 0.9;
+}
+@keyframes aa-sheen {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ---------- بج آیکون ---------- */
+.aa-icon-wrap {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  animation:
+    aa-icon-pop 0.6s 0.12s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    aa-icon-pulse 2.2s 0.7s ease-in-out infinite;
+}
+@keyframes aa-icon-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-40deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes aa-icon-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+      0 0 0 0 var(--glow);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+      0 0 0 7px transparent;
+  }
+}
+
+/* ---------- متن پیغام ---------- */
+.aa-message {
+  flex: 1;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #eef1f7;
+  direction: rtl;
+  text-align: right;
+  opacity: 0;
+  animation: aa-text-in 0.5s 0.22s ease forwards;
+}
+@keyframes aa-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- دکمه‌ی بستن ---------- */
+.aa-close {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #7c8aa5;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.3s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+.aa-close:hover {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  transform: rotate(90deg);
+}
+
+/* ---------- نوار پیشرفت خودکار ---------- */
+.aa-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--accent);
+  width: 100%;
+  transform-origin: left;
+  animation: aa-shrink var(--dur) linear forwards;
+  opacity: 0.75;
+}
+@keyframes aa-shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .aa-root {
+    left: 14px;
+    right: 14px;
+  }
+  .aa-box {
+    max-width: none;
+    width: 100%;
+  }
+}

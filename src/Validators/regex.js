@@ -1,0 +1,33 @@
+export const testEmail = (value) => {
+  const emailPattent = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattent.test(value);
+};
+
+export const testPassword = (value) => {
+  const passwordPattent =
+    /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9])[A-Za-z0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?`~]{8,}$/;
+  return passwordPattent.test(value);
+};
+
+export const passwordRegex = [
+  {
+    text: "signup.rule.rule1",
+    regex: /^.{8,}$/,
+  },
+  {
+    text: "signup.rule.rule2",
+    regex: /[A-Z]/,
+  },
+  {
+    text: "signup.rule.rule3",
+    regex: /[a-z]/,
+  },
+  {
+    text: "signup.rule.rule4",
+    regex: /[^A-Za-z0-9]/,
+  },
+  {
+    text: "signup.rule.rule5",
+    regex: /[0-9]/,
+  },
+];

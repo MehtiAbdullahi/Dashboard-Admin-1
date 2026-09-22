@@ -1,0 +1,369 @@
+{
+  "sidebar": {
+    "pages": "صفحات",
+
+    "dashboard": "داشبورد",
+    "products": "محصولات",
+    "usersList": "لیست کاربران",
+    "favorites": "علاقه‌مندی‌ها",
+    "inbox": "پیام‌ها",
+    "orderLists": "لیست سفارش‌ها",
+    "productStock": "موجودی محصولات",
+
+    "pricing": "قیمت‌گذاری",
+    "calendar": "تقویم",
+    "todo": "لیست کارها",
+    "contact": "تماس",
+    "invoice": "فاکتور",
+    "uiElements": "المان‌های رابط کاربری",
+    "team": "تیم",
+    "table": "جدول",
+
+    "account": "حساب کاربری"
+  },
+  "navbar": {
+    "defaultNmae": "کاربر",
+    "inputPlaceHolder": "جستجو کردن",
+    "languagesSubmenuTitle": "انتخاب زبان",
+    "languagesSubmenu": {
+      "falang": "فارسی",
+      "enlang": "انگلیسی",
+      "arlang": "عربی"
+    },
+    "languages": {
+      "persian": "فارسی",
+      "english": "انگلیسی",
+      "arabic": "عربی"
+    },
+    "userSubmenu": {
+      "manageAcc": "مدیریت حساب",
+      "activityLog": "گزارش فعالیت‌ها",
+      "switchTheme": "تغییر تم",
+      "logOut": "خروج"
+    }
+  },
+  "notifications": {
+    "title": "پیام ها",
+    "textMore": "دیدن همه پیام ها",
+    "WELCOME_ADMIN": {
+      "title": "خوش آمدید!",
+      "description": "به پنل مدیریت خود خوش آمدید."
+    },
+
+    "NEW_ORDER": {
+      "title": "سفارش جدید",
+      "description": "شما یک سفارش جدید دریافت کرده‌اید."
+    },
+
+    "LOW_STOCK": {
+      "title": "هشدار کاهش موجودی",
+      "description": "موجودی برخی محصولات رو به اتمام است."
+    },
+
+    "NEW_USER": {
+      "title": "کاربر جدید",
+      "description": "یک کاربر جدید به پلتفرم اضافه شده است."
+    }
+  },
+  "login": {
+    "title": "ورود به حساب کاربری",
+    "text": "لطفاً برای ادامه، ایمیل و رمز عبور خود را وارد کنید.",
+    "lableEmail": "ایمیل:",
+    "lablePass": "رمز:",
+    "textForgetPass": "رمز عبور را فراموش کرده‌اید؟",
+    "textRememberPass": "به‌خاطر سپردن رمز عبور",
+    "textsignIn": "ورود",
+    "textNotHaveAcc": "حساب کاربری ندارید؟",
+    "textCreateAcc": "ایجاد حساب کاربری",
+    "error": "لطفا یک ایمیل معتبر بنویسید"
+  },
+  "signup": {
+    "title": "ایجاد حساب کاربری",
+    "text": "برای ادامه، یک حساب کاربری ایجاد کنید.",
+    "lableEmail": "ایمیل:",
+    "lableUsername": "نام کاربری:",
+    "lablePass": "رمز:",
+    "placeHolderInputUsername": "نام کاربری",
+    "textTermsConditions": "من شرایط و ضوابط را می‌پذیرم.",
+    "textsignUp": "ثبت‌ نام",
+    "textHaveAcc": "از قبل حساب کاربری دارید؟",
+    "textLoginAcc": "ورود",
+    "rule": {
+      "rule1": "رمز باید حداقل 8 کاراکتر باشد",
+      "rule2": "رمز حداقل باید یک حرف بزرگ داشته باشد",
+      "rule3": "رمز حداقل باید یک حرف کوچک داشته باشد",
+      "rule4": "رمز حداقل باید دارای یک کارکتر خاص باشد",
+      "rule5": "رمز حداقل باید یک عدد داشته باشد"
+    },
+    "errorEmail": "لطفا یک ایمیل معتبر وارد کنید.",
+    "errorPassword": "لطفا یک رمز معتبر وارد کنید.",
+    "rateLimit": {
+      "email": "این ایمیل از قبل وجود داره",
+      "username": "این نام کاربری از قبل وجود داره"
+    }
+  },
+  "dashboard": {
+    "title": "داشبورد",
+    "totalUser": "مجموع کاربران",
+    "totalOrder": "کل سفارش",
+    "totalSales": "مجموع فروش",
+    "totalPending": "مجموع موارد در انتظار",
+    "upFromYesterday": "افزایش نسبت به دیروز",
+    "downFromYesterday": "کاهش نسبت به دیروز",
+    "salesDetails": "جزئیات فروش",
+    "dealsDetails": "جزئیات معاملات",
+    "productName": "نام محصول",
+    "Location": "مکان",
+    "rate": "امتیاز",
+    "count": "تعداد کل",
+    "category": "دسته بندی",
+    "amount": "مبلغ",
+    "status": "وضعیت",
+    "Delivered": "تحویل داده شد"
+  },
+  "products": {
+    "title": "محصولات",
+    "featuredTitle": "در این تابستان از تحویل رایگان در منزل لذت ببرید.",
+    "featuredText": "پیراهن‌های طراحان – از میان پیراهن‌های مد روزِ طراحان انتخاب کنید.",
+    "getStarted": "شروع کنید",
+    "editProduct": "ویرایش محصول"
+  },
+  "usersList": {
+    "title": "همه کاربران",
+    "profile": "پروفایل",
+    "username": "نام کاربری",
+    "name": "نام",
+    "lastName": "نام خانوادگی",
+    "email": "ایمیل",
+    "rule": "نقش",
+    "actions": "اقدامات"
+  },
+  "favorite": {
+    "title": "محصولات مورد علاقه"
+  },
+  "inbox": {
+    "title": "پیام ها",
+    "placeholder": "جستجو",
+    "conpose": "نوشتن",
+    "myEmail": {
+      "title": "ایمیل های من",
+      "inbox": "پیام‌ها",
+      "starred": "ستاره‌دار",
+      "Sent": "ارسال شد",
+      "Draft": "پیش نویس",
+      "Spam": "هرزنامه",
+      "Important": "مهم",
+      "Bin": "سطل زباله"
+    },
+    "lables": {
+      "title": "برچسب ها",
+      "primary": "اصلی",
+      "social": "اجتماعی",
+      "work": "کار",
+      "friends": "دوستان",
+      "createNewLable": "ساختن برچست جدید"
+    }
+  },
+  "orderLists": {
+    "title": "لیست‌های سفارش",
+    "filterList": {
+      "date": "زمان",
+      "orderType": "نوع سفارش",
+      "orderStatus": "وضعیت سفارش",
+      "resetFilter": "تنظیم مجدد فیلتر"
+    },
+    "productTable": {
+      "id": "آیدی",
+      "name": "اسم",
+      "address": "آدرس",
+      "date": "زمان",
+      "type": "نوع",
+      "status": "وضعیت"
+    },
+    "status": {
+      "completed": "تکمیل شده",
+      "processing": "پردازش",
+      "Rejected": "رد شد",
+      "onHold": "در انتظار"
+    }
+  },
+  "productStock": {
+    "title": "محصولات کارکرده",
+    "placeHolder": "جستجو",
+    "table": {
+      "iamge": "عکس",
+      "productName": "نام محصول",
+      "category": "دسته بندی",
+      "price": "قیمت",
+      "piece": "عدد",
+      "availableColor": "رنگ‌های موجود",
+      "actions": "اقدامات"
+    }
+  },
+  "subscription": {
+    "title": "اشتراک",
+    "text": "هزینه ماهانه",
+    "text2": "دوره آزمایشی رایگان ۳۰ روزه خود را شروع کنید",
+    "textBtn": "شروع کنید",
+    "options": {
+      "op1": "راه اندازی رایگان",
+      "op2": "محدودیت پهنای باند ۱۰ گیگابایت",
+      "op3": "۲۰ اتصال کاربر",
+      "op4": "گزارش تحلیلی",
+      "op5": "دسترسی عمومی به API",
+      "op6": "ادغام افزونه‌ها",
+      "op7": "مدیریت محتوای سفارشی"
+    },
+    "basic": {
+      "title": "پایه"
+    },
+    "standard": {
+      "title": "استاندارد"
+    },
+    "premium": {
+      "title": "پریمیوم"
+    }
+  },
+  "calender": {
+    "title": "تقویم",
+    "events": {
+      "btn": "اضافه کردن رویداد جدید",
+      "title": "تو می‌روی به",
+      "btn2": "دیدن بیشتر",
+      "event1": {
+        "title": "کنفرانس طراحی",
+        "address": "۵۶ دیویون میشن سوئیت ۱۵۷،",
+        "location": "میگانبرگ",
+        "date": "2026-09-10"
+      },
+      "event2": {
+        "title": "جشنواره آخر هفته",
+        "address": "۸۵۳ مور فلتس، سوئیت ۱۵۸",
+        "location": "سوئد",
+        "date": "2026-09-15"
+      },
+      "event3": {
+        "title": "جشنواره گلاستونبری",
+        "address": "خیابان والتر، پلاک ۶۴۶، واحد ۵۷۱",
+        "location": "جزایر تورکس و کایکوس",
+        "date": "2026-09-20"
+      },
+      "event4": {
+        "title": "اولترا اروپا ۲۰۲۶",
+        "address": "آپارتمان تونل سترفیلد، پلاک ۵۰۶، شماره ۹۶۳",
+        "location": "سن مارینو",
+        "date": "2026-09-25"
+      }
+    },
+    "calender": {
+      "today": "امروز",
+      "day": "روز",
+      "week": "هفته",
+      "month": "ماه"
+    }
+  },
+  "todo": {
+    "title": "لیست کار ها",
+    "btn": "اضافه کردن تودو جدید",
+    "btnCreate": "ساختن",
+    "error": "برای ساختن تودو لطفا اول چیزی بنویسید!"
+  },
+  "contact": {
+    "title": "تماس",
+    "btn": "افزودن مخاطب جدید"
+  },
+  "invoice": {
+    "title": "فاکتور",
+    "from": "فاکتور از:",
+    "to": "فاکتور برای:",
+    "invoiceDate": "تاریخ فاکتور:",
+    "dueDate": "تاریخ سررسید:",
+    "serialNo": "شماره",
+    "description": "توضیحات",
+    "quantity": "تعداد",
+    "baseCost": "هزینه پایه",
+    "totalCost": "هزینه کل",
+    "total": "مجموع =",
+    "send": "ارسال"
+  },
+  "uIElements": {
+    "title": "عناصر رابط کاربری",
+    "barChart": "نمودار میله‌ای",
+    "pieChart": "نمودار دایره‌ای",
+    "donutChart": "نمودار دونات"
+  },
+  "team": {
+    "title": "تیم",
+    "btn": "اضافه کردن عضو"
+  },
+  "table": {
+    "title": "جدول",
+
+    "id": "شناسه",
+    "name": "نام",
+    "address": "آدرس",
+    "date": "تاریخ",
+    "type": "نوع",
+    "status": "وضعیت",
+
+    "image": "تصویر",
+    "productName": "نام محصول",
+    "category": "دسته‌بندی",
+    "price": "قیمت",
+    "piece": "تعداد",
+    "availableColor": "رنگ‌های موجود",
+    "action": "عملیات",
+
+    "digitalProduct": "محصول دیجیتال",
+
+    "completed": "تکمیل‌شده",
+    "processing": "در حال پردازش",
+    "rejected": "رد شده",
+    "onHold": "در انتظار"
+  },
+  "errors": {
+    "noProducts": "متأسفانه، محصول از سرور بارگیری نشد!",
+    "networkError": "مشکلی پیش اومد. لطفاً دوباره تلاش کنید.",
+    "noTodos": "تودویی برای نمایش وجود ندارد"
+  },
+  "manageYourAccount": {
+    "title": "مدیریت اکانت",
+    "text": "آپدیت کردن عکس",
+    "btn": "ذخیره",
+    "lables": {
+      "Name": "نام",
+      "lastName": "نام خانوادگی",
+      "Password": "رمز",
+      "Username": "نام کاربری",
+      "Email": "ایمیل",
+      "Age": "سن",
+      "phoneNumber": "شماره تلفن",
+      "Rule": "نقش"
+    },
+    "defaultValue": {
+      "text": "خالی!"
+    }
+  },
+  "alertError": {
+    "error": {
+      "title": "خطا",
+      "text": "عملیات به خطا خورد!"
+    },
+    "todo": {
+      "title": "اخطا",
+      "text": "لطفا اول برای ساختن یک تودو چیزی بنویسید!"
+    },
+    "login": {
+      "title": "خطا",
+      "text": "برای ورود لطفا اطلاعات مورد نیاز را وارد کنید"
+    },
+    "invalidCredentials": {
+      "title": "خطا",
+      "text": "ایمیل یا رمز شما اشتباه است!"
+    },
+    "success": {
+      "title": "موفق",
+      "text": "عملیات موفق آمیز بود"
+    }
+  }
+}

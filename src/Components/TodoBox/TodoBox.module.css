@@ -1,0 +1,121 @@
+.todo-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-bg7);
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid var(--border3);
+  transition: all 0.15s ease-in;
+}
+
+.todo-box.do {
+  background-color: var(--primary);
+}
+
+.todo-title__wrapper,
+.todo-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-box {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.check-box input {
+  display: none;
+}
+
+.check-mark {
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.check-mark svg {
+  display: none;
+}
+
+.check-box input:checked + .check-mark svg {
+  color: white;
+  font-size: 14px;
+  display: block;
+}
+
+.todo-title.do {
+  color: white;
+}
+
+.todo-icon__trash {
+  background-color: #5a8bff;
+  border: 1px solid #c8c8c8;
+  padding: 7px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.todo-icon__trash:hover {
+  background-color: #ff5c5c;
+}
+
+.todo-icon__trash svg {
+  color: white;
+}
+
+.todo-icon__star,
+.todo-icon__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todo-icon__star-hollow:hover {
+  color: rgb(255, 204, 0);
+}
+
+.todo-icon__close {
+  background-color: var(--card-bg3);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  transition: all 0.15s ease-in-out;
+}
+
+.todo-icon__close:hover {
+  background-color: rgb(255, 44, 44);
+}
+
+.todo-icon__star-solid,
+.todo-icon__star-hollow {
+  transition: all 0.15s ease-in-out;
+  width: 25px;
+  height: 25px;
+}
+
+.todo-icon__star-solid {
+  color: rgb(255, 204, 0);
+}
+
+.todo-icon__close svg {
+  width: 20px;
+  height: 20px;
+}

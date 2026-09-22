@@ -1,0 +1,104 @@
+.manage-account__header {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.manage-account__wrapper {
+  background-color: var(--card-bg);
+  padding: 5rem 1rem;
+  margin: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manage-account__profile-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.manage-account__profile-img div img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.manage-account__profile-img span {
+  color: blue;
+  display: flex;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.manage-account__profile-img span input {
+  display: none;
+}
+
+.manage-account__form-wrapper {
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.manage-account__form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.manage-account__form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-account__form div input {
+  outline: none;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 300;
+}
+
+.manage-account__form div label {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.manage-account__save-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.manage-account__save-btn button {
+  background-color: var(--primary);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+}
+
+[dir="rtl"] .manage-account__form div input, 
+[dir="rtl"] .manage-account__save-btn button {
+  font-family: AzarMehr;
+  font-weight: 600;
+}
+
+.manage-account__save-btn button:hover {
+  opacity: 80%;
+}

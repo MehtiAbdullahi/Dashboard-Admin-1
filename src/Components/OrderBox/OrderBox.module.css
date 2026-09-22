@@ -1,0 +1,142 @@
+.order-status.Completed span,
+.order-status.Processing span,
+.order-status.Rejected span,
+.order-status.On-Hold span {
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.order-status.Completed span {
+  color: #00b69b;
+  background-color: #00b69b2b;
+}
+.order-status.Processing span {
+  color: #6226ef;
+  background-color: #6226ef2b;
+}
+.order-status.Rejected span {
+  color: #ef3826;
+  background-color: #ef38262b;
+}
+.order-status.On-Hold span {
+  color: #ffa756;
+  background-color: #ffa7562b;
+}
+
+/* =========================================
+   ORDER ROW
+========================================= */
+
+.tr {
+  display: grid;
+
+  grid-template-columns:
+    0.6fr
+    1.4fr
+    2fr
+    1.2fr
+    1.2fr
+    1.2fr;
+
+  align-items: center;
+
+  width: 100%;
+
+  border-top: 1px solid var(--input-border);
+}
+
+/* =========================================
+   TABLE CELL
+========================================= */
+
+.td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 75px;
+
+  padding: 15px 12px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+/* =========================================
+   ORDER COLUMNS
+========================================= */
+
+.order-id {
+  white-space: nowrap;
+}
+
+.order-name {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-address {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.oder-date {
+  white-space: nowrap;
+}
+
+.order-type {
+  white-space: nowrap;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.order-status span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90px;
+
+  padding: 5px 20px;
+
+  border-radius: 5px;
+
+  white-space: nowrap;
+}
+
+/* Completed */
+
+.order-status.Completed span {
+  color: #00b69b;
+  background-color: #00b69b2b;
+}
+
+/* Processing */
+
+.order-status.Processing span {
+  color: #6226ef;
+  background-color: #6226ef2b;
+}
+
+/* Rejected */
+
+.order-status.Rejected span {
+  color: #ef3826;
+  background-color: #ef38262b;
+}
+
+/* On-Hold */
+
+.order-status.On-Hold span {
+  color: #ffa756;
+  background-color: #ffa7562b;
+}

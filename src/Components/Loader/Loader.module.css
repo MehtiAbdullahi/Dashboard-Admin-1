@@ -1,0 +1,92 @@
+.spinner {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.spinner div {
+  position: absolute;
+
+  width: 5px;
+  height: 10px;
+
+  border-radius: 50%;
+  background: var(--text);
+
+  transform: rotate(calc(var(--rotation) * 1deg)) translateY(-14px);
+
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+/* 10 dots */
+
+.spinner div:nth-child(1) {
+  --delay: 0.1;
+  --rotation: 0;
+}
+
+.spinner div:nth-child(2) {
+  --delay: 0.2;
+  --rotation: 36;
+}
+
+.spinner div:nth-child(3) {
+  --delay: 0.3;
+  --rotation: 72;
+}
+
+.spinner div:nth-child(4) {
+  --delay: 0.4;
+  --rotation: 108;
+}
+
+.spinner div:nth-child(5) {
+  --delay: 0.5;
+  --rotation: 144;
+}
+
+.spinner div:nth-child(6) {
+  --delay: 0.6;
+  --rotation: 180;
+}
+
+.spinner div:nth-child(7) {
+  --delay: 0.7;
+  --rotation: 216;
+}
+
+.spinner div:nth-child(8) {
+  --delay: 0.8;
+  --rotation: 252;
+}
+
+.spinner div:nth-child(9) {
+  --delay: 0.9;
+  --rotation: 288;
+}
+
+.spinner div:nth-child(10) {
+  --delay: 1;
+  --rotation: 324;
+}
+
+@keyframes spinner-fzua35 {
+  0%,
+  20%,
+  50%,
+  70%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(-14px);
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(-20px);
+
+    background: rgb(0, 123, 255);
+  }
+}

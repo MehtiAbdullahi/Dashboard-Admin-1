@@ -1,0 +1,258 @@
+.hw-root,
+.hw-root * {
+  font-weight: 600;
+}
+
+.hw-root {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  z-index: 999999;
+}
+
+.hw-trigger {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #ffd27a 0%,
+    #f5b841 45%,
+    #c9861b 100%
+  );
+  box-shadow:
+    0 4px 14px rgba(197, 138, 22, 0.45),
+    0 0 0 rgba(245, 184, 65, 0.6);
+  animation: hw-breathe 3.2s ease-in-out infinite;
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
+}
+
+.hw-trigger::before,
+.hw-trigger::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 184, 65, 0.55);
+  opacity: 0;
+}
+
+.hw-widget:hover .hw-trigger {
+  transform: scale(1.08) rotate(-6deg);
+  box-shadow:
+    0 6px 22px rgba(197, 138, 22, 0.6),
+    0 0 0 8px rgba(245, 184, 65, 0.12);
+  animation:
+    hw-breathe 3.2s ease-in-out infinite,
+    hw-glow-shift 1.8s linear infinite;
+}
+
+.hw-widget:hover .hw-trigger::before {
+  animation: hw-ring 1.4s ease-out infinite;
+}
+.hw-widget:hover .hw-trigger::after {
+  animation: hw-ring 1.4s ease-out infinite 0.5s;
+}
+
+.hw-mark {
+  font-size: 24px;
+  font-weight: 700;
+  color: #241300;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hw-widget:hover .hw-mark {
+  transform: scale(1.15) rotate(8deg);
+}
+
+@keyframes hw-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+@keyframes hw-glow-shift {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: hue-rotate(12deg) brightness(1.12);
+  }
+  100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+@keyframes hw-ring {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+.hw-bridge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 74px;
+}
+
+.hw-panel {
+  position: absolute;
+  top: 66px;
+  right: 0;
+  width: 300px;
+  background: linear-gradient(180deg, #10182b 0%, #0a1120 100%);
+  border: 1px solid rgba(245, 184, 65, 0.22);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  transform: translateY(-10px) scale(0.96);
+  transform-origin: top right;
+  pointer-events: none;
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hw-widget:hover .hw-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.hw-panel-title {
+  font-size: 12px;
+  color: #94a3b8;
+  letter-spacing: 0.02em;
+  padding: 6px 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hw-panel-title span {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+
+.hw-panel-title span:hover {
+  color: red;
+}
+
+/* ---------- ردیف‌های سوال ---------- */
+.hw-item {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: background 0.25s ease;
+}
+.hw-widget:hover .hw-item {
+  animation: hw-item-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hw-widget:hover .hw-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hw-widget:hover .hw-item:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.hw-widget:hover .hw-item:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+@keyframes hw-item-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hw-item:hover {
+  background: rgba(245, 184, 65, 0.08);
+}
+
+.hw-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: default;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #e7ecf5;
+}
+
+.hw-q:first-child {
+  font-weight: 700;
+}
+
+.hw-chevron {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #f5b841;
+  border-bottom: 2px solid #f5b841;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+}
+.hw-item:hover .hw-chevron {
+  transform: rotate(135deg);
+}
+
+.hw-answer-wrap {
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.38s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.28s ease 0.05s;
+}
+.hw-item:hover .hw-answer-wrap {
+  max-height: 160px;
+  opacity: 1;
+}
+
+.hw-answer {
+  padding: 0 12px 12px 12px;
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: #a8b3c7;
+  border-top: 1px dashed rgba(245, 184, 65, 0.18);
+  margin-top: 2px;
+  padding-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .hw-panel {
+    width: 82vw;
+    right: -6px;
+  }
+  .hw-root {
+    top: 14px;
+    right: 14px;
+  }
+}

@@ -1,0 +1,5 @@
+.pricing-box__wrapper {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+}

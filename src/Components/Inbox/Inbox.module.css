@@ -1,0 +1,240 @@
+.inbox-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inbox-left {
+  width: 280px;
+  background-color: var(--card-bg);
+  padding: 25px;
+  border: 1px solid #b9b9b9;
+  border-radius: 10px;
+}
+
+.inbox-left__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inbox-left__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inbox-left__btn span {
+  background-color: #4880ff;
+  color: #ffffff;
+  font-weight: 300;
+  padding: 15px;
+  width: 60%;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.15s ease-out;
+}
+
+.inbox-left__btn span:hover {
+  background-color: #2b6aff;
+}
+
+.my-email__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-email__wrapper,
+.label-wrapper {
+  margin-top: 1rem;
+}
+
+.my-email__wrapper h2,
+.label-wrapper h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 1.3rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0.5rem 0;
+}
+
+.label input {
+  display: none;
+}
+
+.checkmark {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.checkmark svg {
+  opacity: 0;
+  visibility: hidden;
+  color: white;
+}
+
+.label.primary .checkmark {
+  border: 1px solid var(--primary2);
+}
+.label.social .checkmark {
+  border: 1px solid var(--social);
+}
+.label.work .checkmark {
+  border: 1px solid var(--work);
+}
+.label.friends .checkmark {
+  border: 1px solid var(--friends);
+}
+
+.label.primary input:checked + .checkmark {
+  background-color: var(--primary2);
+}
+
+.label.social input:checked + .checkmark {
+  background-color: var(--social);
+}
+
+.label.work input:checked + .checkmark {
+  background-color: var(--work);
+}
+
+.label.friends input:checked + .checkmark {
+  background-color: var(--friends);
+}
+
+.label input:checked + .checkmark svg {
+  opacity: 1;
+  visibility: visible;
+}
+
+.label-wrapper .label span {
+  font-size: 14px;
+}
+
+.create-label {
+  font-size: 16px;
+  color: #20222449;
+  cursor: pointer;
+}
+
+.inbox__title-icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.inbox__title-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+a.selected .my-email__inbox {
+  background-color: #487fff1e;
+  color: #4880ff;
+}
+
+a.selected .my-email__inbox .inbox__title-icon svg path,
+a.selected .my-email__inbox .inbox__title-icon svg rect {
+  stroke: #4880ff;
+}
+
+.my-email__inbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+  color: var(--text);
+}
+
+.my-email__inbox:hover {
+  background-color: #487fff1e;
+  color: #4880ff;
+}
+
+.my-email__inbox:hover .inbox__title-icon svg path,
+.my-email__inbox:hover .inbox__title-icon svg rect {
+  stroke: #4880ff;
+}
+
+.inbox-right {
+  background-color: var(--card-bg);
+  padding: 10px;
+  border: 1px solid var(--border3);
+  border-radius: 10px;
+  width: 850px;
+  height: auto;
+}
+
+.inbox-right__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.inbox-right__left {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 19px;
+}
+
+.inbox-right__left input {
+  background-color: var(--input-bg);
+  outline: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 200;
+  width: 300px;
+}
+
+.inbox-right__right {
+  background-color: var(--card-bg5);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+}
+
+.inbox-right__right span {
+  padding: 5px 15px;
+}
+
+.inbox-right__right span:not(:nth-child(1)) {
+  border-right: 1px solid #d8d8d8;
+}
+
+.mail-boxs {
+  margin-top: 0.5rem;
+}
+
+.mail-boxs .mail-message:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mail-message__time {
+  font-size: 14px;
+  font-weight: 200;
+}

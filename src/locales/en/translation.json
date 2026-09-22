@@ -1,0 +1,369 @@
+{
+  "sidebar": {
+    "pages": "Pages",
+
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "usersList": "Users List",
+    "favorites": "Favorites",
+    "inbox": "Inbox",
+    "orderLists": "Order Lists",
+    "productStock": "Product Stock",
+
+    "pricing": "Pricing",
+    "calendar": "Calendar",
+    "todo": "To-Do List",
+    "contact": "Contact",
+    "invoice": "Invoice",
+    "uiElements": "UI Elements",
+    "team": "Team",
+    "table": "Table",
+
+    "account": "Account"
+  },
+  "navbar": {
+    "defaultNmae": "User",
+    "inputPlaceHolder": "Search",
+    "languagesSubmenuTitle": "Select Language",
+    "languagesSubmenu": {
+      "falang": "Persian",
+      "enlang": "English",
+      "arlang": "Arabic"
+    },
+    "languages": {
+      "persian": "Persian",
+      "english": "English",
+      "arabic": "Arabic"
+    },
+    "userSubmenu": {
+      "manageAcc": "Manage Account",
+      "activityLog": "Activity Log",
+      "switchTheme": "Switch Theme",
+      "logOut": "Log Out"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "textMore": "View All Notifications",
+    "WELCOME_ADMIN": {
+      "title": "Welcome!",
+      "description": "Welcome to your admin panel."
+    },
+
+    "NEW_ORDER": {
+      "title": "New Order",
+      "description": "You have received a new order."
+    },
+
+    "LOW_STOCK": {
+      "title": "Low Stock Alert",
+      "description": "Some products are running low on stock."
+    },
+
+    "NEW_USER": {
+      "title": "New User",
+      "description": "A new user has been added to the platform."
+    }
+  },
+  "login": {
+    "title": "Sign In to Your Account",
+    "text": "Please enter your email and password to continue.",
+    "lableEmail": "Email:",
+    "lablePass": "Password:",
+    "textForgetPass": "Forgot your password?",
+    "textRememberPass": "Remember password",
+    "textsignIn": "Sign In",
+    "textNotHaveAcc": "Don't have an account?",
+    "textCreateAcc": "Create an account",
+    "error": "Please enter a valid email"
+  },
+  "signup": {
+    "title": "Create an Account",
+    "text": "Create an account to continue.",
+    "lableEmail": "Email:",
+    "lableUsername": "Username:",
+    "lablePass": "Password:",
+    "placeHolderInputUsername": "Username",
+    "textTermsConditions": "I accept the terms and conditions.",
+    "textsignUp": "Sign Up",
+    "textHaveAcc": "Already have an account?",
+    "textLoginAcc": "Sign In",
+    "rule": {
+      "rule1": "Password must be at least 8 characters",
+      "rule2": "Password must contain at least one uppercase letter",
+      "rule3": "Password must contain at least one lowercase letter",
+      "rule4": "Password must contain at least one special character",
+      "rule5": "Password must contain at least one number"
+    },
+    "errorEmail": "Please enter a valid email.",
+    "errorPassword": "Please enter a valid password.",
+    "rateLimit": {
+      "email": "This email already exists",
+      "username": "This username already exists"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalUser": "Total Users",
+    "totalOrder": "Total Orders",
+    "totalSales": "Total Sales",
+    "totalPending": "Total Pending",
+    "upFromYesterday": "Up from yesterday",
+    "downFromYesterday": "Down from yesterday",
+    "salesDetails": "Sales Details",
+    "dealsDetails": "Deals Details",
+    "productName": "Product Name",
+    "Location": "Location",
+    "rate": "Rate",
+    "count": "Total Count",
+    "category": "Category",
+    "amount": "Amount",
+    "status": "Status",
+    "Delivered": "Delivered"
+  },
+  "products": {
+    "title": "Products",
+    "featuredTitle": "Enjoy free home delivery this summer.",
+    "featuredText": "Designer Shirts – choose from the latest designer shirt trends.",
+    "getStarted": "Get Started",
+    "editProduct": "Edit Product"
+  },
+  "usersList": {
+    "title": "All Users",
+    "profile": "Profile",
+    "username": "Username",
+    "name": "Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "rule": "Role",
+    "actions": "Actions"
+  },
+  "favorite": {
+    "title": "Favorite Products"
+  },
+  "inbox": {
+    "title": "Inbox",
+    "placeholder": "Search",
+    "conpose": "Compose",
+    "myEmail": {
+      "title": "My Email",
+      "inbox": "Inbox",
+      "starred": "Starred",
+      "Sent": "Sent",
+      "Draft": "Draft",
+      "Spam": "Spam",
+      "Important": "Important",
+      "Bin": "Bin"
+    },
+    "lables": {
+      "title": "Labels",
+      "primary": "Primary",
+      "social": "Social",
+      "work": "Work",
+      "friends": "Friends",
+      "createNewLable": "Create New Label"
+    }
+  },
+  "orderLists": {
+    "title": "Order Lists",
+    "filterList": {
+      "date": "Date",
+      "orderType": "Order Type",
+      "orderStatus": "Order Status",
+      "resetFilter": "Reset Filter"
+    },
+    "productTable": {
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "date": "Date",
+      "type": "Type",
+      "status": "Status"
+    },
+    "status": {
+      "completed": "Completed",
+      "processing": "Processing",
+      "Rejected": "Rejected",
+      "onHold": "On Hold"
+    }
+  },
+  "productStock": {
+    "title": "Used Products",
+    "placeHolder": "Search",
+    "table": {
+      "iamge": "Image",
+      "productName": "Product Name",
+      "category": "Category",
+      "price": "Price",
+      "piece": "Quantity",
+      "availableColor": "Available Colors",
+      "actions": "Actions"
+    }
+  },
+  "subscription": {
+    "title": "Subscription",
+    "text": "Monthly Cost",
+    "text2": "Start your 30-day free trial",
+    "textBtn": "Get Started",
+    "options": {
+      "op1": "Free Setup",
+      "op2": "10 GB Bandwidth Limit",
+      "op3": "20 User Connections",
+      "op4": "Analytics Report",
+      "op5": "Public API Access",
+      "op6": "Plugin Integrations",
+      "op7": "Custom Content Management"
+    },
+    "basic": {
+      "title": "Basic"
+    },
+    "standard": {
+      "title": "Standard"
+    },
+    "premium": {
+      "title": "Premium"
+    }
+  },
+  "calender": {
+    "title": "Calendar",
+    "events": {
+      "btn": "Add New Event",
+      "title": "You're going to",
+      "btn2": "See More",
+      "event1": {
+        "title": "Design Conference",
+        "address": "56 Devion Mission Suite 157,",
+        "location": "Meganburg",
+        "date": "2026-09-10"
+      },
+      "event2": {
+        "title": "Weekend Festival",
+        "address": "853 Moor Flats, Suite 158",
+        "location": "Sweden",
+        "date": "2026-09-15"
+      },
+      "event3": {
+        "title": "Glastonbury Festival",
+        "address": "646 Walter Street, Unit 571",
+        "location": "Turks and Caicos Islands",
+        "date": "2026-09-20"
+      },
+      "event4": {
+        "title": "Ultra Europe 2026",
+        "address": "Sterfield Tunnel Apartment, No. 506, Unit 963",
+        "location": "San Marino",
+        "date": "2026-09-25"
+      }
+    },
+    "calender": {
+      "today": "Today",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month"
+    }
+  },
+  "todo": {
+    "title": "To-Do List",
+    "btn": "Add New To-Do",
+    "btnCreate": "Create",
+    "error": "Please write something first to create a to-do!"
+  },
+  "contact": {
+    "title": "Contact",
+    "btn": "Add New Contact"
+  },
+  "invoice": {
+    "title": "Invoice",
+    "from": "From:",
+    "to": "To:",
+    "invoiceDate": "Invoice Date:",
+    "dueDate": "Due Date:",
+    "serialNo": "Serial No.",
+    "description": "Description",
+    "quantity": "Quantity",
+    "baseCost": "Base Cost",
+    "totalCost": "Total Cost",
+    "total": "Total =",
+    "send": "Send"
+  },
+  "uIElements": {
+    "title": "UI Elements",
+    "barChart": "Bar Chart",
+    "pieChart": "Pie Chart",
+    "donutChart": "Donut Chart"
+  },
+  "team": {
+    "title": "Team",
+    "btn": "Add Member"
+  },
+  "table": {
+    "title": "Table",
+
+    "id": "ID",
+    "name": "Name",
+    "address": "Address",
+    "date": "Date",
+    "type": "Type",
+    "status": "Status",
+
+    "image": "Image",
+    "productName": "Product Name",
+    "category": "Category",
+    "price": "Price",
+    "piece": "Quantity",
+    "availableColor": "Available Colors",
+    "action": "Action",
+
+    "digitalProduct": "Digital Product",
+
+    "completed": "Completed",
+    "processing": "Processing",
+    "rejected": "Rejected",
+    "onHold": "On Hold"
+  },
+  "errors": {
+    "noProducts": "Sorry, the product could not be loaded from the server!",
+    "networkError": "Something went wrong. Please try again.",
+    "noTodos": "No to-dos to display"
+  },
+  "manageYourAccount": {
+    "title": "Manage Account",
+    "text": "Update Photo",
+    "btn": "Save",
+    "lables": {
+      "Name": "Name",
+      "lastName": "Last Name",
+      "Password": "Password",
+      "Username": "Username",
+      "Email": "Email",
+      "Age": "Age",
+      "phoneNumber": "Phone Number",
+      "Rule": "Role"
+    },
+    "defaultValue": {
+      "text": "Empty!"
+    }
+  },
+  "alertError": {
+    "error": {
+      "title": "Error",
+      "text": "The operation failed!"
+    },
+    "todo": {
+      "title": "Warning",
+      "text": "Please write something first to create a to-do!"
+    },
+    "login": {
+      "title": "Error",
+      "text": "Please enter the required information to log in"
+    },
+    "invalidCredentials": {
+      "title": "Error",
+      "text": "Your email or password is incorrect!"
+    },
+    "success": {
+      "title": "Success",
+      "text": "Operation completed successfully"
+    }
+  }
+}

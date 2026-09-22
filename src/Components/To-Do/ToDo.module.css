@@ -1,0 +1,91 @@
+.alert {
+  font-family: AzarMehr;
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.todo-header__create-btn {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+}
+
+.todo-header__create-btn a span {
+  font-size: 16px;
+  color: white;
+  background-color: #4379ee;
+  padding: 15px 10px;
+  border-radius: 10px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-header__input {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-in-out;
+  margin-right: -10px;
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid var(--border);
+}
+
+[dir="rtl"] .todo-header__input {
+  flex-direction: row-reverse;
+  margin-left: 1rem;
+  padding: 6px;
+}
+
+[dir="rtl"] .todo-header__input input {
+  font-family: AzarMehr;
+}
+
+.todo-header__input.show {
+  width: 250px;
+  opacity: 1;
+  visibility: visible;
+  margin-right: 1rem;
+}
+
+.todo-header__input button {
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 200;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+[dir="rtl"] .todo-header__input button {
+  font-family: AzarMehr;
+  font-size: 12px;
+}
+
+.todo-header__input input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-weight: 300;
+}
+
+.todo-body__wrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

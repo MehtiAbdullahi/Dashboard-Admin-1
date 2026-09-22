@@ -1,0 +1,16 @@
+.container {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 0 20px;
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
