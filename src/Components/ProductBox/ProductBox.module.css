@@ -16,8 +16,8 @@
 }
 
 .product-box__top img {
-  max-width: 25rem;
-  max-height: 25rem;
+  width: 25rem;
+  height: 25rem;
   object-fit: contain;
   padding: 1rem;
 }
@@ -54,6 +54,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 25rem;
+  height: auto;
   text-wrap: nowrap;
 }
 
@@ -114,4 +115,85 @@
 .arrow-right:hover,
 .arrow-left:hover {
   background-color: #c7c7c7d3;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 102.4rem) {
+  .product__title-price h3 {
+    font-size: 1.4rem;
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 76.8rem) {
+  .product-box {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+  }
+  .product__title-price h3 {
+    font-size: 1.4rem;
+    max-width: 14rem;
+  }
+  .product-box__top img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: contain;
+    padding: 1rem;
+  }
+  .product__edit-btn a span {
+    font-size: 1.1rem;
+    padding: 0.3rem 1rem;
+  }
+}
+
+@media (max-width: 42.5rem) {
+  .product-box {
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
+  }
+  .product__title-price h3 {
+    font-size: 1.1rem;
+    max-width: 6rem;
+  }
+  .product-box__top img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+    padding: 1rem;
+  }
+  .product-favorite__icon span {
+    padding: 0.5rem;
+  }
+  .product-favorite__icon span svg {
+    width: 16px;
+    width: 14px;
+  }
+  .product__edit-btn a span {
+    font-size: 0.9rem;
+  }
+  .product__stars-rating span {
+    font-size: 1rem;
+  }
+  .product__title-price h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 32rem) {
+  .product-box {
+    width: 100%;
+    max-width: 13rem;
+    height: auto;
+  }
 }
