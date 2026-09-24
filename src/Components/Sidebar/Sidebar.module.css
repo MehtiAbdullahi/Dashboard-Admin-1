@@ -1,13 +1,16 @@
 .sidebarWrapper {
   background-color: var(--card-bg);
   width: 200px;
+  overflow-y: auto;
   height: 100%;
+  transition: all 0.15s ease-in;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  margin-bottom: 4rem;
 }
 
 .sidebarTop {
@@ -17,14 +20,28 @@
 }
 
 .dasboard-admin__title {
-  margin: 2rem 0;
+  margin: 2rem auto 0 auto;
   font-weight: 500;
   font-size: 20px;
   font-family: nunito;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .dasboard-admin__title span {
   color: var(--primary);
+}
+
+.dasboard-admin__title-icon {
+  display: none;
+  width: 25px;
+  height: 25px;
+}
+
+.sideBarItemsWrapper {
+  overflow-y: auto;
+  height: 650px;
 }
 
 .sidebarTop img {
@@ -88,4 +105,24 @@
 
 [dir="rtl"] .sidebarBody h3 {
   margin-right: 1rem;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 768px) {
+  .dasboard-admin__title {
+    font-size: 17px;
+    margin: 1rem auto 0 auto;
+  }
+  .dasboard-admin__title-icon {
+    display: block;
+  }
 }

@@ -3,15 +3,16 @@
   height: 60px;
   direction: ltr;
   padding: 0 40px;
-}
-
-.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
-  height: 100%;
+  gap: 2rem;
 }
+
+/* .navbar {
+
+} */
 
 .navbarRight {
   display: flex;
@@ -19,6 +20,289 @@
   align-items: center;
   gap: 15px;
 }
+
+/* Mobile SideBar */
+
+.navbarProfileMobile {
+  display: none;
+  position: relative;
+}
+
+.navbarProfileImg img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.navbarMobileSubmenu {
+  background-color: var(--card-bg);
+  position: absolute;
+  top: -14px;
+  left: -20px;
+  bottom: 0;
+  max-width: 180px;
+  height: 100vh;
+  z-index: 99999999;
+  width: 200px;
+  padding: 1rem 1.5rem;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.navbarMobileSubmenu.show {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.navbarMobileSubmenuCloseIcon {
+  float: left;
+}
+
+.navbarLanguageMobileWrapper {
+  overflow: hidden;
+}
+
+.navbarSubmenuProfileMobile,
+.navbarLanguageMobile,
+.notificationIconMobile {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbarSubmenuProfileMobile {
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.navbarSubmenuProfileMobile img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.submenuProfileMobileNameLast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.profileSubmenuMobile {
+  overflow: hidden;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    height 150ms ease-in-out,
+    opacity 100ms ease-in,
+    visibility 100ms ease-in;
+}
+
+.profileSubmenuMobile.show {
+  height: 180px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.profileSubmenuMobile li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profileSubmenuMobile li a {
+  color: var(--text);
+}
+
+.profileSubmenuMobile li:not(:first-child) {
+  margin: 2rem 0;
+}
+
+.navbar-submenu__icon-manage,
+.navbar-submenu__icon-log,
+.navbar-submenu__icon-moon,
+.navbar-submenu__icon-sun {
+  margin-right: 0.5rem;
+}
+
+.navbarLanguageMobile {
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbarLanguageMobile svg {
+  color: rgb(0, 0, 0);
+}
+
+.notificationIconMobile {
+  justify-content: space-between;
+}
+
+.notificationIconMobile div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.notificationIconMobile span {
+  background-color: #f93c65;
+  color: white;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.notificationBoxMobile {
+  font-size: 80%;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    height 150ms ease-in-out,
+    opacity 100ms ease-in,
+    visibility 100ms ease-in;
+}
+
+.notificationBoxMobile.show {
+  height: 350px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.notificationBoxListsMobile {
+}
+
+.notificationBoxItemMobile {
+  padding: 0.8rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.notificationBoxItemMobile:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, 0.477);
+}
+
+.notificationBoxItemMobile span {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 229, 145, 1) 0.3%,
+    rgba(255, 106, 60, 1) 100.2%
+  );
+  padding: 4px 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 30%;
+}
+
+.notificationBoxItemMobile span svg {
+  width: 4px;
+  height: 100%;
+  color: white;
+}
+
+.notificationBoxItemMobile div h4 {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.notificationBoxItemMobile div p {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-9);
+}
+
+.notificationBoxTextMobile {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.477);
+  padding: 1rem 0;
+}
+
+.languageItemsMobile {
+  margin: 0.5rem 0.5rem 0 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    height 150ms ease-in-out,
+    opacity 100ms ease-in,
+    visibility 100ms ease-in;
+}
+
+.languageItemsMobile.show {
+  height: 200px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.languageItemsMobile li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.5rem;
+  border-radius: 5px;
+}
+
+.languageItemsMobile li.selected {
+  background-color: #487fff;
+  color: white;
+}
+
+.languageItemsMobile li svg {
+  width: 12px;
+  height: 12px;
+}
+
+.languageItemsMobile li div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.languageItemsMobile li div img {
+  width: auto;
+  height: 30px;
+}
+
+.languageItemsMobile li img:nth-child(1) {
+  border-radius: 5px;
+}
+
+.navbarLanguageIconName {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbarLanguageIconName img {
+  width: auto;
+  height: 30px;
+}
+
+.langMobileIconChevron {
+  transition: all 200ms ease-in-out;
+}
+
+.langMobileIconChevron.show {
+  transform: rotate(180deg);
+}
+
+/* End Mobile SideBar */
 
 .navbarRightProfile {
   display: flex;
@@ -106,6 +390,10 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.profileRightSubmenu li a {
+  color: var(--text);
 }
 
 .profileRightSubmenu li {
@@ -254,6 +542,7 @@
 
 .navbarLeft {
   margin-left: 2rem;
+  width: 100%;
 }
 
 .navbarRightNotifactionWrapper {
@@ -388,6 +677,9 @@
   gap: 5px;
   padding: 5px 10px;
   border-radius: 19px;
+  width: 100%;
+  max-width: 300px;
+  min-width: 50px;
 }
 
 .navbarLeftSearchInput input {
@@ -396,6 +688,64 @@
   border: none;
   font-size: 14px;
   font-weight: 200;
-  width: 300px;
   font-family: AzarMehr;
+  width: 100%;
+  max-width: 300px;
+  min-width: 50px;
+}
+
+.iconSideBar {
+  display: none;
+  width: 35px;
+  height: 35px;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 768px) {
+  .iconSideBar {
+    display: block;
+  }
+  .navbarProfileMobile {
+    display: block;
+  }
+  .navbarRight {
+    display: none;
+  }
+  [dir="rtl"] .navbarWrapper {
+    direction: rtl;
+  }
+  .navbarLeftSearchInput {
+    padding: 2px 10px;
+  }
+  .background {
+    background-color: rgb(0, 0, 0);
+    z-index: 9999999;
+    position: fixed;
+    inset: 0;
+    opacity: 0.4;
+    /* opacity: 0;
+  display: none;
+  transition: all 0.13s ease-in; */
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbarWrapper {
+    padding: 0 20px;
+  }
+  .navbarLeft {
+    margin-left: 1rem;
+  }
+  .navbarRight {
+    gap: 5px;
+  }
 }

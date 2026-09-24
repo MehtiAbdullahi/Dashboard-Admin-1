@@ -2,8 +2,12 @@ import { NavLink } from "react-router-dom";
 
 import style from "./Sidebar.module.css";
 import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 
-function Sidebar() {
+// Todo Icons
+import { IoClose } from "react-icons/io5";
+
+function Sidebar({ setShowSideBar }) {
   const { t } = useTranslation();
 
   const sidebarItems = {
@@ -28,58 +32,81 @@ function Sidebar() {
       { name: "sidebar.table", path: "/table" },
     ],
 
-    otherItems: [{ name: "sidebar.account", path: "/manage-account" }],
+    otherItems: [
+      {
+        name: "sidebar.account",
+        path: "/manage-account",
+        className: "navLinkSidebarAccount",
+      },
+    ],
   };
 
   const navLinkClass = ({ isActive }) =>
     isActive ? `${style.navLink} ${style.selected}` : style.navLink;
 
   return (
-    <div className={style.sidebarWrapper}>
-      <div className={style.sidebar}>
-        <div className={style.sidebarTop}>
+    <>
+      <div className={style.sidebarWrapper}>
+        <div className={style.sidebar}>
           <span className={style["dasboard-admin__title"]}>
-            <span>Dasboard</span> Admin
+            <IoClose
+              className={style["dasboard-admin__title-icon"]}
+              onClick={() => setShowSideBar((prev) => !prev)}
+            />
+            <div className="">
+              <span>Dasboard</span> Admin
+            </div>
           </span>
 
-          <ul className={style.sidebarItems}>
-            {sidebarItems.mainItem.map(({ name, path }) => (
-              <NavLink to={path} className={navLinkClass}>
-                <span></span>
-                <li>{t(name)}</li>
-                <h4></h4>
-              </NavLink>
-            ))}
-          </ul>
-        </div>
+          <div className={style.sidebarTop}>
+            <ul className={style.sidebarItems}>
+              {sidebarItems.mainItem.map(({ name, path }) => (
+                <NavLink
+                  to={path}
+                  className={classNames(navLinkClass, style.navLinkSidebar)}
+                >
+                  <span></span>
+                  <li>{t(name)}</li>
+                  <h4></h4>
+                </NavLink>
+              ))}
+            </ul>
+          </div>
 
-        <div className={style.sidebarBody}>
-          <h3>{t('sidebar.pages')}</h3>
+          <div className={style.sidebarBody}>
+            <h3>{t("sidebar.pages")}</h3>
 
-          <ul className={style.sidebarItems}>
-            {sidebarItems.pages.map(({ name, path }) => (
-              <NavLink to={path} className={navLinkClass}>
-                <span></span>
-                <li>{t(name)}</li>
-                <h4></h4>
-              </NavLink>
-            ))}
-          </ul>
-        </div>
+            <ul className={style.sidebarItems}>
+              {sidebarItems.pages.map(({ name, path }) => (
+                <NavLink
+                  to={path}
+                  className={classNames(navLinkClass, style.navLinkSidebar)}
+                >
+                  <span></span>
+                  <li>{t(name)}</li>
+                  <h4></h4>
+                </NavLink>
+              ))}
+            </ul>
+          </div>
 
-        <div className={style.sidebarBottom}>
-          <ul className={style.sidebarItems}>
-            {sidebarItems.otherItems.map(({ name, path }) => (
-              <NavLink to={path} className={navLinkClass}>
-                <span></span>
-                <li>{t(name)}</li>
-                <h4></h4>
-              </NavLink>
-            ))}
-          </ul>
+          <div className={style.sidebarBottom}>
+            <ul className={style.sidebarItems}>
+              {sidebarItems.otherItems.map(({ name, path, className }) => (
+                <NavLink
+                  to={path}
+                  className={classNames(navLinkClass, `style.${className}`)}
+                >
+                  <span></span>
+                  <li>{t(name)}</li>
+                  <h4></h4>
+                </NavLink>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
