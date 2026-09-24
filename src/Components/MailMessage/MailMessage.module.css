@@ -3,6 +3,7 @@
 .mail__icon-checked {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .mail-message {
@@ -10,10 +11,11 @@
   padding: 2rem 1.5rem;
   cursor: pointer;
   transition: all 0.15s ease-in;
+  flex-wrap: wrap;
 }
 
 .mail-message:hover {
-  background-color: #f3f3f3;
+  background-color: var(--card-bg5);
 }
 
 .mail__icon-checked svg.active,
@@ -39,6 +41,11 @@
 .mail__message-label p {
   font-weight: 200;
   font-size: 1.4rem;
+  width: 100%;
+  max-width: 200px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mail__message-label {
@@ -71,4 +78,26 @@
 .mail__message-label .Social {
   color: #d456fd;
   background-color: #d456fd2b;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 144rem) {
+  .mail-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 37rem) {
+  .mail__message-label p {
+    max-width: 17rem;
+  }
 }

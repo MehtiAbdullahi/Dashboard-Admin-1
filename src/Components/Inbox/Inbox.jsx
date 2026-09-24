@@ -13,8 +13,13 @@ import { MdOutlineMoveToInbox } from "react-icons/md";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { FaTrash } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
+import { useState } from "react";
+import { TbArrowBadgeRight } from "react-icons/tb";
+import classNames from "classnames";
 
 function Inbox() {
+  const [showTools, setShowTools] = useState(false);
+
   const { t } = useTranslation();
 
   return (
@@ -22,11 +27,40 @@ function Inbox() {
       <h1>{t("inbox.title")}</h1>
 
       <div className={style["inbox-wrapper"]}>
-        <div className={style["inbox-left"]}>
+        <div
+          className={classNames(
+            style["btn__open-tools"],
+            showTools && style["show"],
+          )}
+          onClick={() => setShowTools(!showTools)}
+        >
+          <span>
+            <TbArrowBadgeRight />
+          </span>
+        </div>
+        <div
+          className={classNames(
+            style["inbox-left"],
+            showTools && style["show"],
+          )}
+        >
           <Link className={style["inbox-left__btn"]}>
-            <span>+ {t("inbox.conpose")}</span>
+            <div
+              className={classNames(
+                style["btn__close-tools"],
+                showTools && style["show"],
+              )}
+              onClick={() => setShowTools(!showTools)}
+            >
+              <span>
+                <TbArrowBadgeRight />
+              </span>
+            </div>
+            <div>
+              <span>+</span>
+              <span>{t("inbox.conpose")}</span>
+            </div>
           </Link>
-
           <div className={style["inbox-left__body"]}>
             <div className={style["my-email__wrapper"]}>
               <h2>{t("inbox.title")}</h2>
@@ -166,9 +200,10 @@ function Inbox() {
               </label>
             </div>
 
-            <span className={style["create-label"]}>
-              + {t("inbox.lables.createNewLable")}
-            </span>
+            <div className={style["create-label"]}>
+              <span>+</span>
+              <span>{t("inbox.lables.createNewLable")}</span>
+            </div>
           </div>
         </div>
 
