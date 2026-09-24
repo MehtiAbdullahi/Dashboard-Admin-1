@@ -65,7 +65,7 @@
 .login-form__pass-labels {
   display: flex;
   justify-content: space-between;
-  width: 105%;
+  width: 100%;
 }
 
 .login-form__email-wrapper {
@@ -97,7 +97,7 @@
   background-color: var(--card-bg2);
   outline: none;
   border: 0.1rem solid var(--border4);
-  width: 100%;
+  width: 94%;
   height: 4rem;
   padding: 0 1rem 0.1rem 1rem;
   border-radius: 0.5rem;

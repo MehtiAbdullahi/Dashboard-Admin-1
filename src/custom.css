@@ -54,6 +54,7 @@
   --text-7: #2121214d;
   --text-8: #5a8cff;
   --text-9: #b5b5b5;
+  --text-10: #20222449;
   --card-bg: #ffffff;
   --card-bg-hover: #eaeaea;
   --card-bg2: #f1f4f9;
@@ -86,6 +87,7 @@ body.dark {
   --text-5: #ffffff;
   --text-6: #636363;
   --text-7: rgba(255, 255, 255, 0.4);
+  --text-10: #ffffff75;
   --card-bg: #273142;
   --card-bg2: #323d4e;
   --card-bg3: #3b465a;

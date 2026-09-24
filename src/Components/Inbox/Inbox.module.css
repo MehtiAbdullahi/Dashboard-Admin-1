@@ -126,7 +126,7 @@
 
 .create-label {
   font-size: 1.6rem;
-  color: #20222449;
+  color: var(--text-10);
   cursor: pointer;
 }
 
@@ -200,6 +200,11 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
   border-radius: 1.9rem;
 }
 
+.inbox-right__left span svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .inbox-right__left input {
   background-color: var(--input-bg);
   outline: none;
@@ -207,6 +212,7 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
   font-size: 1.4rem;
   font-weight: 200;
   width: 30rem;
+  color: var(--text);
 }
 
 .inbox-right__right {
@@ -220,10 +226,22 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
 
 .inbox-right__right span {
   padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.inbox-right__right span:hover {
+  opacity: 50%;
 }
 
 .inbox-right__right span:not(:nth-child(1)) {
   border-right: 0.1rem solid #d8d8d8;
+}
+
+.inbox-right__right span svg {
+  color: var(--text);
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .mail-boxs {
