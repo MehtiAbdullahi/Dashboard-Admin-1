@@ -15,6 +15,7 @@ import { logoutUser } from "../../Redux/Store/authSlice";
 import { getUser } from "../../Redux/Store/Users";
 import { FaChevronDown } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
+import { IoMdCheckmark } from "react-icons/io";
 
 import style from "./Navbar.module.css";
 
@@ -204,6 +205,7 @@ function Navbar({ setShowSideBar }) {
 
                     <li>{t("navbar.languagesSubmenu.enlang")}</li>
                   </span>
+                  {languageSelected === "english" ? <IoMdCheckmark /> : ""}
                 </div>
                 <div
                   onClick={() => {
@@ -217,6 +219,7 @@ function Navbar({ setShowSideBar }) {
 
                     <li>{t("navbar.languagesSubmenu.arlang")}</li>
                   </span>
+                  {languageSelected === "arabic" ? <IoMdCheckmark /> : ""}
                 </div>
                 <div
                   onClick={() => {
@@ -230,6 +233,7 @@ function Navbar({ setShowSideBar }) {
 
                     <li>{t("navbar.languagesSubmenu.falang")}</li>
                   </span>
+                  {languageSelected === "persian" ? <IoMdCheckmark /> : ""}
                 </div>
               </ul>
             </div>
