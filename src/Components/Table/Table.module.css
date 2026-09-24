@@ -5,8 +5,8 @@
 
 .table-order__border {
   width: 100%;
-  border-top: 1px solid #979797;
-  border-bottom: 1px solid #979797;
+  border-top: 0.1rem solid #979797;
+  border-bottom: 0.1rem solid #979797;
 }
 
 .table-order__wrapper {
@@ -18,8 +18,8 @@
   width: 100%;
   overflow: hidden;
 
-  border: 1px solid var(--input-border);
-  border-radius: 10px;
+  border: 0.1rem solid var(--input-border);
+  border-radius: 1rem;
 
   background-color: var(--card-bg);
 }
@@ -43,8 +43,8 @@
 .table-order__top {
   background-color: var(--card-bg6);
 
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 
   font-weight: 500;
 }
@@ -69,9 +69,9 @@
   justify-content: center;
 
   min-width: 0;
-  padding: 15px 12px;
+  padding: 1.5rem 1.2rem;
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.4;
 
@@ -96,8 +96,8 @@
 
   overflow: hidden;
 
-  border: 1px solid var(--input-border);
-  border-radius: 10px;
+  border: 0.1rem solid var(--input-border);
+  border-radius: 1rem;
 
   background-color: var(--card-bg);
 }
@@ -107,8 +107,8 @@
 
   background-color: var(--card-bg6);
 
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .product-stock__top .tr {
@@ -132,9 +132,9 @@
   justify-content: center;
 
   min-width: 0;
-  padding: 15px 10px;
+  padding: 1.5rem 1rem;
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.4;
 
@@ -161,7 +161,7 @@
 
   width: 100%;
 
-  border-top: 1px solid var(--input-border);
+  border-top: 0.1rem solid var(--input-border);
 }
 
 .product-stock__box .td {
@@ -170,11 +170,11 @@
   justify-content: center;
 
   min-width: 0;
-  min-height: 80px;
+  min-height: 8rem;
 
-  padding: 15px 10px;
+  padding: 1.5rem 1rem;
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
 
   text-align: center;
@@ -185,12 +185,12 @@
   align-items: center;
   justify-content: center;
 
-  width: 55px;
-  height: 55px;
+  width: 5.5rem;
+  height: 5.5rem;
 
   overflow: hidden;
 
-  border-radius: 8px;
+  border-radius: 0.8rem;
 }
 
 .product-stock__img img {
@@ -207,18 +207,18 @@
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 .product-color {
   display: block;
 
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 0.1rem solid rgba(0, 0, 0, 0.15);
 }
 
 .product-color.black {
@@ -244,7 +244,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 .product__edit-delet svg {

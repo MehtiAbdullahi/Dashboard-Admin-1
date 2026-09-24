@@ -10,10 +10,10 @@
 
 .is-user,
 .is-admin {
-  width: 10px;
+  width: 1rem;
   color: var(--text);
-  padding: 5px 15px;
-  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
   font-weight: 400;
 }
 
@@ -42,11 +42,11 @@
 }
 
 .user-list__header a span {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--card-bg);
   background-color: #4379ee;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 1rem;
   font-weight: 200;
 }
 
@@ -59,7 +59,7 @@
 .users-top {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border2);
+  border-bottom: 0.1rem solid var(--border2);
   background-color: var(--card-bg);
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -76,19 +76,19 @@
   background-color: var(--input-bg);
   display: flex;
   align-items: center;
-  border: 1px solid var(--input-border);
-  padding: 5px 3px 5px 8px;
+  border: 0.1rem solid var(--input-border);
+  padding: 0.5rem 0.3rem 0.5rem 0.8rem;
   width: 100%;
-  max-width: 250px;
+  max-width: 25rem;
   flex-shrink: 1;
-  border-radius: 25px;
+  border-radius: 2.5rem;
 }
 
 .users-top__search-input input {
   background-color: transparent;
   outline: none;
   border: none;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   width: 100%;
 }
@@ -102,16 +102,16 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 5px;
-  border: 1px solid var(--border);
-  padding: 5px 10px;
-  border-radius: 5px;
+  gap: 0.5rem;
+  border: 0.1rem solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   transition: all 0.1s ease-in;
   cursor: pointer;
 }
 
 .users-top__filter-wrapper span:hover {
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 
 .users-top__filter-wrapper ul {
@@ -119,17 +119,17 @@
   visibility: hidden;
   opacity: 0;
   background-color: var(--card-bg);
-  padding: 5px 0;
-  left: -55px;
+  padding: 0.5rem 0;
+  left: -5.5rem;
   right: 0;
-  top: 27px;
-  box-shadow: 0 0 3px 0 var(--shadow1);
-  border-radius: 5px;
+  top: 2.7rem;
+  box-shadow: 0 0 0.3rem 0 var(--shadow1);
+  border-radius: 0.5rem;
 }
 
 .users-top__filter-wrapper ul li {
-  padding: 10px 15px;
-  font-size: 14px;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
   text-wrap: nowrap;
   transition: all 0.1s ease-in;
 }
@@ -146,7 +146,7 @@
 
 .users-body {
   background-color: var(--card-bg);
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 
 .users-body .thead {
@@ -160,12 +160,12 @@
 }
 
 .user-item:not(:last-child) {
-  border-bottom: 1px dotted var(--border3);
+  border-bottom: 0.1rem dotted var(--border3);
 }
 
 .user-item__img {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
 }
 
@@ -178,13 +178,13 @@
 .user-item__icon-info,
 .user-item__icon-edit,
 .user-item__icon-delete {
-  padding: 3px;
-  margin: 0 5px;
+  padding: 0.3rem;
+  margin: 0 0.5rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.1s ease-in;
 }
@@ -210,8 +210,8 @@
 .user-item__icon-info svg,
 .user-item__icon-edit svg,
 .user-item__icon-delete svg {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* 
@@ -234,9 +234,9 @@
 
 .th {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .td {
-  font-size: 14px;
+  font-size: 1.4rem;
 }

@@ -1,6 +1,6 @@
 .sidebarWrapper {
   background-color: var(--card-bg);
-  width: 200px;
+  width: 20rem;
   overflow-y: auto;
   height: 100%;
   transition: all 0.15s ease-in;
@@ -9,7 +9,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 3rem;
   margin-bottom: 4rem;
 }
 
@@ -22,11 +22,11 @@
 .dasboard-admin__title {
   margin: 2rem auto 0 auto;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 2rem;
   font-family: nunito;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .dasboard-admin__title span {
@@ -35,13 +35,13 @@
 
 .dasboard-admin__title-icon {
   display: none;
-  width: 25px;
-  height: 25px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .sideBarItemsWrapper {
   overflow-y: auto;
-  height: 650px;
+  height: 65rem;
 }
 
 .sidebarTop img {
@@ -62,12 +62,12 @@
 }
 
 .sidebarItems a li {
-  padding: 10px 30px;
+  padding: 1rem 3rem;
   color: var(--text);
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   transition: 0.15s ease-in all;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   width: 50%;
   text-wrap: nowrap;
 }
@@ -78,11 +78,11 @@
 }
 
 .sidebarItems a.selected {
-  border-left: 4px solid var(--primary);
+  border-left: 0.4rem solid var(--primary);
 }
 
 [dir="rtl"] .sidebarItems a.selected {
-  border-right: 4px solid var(--primary);
+  border-right: 0.4rem solid var(--primary);
   border-left: none;
 }
 
@@ -92,15 +92,15 @@
 }
 
 .sidebarBody {
-  border-top: 1px solid var(--border2);
-  border-bottom: 1px solid var(--border2);
-  padding: 20px 0;
+  border-top: 0.1rem solid var(--border2);
+  border-bottom: 0.1rem solid var(--border2);
+  padding: 2rem 0;
 }
 
 .sidebarBody h3 {
-  padding: 0 0 15px 20px;
+  padding: 0 0 1.5rem 2rem;
   color: var(--text);
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 [dir="rtl"] .sidebarBody h3 {
@@ -117,9 +117,9 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
 
 */
 
-@media (max-width: 768px) {
+@media (max-width: 76.8rem) {
   .dasboard-admin__title {
-    font-size: 17px;
+    font-size: 1.7rem;
     margin: 1rem auto 0 auto;
   }
   .dasboard-admin__title-icon {

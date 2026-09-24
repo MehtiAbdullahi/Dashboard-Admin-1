@@ -11,19 +11,19 @@
 .order-filters {
   margin-top: 2rem;
   background-color: var(--card-bg);
-  border-radius: 5px;
-  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--border);
 }
 
 .order-filters div:not(:last-child) {
-  border-left: 1px solid;
+  border-left: 0.1rem solid;
 }
 
 .filter-date,
 .filter__order-type,
 .filter__order-status,
 .filter__reset-filter {
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .filter-icon,
@@ -32,8 +32,8 @@
 .filter__order-type,
 .filter__order-status,
 .filter__reset-filter {
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
   cursor: pointer;
 }
 
@@ -42,16 +42,16 @@
 }
 
 .order-lists__top-wrapper {
-  border: 1px solid var(--input-border);
+  border: 0.1rem solid var(--input-border);
   background-color: var(--card-bg);
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .order-lists__top {
   background-color: var(--card-bg6);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  /* padding: 15px 20px; */
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  /* padding: 1.5rem 2rem; */
   font-weight: 500;
 }
 
@@ -67,9 +67,9 @@
   justify-content: center;
 
   min-width: 0;
-  padding: 15px 10px;
+  padding: 1.5rem 1rem;
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.4;
 

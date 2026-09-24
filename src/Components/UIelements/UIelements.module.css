@@ -9,7 +9,7 @@
 .uielements__pie-chart,
 .uielements__donut-chart {
   background-color: var(--card-bg);
-  padding: 20px;
+  padding: 2rem;
 }
 
 .bar-chart__items,
@@ -17,5 +17,5 @@
 .donut-chart__items {
   display: flex;
   justify-content: space-around;
-  padding: 80px 50px 20px 50px;
+  padding: 8rem 5rem 2rem 5rem;
 }

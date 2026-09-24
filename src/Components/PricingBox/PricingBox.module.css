@@ -4,8 +4,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
-  width: 400px;
-  max-width: 400px;
+  width: 40rem;
+  max-width: 40rem;
   height: auto;
   overflow: hidden;
   background: url("/public/image/Bg/Pattern.png") var(--card-bg);
@@ -28,25 +28,25 @@
 
 .pricing-box__top {
   padding-bottom: 1.5rem;
-  gap: 10px;
+  gap: 1rem;
 }
 
 [dir='rtl'] .pricing-box__top {
 }
 
 .pricing-box__top h4 {
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 400;
 }
 
 [dir='rtl'] .pricing-box__top h4 {
-  font-size: 26px;
+  font-size: 2.6rem;
   font-weight: 700;
 }
 
 .pricing-box__top h5 {
-  font-size: 22px;
-  font-size: 16px;
+  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 200;
 }
 
@@ -57,18 +57,18 @@
 
 .pricing-box__top span {
   margin-top: 1rem;
-  font-size: 46px;
+  font-size: 4.6rem;
   font-weight: 500;
   color: #4880ff;
 }
 
 .pricing-box__body {
-  gap: 50px;
+  gap: 5rem;
   padding: 1.5rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 0.1rem solid var(--border);
+  border-bottom: 0.1rem solid var(--border);
   font-weight: 300;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .pricing-box__body p {
@@ -81,10 +81,10 @@
 }
 
 .pricing-box__bottom a {
-  border: 3px solid #4880ff;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-size: 16px;
+  border: 0.3rem solid #4880ff;
+  padding: 1.5rem 3rem;
+  border-radius: 3rem;
+  font-size: 1.6rem;
   color: #4880ff;
   transition: all 0.15s ease-in;
 }
@@ -100,7 +100,7 @@
 
 .pricing-box__bottom span {
   margin-top: 1rem;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 300;
   text-decoration: underline;
 }

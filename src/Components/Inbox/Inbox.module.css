@@ -5,17 +5,17 @@
 }
 
 .inbox-left {
-  width: 280px;
+  width: 28rem;
   background-color: var(--card-bg);
-  padding: 25px;
-  border: 1px solid #b9b9b9;
-  border-radius: 10px;
+  padding: 2.5rem;
+  border: 0.1rem solid #b9b9b9;
+  border-radius: 1rem;
 }
 
 .inbox-left__body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .inbox-left__btn {
@@ -28,11 +28,11 @@
   background-color: #4880ff;
   color: #ffffff;
   font-weight: 300;
-  padding: 15px;
+  padding: 1.5rem;
   width: 60%;
   text-align: center;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 1rem;
+  font-size: 1.6rem;
   transition: all 0.15s ease-out;
 }
 
@@ -52,7 +52,7 @@
 
 .my-email__wrapper h2,
 .label-wrapper h2 {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
   margin-bottom: 1.3rem;
 }
@@ -60,9 +60,9 @@
 .label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.6rem;
   padding: 0.5rem 0;
 }
 
@@ -71,9 +71,9 @@
 }
 
 .checkmark {
-  width: 15px;
-  height: 15px;
-  border-radius: 3px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -87,16 +87,16 @@
 }
 
 .label.primary .checkmark {
-  border: 1px solid var(--primary2);
+  border: 0.1rem solid var(--primary2);
 }
 .label.social .checkmark {
-  border: 1px solid var(--social);
+  border: 0.1rem solid var(--social);
 }
 .label.work .checkmark {
-  border: 1px solid var(--work);
+  border: 0.1rem solid var(--work);
 }
 .label.friends .checkmark {
-  border: 1px solid var(--friends);
+  border: 0.1rem solid var(--friends);
 }
 
 .label.primary input:checked + .checkmark {
@@ -121,24 +121,24 @@
 }
 
 .label-wrapper .label span {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .create-label {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #20222449;
   cursor: pointer;
 }
 
 .inbox__title-icon {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
 }
 
 .inbox__title-icon svg {
-  width: 17px;
-  height: 17px;
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 a.selected .my-email__inbox {
@@ -155,11 +155,11 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 10px;
+  padding: 1.5rem 1rem;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1.4rem;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 1rem;
   transition: all 0.15s ease-in-out;
   color: var(--text);
 }
@@ -176,10 +176,10 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
 
 .inbox-right {
   background-color: var(--card-bg);
-  padding: 10px;
-  border: 1px solid var(--border3);
-  border-radius: 10px;
-  width: 850px;
+  padding: 1rem;
+  border: 0.1rem solid var(--border3);
+  border-radius: 1rem;
+  width: 85rem;
   height: auto;
 }
 
@@ -187,43 +187,43 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 
 .inbox-right__left {
   background-color: var(--input-bg);
-  border: 1px solid var(--input-border);
+  border: 0.1rem solid var(--input-border);
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border-radius: 19px;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.9rem;
 }
 
 .inbox-right__left input {
   background-color: var(--input-bg);
   outline: none;
   border: none;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 200;
-  width: 300px;
+  width: 30rem;
 }
 
 .inbox-right__right {
   background-color: var(--card-bg5);
   display: flex;
   align-items: center;
-  border-radius: 10px;
-  border: 1px solid #d8d8d8;
-  border-radius: 10px;
+  border-radius: 1rem;
+  border: 0.1rem solid #d8d8d8;
+  border-radius: 1rem;
 }
 
 .inbox-right__right span {
-  padding: 5px 15px;
+  padding: 0.5rem 1.5rem;
 }
 
 .inbox-right__right span:not(:nth-child(1)) {
-  border-right: 1px solid #d8d8d8;
+  border-right: 0.1rem solid #d8d8d8;
 }
 
 .mail-boxs {
@@ -231,10 +231,10 @@ a.selected .my-email__inbox .inbox__title-icon svg rect {
 }
 
 .mail-boxs .mail-message:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 0.1rem solid #e0e0e0;
 }
 
 .mail-message__time {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 200;
 }

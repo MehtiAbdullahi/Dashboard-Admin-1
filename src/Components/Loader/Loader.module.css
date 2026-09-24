@@ -1,7 +1,7 @@
 .spinner {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,13 +11,13 @@
 .spinner div {
   position: absolute;
 
-  width: 5px;
-  height: 10px;
+  width: 0.5rem;
+  height: 1rem;
 
   border-radius: 50%;
   background: var(--text);
 
-  transform: rotate(calc(var(--rotation) * 1deg)) translateY(-14px);
+  transform: rotate(calc(var(--rotation) * 1deg)) translateY(-1.4rem);
 
   animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
 }
@@ -81,11 +81,11 @@
   70%,
   90%,
   100% {
-    transform: rotate(calc(var(--rotation) * 1deg)) translateY(-14px);
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(-1.4rem);
   }
 
   50% {
-    transform: rotate(calc(var(--rotation) * 1deg)) translateY(-20px);
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(-2rem);
 
     background: rgb(0, 123, 255);
   }

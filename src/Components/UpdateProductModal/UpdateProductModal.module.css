@@ -15,7 +15,7 @@
   justify-content: center;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.659);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(0.2rem);
   color: white;
 }
 
@@ -26,26 +26,26 @@
 }
 
 .update-modal form {
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .update-modal form label {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
   font-weight: 300;
 }
 
 .update-modal form input {
   background-color: rgba(64, 163, 255, 0.355);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(0.2rem);
   color: white;
   font-weight: 200;
-  height: 30px;
-  width: 300px;
-  margin-bottom: 20px;
-  max-width: 300px;
-  border-radius: 5px;
+  height: 3rem;
+  width: 30rem;
+  margin-bottom: 2rem;
+  max-width: 30rem;
+  border-radius: 0.5rem;
   outline: none;
-  border: 1px solid rgb(161, 210, 255);
+  border: 0.1rem solid rgb(161, 210, 255);
 }
 
 .update-modal__btns {
@@ -55,12 +55,12 @@
 
 .update-modal__btn-save,
 .update-modal__btn-cancel {
-  height: 40px;
+  height: 4rem;
   flex-basis: 60%;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   outline: none;
-  border: 1px solid rgba(161, 210, 255, 0);
+  border: 0.1rem solid rgba(161, 210, 255, 0);
   color: white;
   cursor: pointer;
   transition: all 0.15s ease-out;
@@ -77,9 +77,9 @@
 }
 
 .update-modal__btn-cancel:hover {
-  border: 1px solid rgb(255, 161, 161);
+  border: 0.1rem solid rgb(255, 161, 161);
 }
 
 .update-modal__btn-save:hover {
-  border: 1px solid rgb(161, 210, 255);
+  border: 0.1rem solid rgb(161, 210, 255);
 }

@@ -1,17 +1,18 @@
 .statistics-total__wrapper {
   display: flex;
   justify-content: space-around;
-  margin: 2rem 0 0 0;
-  gap: 3rem;
+  margin-top: 2rem;
+  gap: clamp(0.5rem, 2vw, 2rem);
+  flex-wrap: wrap;
 }
 
 .statistics-total__box {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
   background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 10px;
+  padding: 2rem;
+  border-radius: 1rem;
   flex: 1;
 }
 
@@ -23,29 +24,29 @@
 
 .statistics-box__texts {
   display: flex;
-  gap: 15px;
+  gap: 1.5rem;
   flex-direction: column;
 }
 
 .statistics-box__texts h5 {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--text);
   font-weight: 300;
 }
 
 .statistics-box__texts h2 {
-  font-size: 28px;
+  font-size: 2.8rem;
   color: var(--text);
 }
 
 .statistics-box__bottom {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .statistics-box__bottom svg {
-  margin-right: 7px;
+  margin-right: 0.7rem;
 }
 
 .bad {
@@ -62,17 +63,17 @@
 
 .statistics-box__percent,
 .statistics-box__text-time {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 300;
 }
 
 .sales-chart__wrapper {
   background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 10px;
+  padding: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
   margin: 2rem 0;
 }
 
@@ -81,7 +82,7 @@
 }
 
 .sales-chart__top {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 400;
   margin: 1rem 0;
 }
@@ -100,22 +101,22 @@
 }
 
 .deals-details__top h2 {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 400;
 }
 
 .deals-details__top-icon {
   display: flex;
   align-items: center;
-  gap: 12px;
-  border: 1px solid var(--input-border);
-  padding: 10px 30px;
-  border-radius: 5px;
+  gap: 1.2rem;
+  border: 0.1rem solid var(--input-border);
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
 }
 
 .deals-details__top-icon span {
   color: var(--text-5);
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .deals-details__top-icon svg path {
@@ -130,7 +131,7 @@
   width: 100%;
   height: auto;
   /* overflow: hidden; */
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: var(--card-bg);
   position: relative;
 }
@@ -144,7 +145,7 @@
 
   background-color: var(--card-bg2);
 
-  border-radius: 10px 10px 0 0;
+  border-radius: 1rem 1rem 0 0;
   margin-top: 2rem;
 }
 
@@ -171,11 +172,11 @@
 
   min-width: 0;
 
-  padding: 18px 15px;
+  padding: 1.8rem 1.5rem;
 
   color: var(--text);
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
 
   text-align: center;
@@ -209,7 +210,7 @@
 }
 
 .deals-details__item-box:not(:last-child) {
-  border-bottom: 1px solid var(--input-border);
+  border-bottom: 0.1rem solid var(--input-border);
 }
 
 .deals-details__item-box .td {
@@ -218,13 +219,13 @@
   justify-content: center;
 
   min-width: 0;
-  min-height: 80px;
+  min-height: 8rem;
 
-  padding: 15px;
+  padding: 1.5rem;
 
   color: var(--text);
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
 
   text-align: center;
@@ -239,7 +240,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
+  gap: 1rem;
 
   width: 100%;
 }
@@ -247,8 +248,8 @@
 .deals-details__box-img img {
   display: block;
 
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
 
   object-fit: contain;
 
@@ -259,8 +260,8 @@
   color: var(--text);
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 100px;
-  font-size: 14px;
+  max-width: 10rem;
+  font-size: 1.4rem;
   font-weight: 300;
   margin-top: 0;
   white-space: nowrap;
@@ -275,15 +276,15 @@
   align-items: center;
   justify-content: center;
 
-  padding: 5px 15px;
+  padding: 0.5rem 1.5rem;
 
-  border-radius: 15px;
+  border-radius: 1.5rem;
 
   background-color: #00b69b;
 
   color: #ffffff !important;
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400 !important;
 
   white-space: nowrap;
@@ -297,17 +298,13 @@
   background-color: #00d8b8;
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* 
 
-@media (max-width: 900px) {
-  .deals-details__table-wrapper {
-    overflow-x: auto;
-  }
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
 
-  .deals-details__table,
-  .deals-details__items {
-    min-width: 900px;
-  }
-}
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+

@@ -16,35 +16,35 @@
 }
 
 .todo-header__create-btn a span {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: white;
   background-color: #4379ee;
-  padding: 15px 10px;
-  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
   font-weight: 300;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .todo-header__input {
-  width: 0px;
+  width: 0rem;
   opacity: 0;
   visibility: hidden;
   transition: all 0.15s ease-in-out;
-  margin-right: -10px;
+  margin-right: -1rem;
   display: flex;
   align-items: center;
   background-color: var(--card-bg);
-  border-radius: 5px;
-  padding: 8px;
-  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  border: 0.1rem solid var(--border);
 }
 
 [dir="rtl"] .todo-header__input {
   flex-direction: row-reverse;
   margin-left: 1rem;
-  padding: 6px;
+  padding: 0.6rem;
 }
 
 [dir="rtl"] .todo-header__input input {
@@ -52,7 +52,7 @@
 }
 
 .todo-header__input.show {
-  width: 250px;
+  width: 25rem;
   opacity: 1;
   visibility: visible;
   margin-right: 1rem;
@@ -64,14 +64,14 @@
   background-color: var(--primary);
   color: white;
   font-weight: 200;
-  font-size: 14px;
-  border-radius: 3px;
+  font-size: 1.4rem;
+  border-radius: 0.3rem;
   cursor: pointer;
 }
 
 [dir="rtl"] .todo-header__input button {
   font-family: AzarMehr;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .todo-header__input input {

@@ -34,7 +34,7 @@
 
 .landing-body__wrapper h1 {
   font-weight: 400;
-  font-size: 32px;
+  font-size: 3.2rem;
 }
 
 /* .background.show {
@@ -44,12 +44,12 @@
 
 /* ? */
 
-@media (max-width: 768px) {
+@media (max-width: 76.8rem) {
   .sidebar-wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    width: 280px;
+    width: 28rem;
     height: 100vh;
 
     z-index: 99999999;

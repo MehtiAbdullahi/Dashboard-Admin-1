@@ -8,7 +8,7 @@
 
 .aa-root {
   position: fixed;
-  left: 22px;
+  left: 2.2rem;
   z-index: 999999;
   direction: ltr;
   transition: top 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -18,18 +18,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 280px;
-  max-width: 380px;
-  padding: 14px 16px;
-  border-radius: 14px;
+  gap: 1.2rem;
+  min-width: 28rem;
+  max-width: 38rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 1.4rem;
   overflow: hidden;
   background: linear-gradient(135deg, var(--bg1), var(--bg2));
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border: 0.1rem solid color-mix(in srgb, var(--accent) 35%, transparent);
   box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.02),
-    0 0 26px var(--glow);
+    0 1.4rem 3.4rem rgba(0, 0, 0, 0.45),
+    0 0 0 0.1rem rgba(255, 255, 255, 0.02),
+    0 0 2.6rem var(--glow);
   animation: aa-in 0.55s cubic-bezier(0.22, 1.15, 0.36, 1) both;
 }
 
@@ -40,11 +40,11 @@
 @keyframes aa-in {
   0% {
     opacity: 0;
-    transform: translateX(-46px) scale(0.92);
+    transform: translateX(-4.6rem) scale(0.92);
   }
   60% {
     opacity: 1;
-    transform: translateX(6px) scale(1.015);
+    transform: translateX(0.6rem) scale(1.015);
   }
   100% {
     opacity: 1;
@@ -58,7 +58,7 @@
   }
   100% {
     opacity: 0;
-    transform: translateX(-40px) scale(0.94);
+    transform: translateX(-4rem) scale(0.94);
   }
 }
 
@@ -67,7 +67,7 @@
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 2px;
+  height: 0.2rem;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
   background-size: 200% 100%;
   animation: aa-sheen 2.4s linear infinite;
@@ -85,16 +85,16 @@
 /* ---------- بج آیکون ---------- */
 .aa-icon-wrap {
   flex: none;
-  width: 38px;
-  height: 38px;
+  width: 3.8rem;
+  height: 3.8rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   color: var(--accent);
   background: color-mix(in srgb, var(--accent) 16%, transparent);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 0 0 0.1rem color-mix(in srgb, var(--accent) 40%, transparent);
   animation:
     aa-icon-pop 0.6s 0.12s cubic-bezier(0.34, 1.56, 0.64, 1) both,
     aa-icon-pulse 2.2s 0.7s ease-in-out infinite;
@@ -113,20 +113,20 @@
   0%,
   100% {
     box-shadow:
-      0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+      0 0 0 0.1rem color-mix(in srgb, var(--accent) 40%, transparent),
       0 0 0 0 var(--glow);
   }
   50% {
     box-shadow:
-      0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
-      0 0 0 7px transparent;
+      0 0 0 0.1rem color-mix(in srgb, var(--accent) 40%, transparent),
+      0 0 0 0.7rem transparent;
   }
 }
 
 /* ---------- متن پیغام ---------- */
 .aa-message {
   flex: 1;
-  font-size: 13.5px;
+  font-size: 1.35rem;
   line-height: 1.8;
   color: #eef1f7;
   direction: rtl;
@@ -137,7 +137,7 @@
 @keyframes aa-text-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(0.4rem);
   }
   to {
     opacity: 1;
@@ -148,13 +148,13 @@
 /* ---------- دکمه‌ی بستن ---------- */
 .aa-close {
   flex: none;
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   border: none;
   background: transparent;
   color: #7c8aa5;
-  font-size: 13px;
+  font-size: 1.3rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -175,7 +175,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 3px;
+  height: 0.3rem;
   background: var(--accent);
   width: 100%;
   transform-origin: left;
@@ -191,10 +191,10 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 48rem) {
   .aa-root {
-    left: 14px;
-    right: 14px;
+    left: 1.4rem;
+    right: 1.4rem;
   }
   .aa-box {
     max-width: none;

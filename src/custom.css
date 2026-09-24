@@ -107,12 +107,16 @@ body.dark {
   font-family: AzarMehr;
 }
 
+html {
+  font-size: 10px;
+}
+
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
-  overflow: hidden; /* اسکرول کل سایت بسته می‌شود */
+  overflow: hidden;
 }
 
 body {

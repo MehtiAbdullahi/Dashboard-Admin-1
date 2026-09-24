@@ -1,8 +1,8 @@
 .navbarWrapper {
   background-color: var(--card-bg);
-  height: 60px;
+  height: 6rem;
   direction: ltr;
-  padding: 0 40px;
+  padding: 0 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 /* Mobile SideBar */
@@ -29,22 +29,22 @@
 }
 
 .navbarProfileImg img {
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 }
 
 .navbarMobileSubmenu {
   background-color: var(--card-bg);
   position: absolute;
-  top: -14px;
-  left: -20px;
+  top: -1.4rem;
+  left: -2rem;
   bottom: 0;
-  max-width: 180px;
+  max-width: 18rem;
   height: 100vh;
   z-index: 99999999;
-  width: 200px;
+  width: 20rem;
   padding: 1rem 1.5rem;
   transform: translateX(-100%);
   visibility: hidden;
@@ -81,10 +81,10 @@
 }
 
 .navbarSubmenuProfileMobile img {
-  width: 35px;
-  height: 35px;
+  width: 3.5rem;
+  height: 3.5rem;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 }
 
 .submenuProfileMobileNameLast {
@@ -106,7 +106,7 @@
 }
 
 .profileSubmenuMobile.show {
-  height: 180px;
+  height: 18rem;
   visibility: visible;
   opacity: 1;
 }
@@ -148,19 +148,19 @@
 .notificationIconMobile div {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .notificationIconMobile span {
   background-color: #f93c65;
   color: white;
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .notificationBoxMobile {
@@ -176,7 +176,7 @@
 }
 
 .notificationBoxMobile.show {
-  height: 350px;
+  height: 35rem;
   opacity: 1;
   visibility: visible;
 }
@@ -188,11 +188,11 @@
   padding: 0.8rem 0.5rem;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .notificationBoxItemMobile:not(:first-child) {
-  border-top: 1px solid rgba(0, 0, 0, 0.477);
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.477);
 }
 
 .notificationBoxItemMobile span {
@@ -201,7 +201,7 @@
     rgba(255, 229, 145, 1) 0.3%,
     rgba(255, 106, 60, 1) 100.2%
   );
-  padding: 4px 8px;
+  padding: 0.4rem 0.8rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -210,26 +210,26 @@
 }
 
 .notificationBoxItemMobile span svg {
-  width: 4px;
+  width: 0.4rem;
   height: 100%;
   color: white;
 }
 
 .notificationBoxItemMobile div h4 {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: var(--text);
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .notificationBoxItemMobile div p {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 300;
   color: var(--text-9);
 }
 
 .notificationBoxTextMobile {
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.477);
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.477);
   padding: 1rem 0;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .languageItemsMobile.show {
-  height: 200px;
+  height: 20rem;
   opacity: 1;
   visibility: visible;
 }
@@ -255,7 +255,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0.5rem;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .languageItemsMobile li.selected {
@@ -264,34 +264,34 @@
 }
 
 .languageItemsMobile li svg {
-  width: 12px;
-  height: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .languageItemsMobile li div {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .languageItemsMobile li div img {
   width: auto;
-  height: 30px;
+  height: 3rem;
 }
 
 .languageItemsMobile li img:nth-child(1) {
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .navbarLanguageIconName {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .navbarLanguageIconName img {
   width: auto;
-  height: 30px;
+  height: 3rem;
 }
 
 .langMobileIconChevron {
@@ -307,19 +307,19 @@
 .navbarRightProfile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .navbarRightProfile img {
-  width: 30px;
+  width: 3rem;
   height: 100%;
 }
 
 .navbarRightProfile span {
-  margin-left: 10px;
-  border: 1px solid #5c5c5c;
-  width: 20px;
-  height: 20px;
+  margin-left: 1rem;
+  border: 0.1rem solid #5c5c5c;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,11 +331,11 @@
 }
 
 .profileTexts h5 {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .profileTexts h6 {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .profileRightIcon {
@@ -361,7 +361,7 @@
 
 .navbar-submenu__icon-logout {
   color: rgb(255, 60, 60);
-  width: 21px;
+  width: 2.1rem;
   height: 100%;
   height: 100%;
 }
@@ -370,19 +370,19 @@
   position: absolute;
   background-color: var(--card-bg);
   top: 1.7rem;
-  right: 0px;
+  right: 0rem;
   display: flex;
   flex-direction: column;
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: 300;
-  border-radius: 15px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.079);
+  border-radius: 1.5rem;
+  box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 0, 0, 0.079);
   transition: 0.1s ease-in all;
   transition: all ease-in-out 0.2s;
   z-index: 999999;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-120px);
+  transform: translateY(-12rem);
   padding: 0.5rem 1.5rem;
 }
 
@@ -400,7 +400,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 150px;
+  width: 15rem;
   padding: 1rem 0;
   transition: all ease-in-out 0.2s;
 }
@@ -410,28 +410,28 @@
 }
 
 .profileRightSubmenu li:not(:last-child) {
-  border-bottom: 1px solid var(--border4);
+  border-bottom: 0.1rem solid var(--border4);
 }
 
 .profileRightSubmenu li p {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .profileRightSubmenu li a {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 /* .profileRightSubmenu span {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 15px 25px;
+  gap: 0.5rem;
+  padding: 1.5rem 2.5rem;
   color: var(--text);
   transition: 0.15s ease-in all;
 } */
 
 /* .profileRightSubmenu a:nth-child(n + 1):nth-child(-n + 3) {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0.1rem solid var(--border);
 }
 
 .profileRightSubmenu a:hover {
@@ -444,7 +444,7 @@
 
 .profileRightSubmenu a li {
   text-wrap: nowrap;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 300;
 } */
 
@@ -455,23 +455,23 @@
 
 .navbarRightLanguage {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .navbarRightLanguage img {
-  width: 55px;
-  height: 35px;
-  border-radius: 3px;
+  width: 5.5rem;
+  height: 3.5rem;
+  border-radius: 0.3rem;
 }
 
 .languageSelected {
   display: flex;
   align-items: center;
   position: relative;
-  gap: 10px;
+  gap: 1rem;
   cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
   transition: 0.15s all ease-out;
   user-select: none;
   z-index: 999999;
@@ -485,16 +485,16 @@
   position: absolute;
   background-color: var(--card-bg);
   top: 1.7rem;
-  right: -20px;
+  right: -2rem;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  font-size: 17px;
+  gap: 0.5rem;
+  font-size: 1.7rem;
   font-weight: 300;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.079);
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 0, 0, 0.079);
   transition: 0.1s ease-in all;
-  transform: translateY(-100px);
+  transform: translateY(-10rem);
   opacity: 0;
   visibility: hidden;
 }
@@ -504,25 +504,25 @@
 }
 
 .languageItemsTitle {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0.1rem solid var(--border);
   text-wrap: nowrap;
-  font-size: 15px;
-  padding: 15px;
+  font-size: 1.5rem;
+  padding: 1.5rem;
   font-weight: 200;
 }
 
 .languageItems div {
-  padding: 20px;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 230px;
+  width: 23rem;
 }
 
 .languageItems div span {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .languageItems.show {
@@ -556,23 +556,23 @@
 }
 
 .notificationIcon svg {
-  margin-top: 8px;
+  margin-top: 0.8rem;
 }
 
 .notificationIcon span {
   background-color: #f93c65;
   color: white;
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 1.4rem;
   position: absolute;
-  top: -4px;
-  right: -7px;
-  border: 1px solid #979797;
+  top: -0.4rem;
+  right: -0.7rem;
+  border: 0.1rem solid #979797;
 }
 
 .notificationBox {
@@ -580,10 +580,10 @@
   background-color: var(--card-bg);
   margin: 0 auto;
   right: -5rem;
-  width: 250px;
-  max-width: 250px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.051);
-  border-radius: 10px;
+  width: 25rem;
+  max-width: 25rem;
+  box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.051);
+  border-radius: 1rem;
   transition: all 0.15s ease-in-out;
 
   opacity: 0;
@@ -600,8 +600,8 @@
 }
 
 .notificationBoxTitle {
-  border-bottom: 1px solid var(--border);
-  font-size: 15px;
+  border-bottom: 0.1rem solid var(--border);
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
@@ -619,7 +619,7 @@
 .notificationBoxItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
   padding: 0.8rem 1rem;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
@@ -635,8 +635,8 @@
     rgba(255, 229, 145, 1) 0.3%,
     rgba(255, 106, 60, 1) 100.2%
   );
-  width: 25px;
-  height: 25px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -644,60 +644,60 @@
 }
 
 .notificationBoxItem span svg {
-  width: 25px;
-  height: 18px;
+  width: 2.5rem;
+  height: 1.8rem;
   color: white;
 }
 
 .notificationBoxItem div h4 {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: var(--text);
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .notificationBoxItem div p {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 300;
   color: var(--text-9);
 }
 
 .notificationBoxText {
-  border-top: 1px solid var(--border);
+  border-top: 0.1rem solid var(--border);
   text-align: center;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   color: var(--text-9);
 }
 
 .navbarLeftSearchInput {
   background-color: var(--input-bg);
-  border: 1px solid var(--input-border);
+  border: 0.1rem solid var(--input-border);
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border-radius: 19px;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.9rem;
   width: 100%;
-  max-width: 300px;
-  min-width: 50px;
+  max-width: 30rem;
+  min-width: 5rem;
 }
 
 .navbarLeftSearchInput input {
   background-color: var(--input-bg);
   outline: none;
   border: none;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 200;
   font-family: AzarMehr;
   width: 100%;
-  max-width: 300px;
-  min-width: 50px;
+  max-width: 30rem;
+  min-width: 5rem;
 }
 
 .iconSideBar {
   display: none;
-  width: 35px;
-  height: 35px;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 /* 
@@ -710,7 +710,7 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
 
 */
 
-@media (max-width: 768px) {
+@media (max-width: 76.8rem) {
   .iconSideBar {
     display: block;
   }
@@ -724,7 +724,7 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
     direction: rtl;
   }
   .navbarLeftSearchInput {
-    padding: 2px 10px;
+    padding: 0.2rem 1rem;
   }
   .background {
     background-color: rgb(0, 0, 0);
@@ -738,14 +738,14 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 102.4rem) {
   .navbarWrapper {
-    padding: 0 20px;
+    padding: 0 2rem;
   }
   .navbarLeft {
     margin-left: 1rem;
   }
   .navbarRight {
-    gap: 5px;
+    gap: 0.5rem;
   }
 }

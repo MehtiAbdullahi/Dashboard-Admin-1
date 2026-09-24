@@ -7,7 +7,7 @@
 
 .mail-message {
   justify-content: space-between;
-  padding: 20px 15px;
+  padding: 2rem 1.5rem;
   cursor: pointer;
   transition: all 0.15s ease-in;
 }
@@ -23,34 +23,34 @@
 }
 
 .mail__icon-checked {
-  gap: 20px;
+  gap: 2rem;
 }
 
 .mail-title {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .mail__message-label span {
   font-weight: 200;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .mail__message-label p {
   font-weight: 200;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .mail__message-label {
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .mail__message-label .Primary,
 .mail__message-label .Work,
 .mail__message-label .Friends,
 .mail__message-label .Social {
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .mail__message-label .Primary {

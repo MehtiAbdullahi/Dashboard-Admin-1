@@ -1,9 +1,9 @@
 .invoice-wrapper {
   margin-top: 2rem;
   background-color: var(--card-bg);
-  padding: 20px 60px;
-  border-radius: 10px;
-  border: 1px solid #b9b9b9;
+  padding: 2rem 6rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #b9b9b9;
 }
 
 [dir="rtl"] .invoice-wrapper {
@@ -18,28 +18,28 @@
 .invoice-date {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   justify-content: center;
 }
 
 .invoice-from span,
 .invoice-to span,
 .invoice-date span {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 300;
 }
 
 .invoice-from h4,
 .invoice-to h4 {
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 
 .invoice-from p,
 .invoice-to p {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
 }
 
@@ -63,11 +63,11 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  padding: 7px 20px;
-  border-radius: 10px;
+  padding: 0.7rem 2rem;
+  border-radius: 1rem;
   color: #ffffff;
-  gap: 20px;
-  font-size: 16px;
+  gap: 2rem;
+  font-size: 1.6rem;
 }
 
 .btn-submit__icon {
@@ -75,33 +75,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .invoice-body__total-price {
   margin-bottom: 2rem;
   gap: 1rem;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 
 .invoice-body__submit-print {
-  gap: 20px;
+  gap: 2rem;
 }
 
 .btn-print__icon {
   background-color: #fafbfd;
   display: flex;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #d5d5d5;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #d5d5d5;
 }
 
 /* ? table */
 
 .invoice-body__wrapper.table {
-  border-radius: 10px;
+  border-radius: 1rem;
   display: table;
   font-weight: 600;
   text-align: center;
@@ -128,7 +128,7 @@
 .product-stock__body.tbody .tr::after {
   content: "";
   display: block;
-  height: 1px;
+  height: 0.1rem;
   left: 0;
   right: 0;
   position: absolute;
@@ -139,18 +139,18 @@
 .invoice-body__top.thead .tr .th {
   vertical-align: middle;
   display: table-cell;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .invoice-body__top.thead .tr .th {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 
 .invoice-body__body.tbody .tr .td {
-  padding: 30px 0;
+  padding: 3rem 0;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 /* ? table end */
