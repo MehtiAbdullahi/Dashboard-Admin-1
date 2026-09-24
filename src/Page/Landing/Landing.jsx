@@ -8,9 +8,9 @@ import classNames from "classnames";
 function Landing() {
   const [showSideBar, setShowSideBar] = useState(false);
 
-  const closeSideBar = (e) => {
-    setShowSideBar(!showSideBar);
-  };
+  // const closeSideBar = (e) => {
+  //   setShowSideBar(!showSideBar);
+  // };
 
   return (
     <>

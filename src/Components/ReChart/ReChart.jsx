@@ -63,6 +63,7 @@ export default function SalesChart() {
             dataKey="month"
             axisLine={false}
             tickLine={false}
+            interval="preserveStartEnd"
             tick={{
               fill: "#A1A5AA",
               fontSize: 12,
@@ -80,7 +81,7 @@ export default function SalesChart() {
               fill: "#A1A5AA",
               fontSize: 12,
             }}
-            width={50}
+            width={45}
           />
 
           <Tooltip

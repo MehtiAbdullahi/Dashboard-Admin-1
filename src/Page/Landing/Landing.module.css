@@ -37,12 +37,22 @@
   font-size: 3.2rem;
 }
 
-/* .background.show {
-  opacity: 0.4;
-  display: block;
-} */
 
-/* ? */
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 102.4rem) {
+  .landing-body__wrapper h1 {
+    font-size: 2.6rem;
+  }
+}
 
 @media (max-width: 76.8rem) {
   .sidebar-wrapper {

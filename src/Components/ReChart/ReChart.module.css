@@ -1,52 +1,42 @@
-.sales-chart {
-  width: 100%;
-  height: 32rem;
-}
-
-.sales-tooltip {
-  background: #467dff;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 0.3rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  box-shadow: 0 0.3rem 0.8rem rgba(70, 125, 255, 0.25);
-}
-
 .sales-card {
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
   background: #fff;
   border-radius: 1.4rem;
   padding: 2.8rem 3.2rem 2.4rem;
+}
+
+.sales-chart {
+  width: 100%;
+  min-width: 0;
+  height: clamp(24rem, 30vw, 32rem);
 }
 
 .sales-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
-.sales-card-header h2 {
-  margin: 0;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #202124;
-}
+@media (max-width: 48rem) {
+  .sales-card {
+    padding: 2rem 1.6rem;
+  }
 
-.month-select {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  padding: 0.7rem 1.2rem;
-  background: #fff;
-  border: 0.1rem solid #e1e3e6;
-  border-radius: 0.5rem;
-  color: #9ca0a5;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
+  .sales-card-header h2 {
+    font-size: 2rem;
+  }
 
-.month-select span {
-  font-size: 1.6rem;
+  .sales-chart {
+    height: 26rem;
+  }
+
+  .month-select {
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
 }
