@@ -48,7 +48,7 @@
 }
 
 .invoice-body__top {
-  background-color: #f1f4f9;
+  background-color: var(--card-bg3);
 }
 
 .invoice-body__total-price,
@@ -118,7 +118,8 @@
 
 .invoice-body__body.tbody .tr,
 .invoice-body__top.thead .tr {
-  display: table-row;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .invoice-body__body.tbody .tr {
@@ -154,3 +155,61 @@
 }
 
 /* ? table end */
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 768px) {
+  .invoice-body__body.tbody .tr,
+  .invoice-body__top.thead .tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .invoice-body__body.tbody .tr > :nth-child(1),
+  .invoice-body__top.thead .tr > :nth-child(1) {
+    display: none;
+  }
+  .invoice-top {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .invoice-top div span,
+  .invoice-top div h4,
+  .invoice-top div p {
+    font-size: 1.2rem;
+  }
+  .invoice-body__top .tr .th {
+    font-size: 1.4rem !important;
+  }
+  .invoice-body__body .tr .td {
+    font-size: 1.2rem !important;
+  }
+  .invoice-wrapper {
+    padding: 2rem 4rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .invoice-wrapper {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .invoice-body__body.tbody .tr,
+  .invoice-body__top.thead .tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .invoice-body__body.tbody .tr > :nth-child(2),
+  .invoice-body__top.thead .tr > :nth-child(2) {
+    display: none;
+  }
+}
