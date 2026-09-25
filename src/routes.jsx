@@ -37,7 +37,7 @@ let routes = [
       { path: "users-list", element: <UsersList /> },
       { path: "favorites", element: <Favorites /> },
       { path: "inbox", element: <Inbox /> },
-      { path: "orderlists", element: <Orderlists /> },
+      // { path: "orderlists", element: <Orderlists /> },
       { path: "productstock", element: <Productstock /> },
       { path: "pricing", element: <Pricing /> },
       { path: "calender", element: <Calender /> },

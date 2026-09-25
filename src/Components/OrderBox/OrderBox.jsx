@@ -4,7 +4,7 @@ import classNames from "classnames";
 function OrderBox({ status }) {
   return (
     <div className={style["tr"]}>
-      <span className={classNames(style["td"], style["order-id"])}>00001</span>
+      <span className={classNames(style["td"], style["order-id"])}>1</span>
 
       <span className={classNames(style["td"], style["order-name"])}>
         Christine Brooks

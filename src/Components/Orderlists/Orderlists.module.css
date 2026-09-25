@@ -37,6 +37,11 @@
   cursor: pointer;
 }
 
+.filter-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
 .order-lists__wrapper {
   margin-top: 2rem;
 }
@@ -74,4 +79,47 @@
   line-height: 1.4;
 
   text-align: center;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 1024px) {
+  .order-filters div span {
+    font-size: 1.2rem;
+  }
+  .order-lists__top .tr {
+    grid-template-columns: 0.5fr 1.2fr 1fr 1fr 1fr;
+  }
+  .order-lists__top-wrapper > div div:last-child div {
+    grid-template-columns: 0.5fr 1.2fr 1fr 1fr 1fr;
+  }
+  .order-lists__top .tr .th:nth-child(3) {
+    display: none;
+  }
+  .order-lists__top-wrapper > div div:last-child div > :nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-lists__top .tr {
+    grid-template-columns: -1fr 1fr 2fr 3fr 0fr;
+  }
+  .order-lists__top-wrapper > div div:last-child div {
+    grid-template-columns: -1fr 1fr 2fr 3fr 0fr;
+  }
+  .order-filters div:first-child {
+    border: none;
+  }
+  .order-filters div:not(:first-child) {
+    display: none;
+  }
 }
