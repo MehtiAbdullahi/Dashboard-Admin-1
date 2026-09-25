@@ -2,4 +2,21 @@
   display: flex;
   margin-top: 2rem;
   justify-content: space-evenly;
+  gap: 5rem;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 1024px) {
+  .pricing-box__wrapper {
+    flex-wrap: wrap;
+  }
 }
