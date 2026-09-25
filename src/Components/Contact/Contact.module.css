@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 3rem 0;
 }
 
 .contact-header a span {
   font-size: 1.6rem;
-  color: var(--card-bg);
+  color: var(--text);
   background-color: #4379ee;
   padding: 1rem;
   border-radius: 1rem;
@@ -23,6 +24,11 @@
 .contact-box {
   display: flex;
   flex-direction: column;
+}
+
+.contact-box img {
+  width: 100%;
+  height: auto;
 }
 
 .contact-box__info {
@@ -43,7 +49,7 @@
 
 .contact-email {
   font-size: 1.4rem;
-  color: #2022247d;
+  color: var(--text-7);
   font-weight: 200;
 }
 
@@ -60,4 +66,66 @@
 
 .contact-box__info a span {
   font-size: 1.6rem;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 1440px) {
+  .contact-body__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-body__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-body__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .contact-name {
+    font-size: 1.4rem;
+  }
+  .contact-email {
+    font-size: 1.2rem;
+  }
+  .contact-box__info a {
+    padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+  }
+  .contact-box__info a span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .contact-name {
+    font-size: 1.2rem;
+  }
+  .contact-email {
+    font-size: 1rem;
+  }
+  .contact-box__info a {
+    margin-top: 0.5rem;
+  }
+  .contact-box__info a span {
+    font-size: 1rem;
+  }
+  .contact-box__info {
+    padding: 1rem 0;
+  }
 }
