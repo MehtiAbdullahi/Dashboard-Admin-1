@@ -17,14 +17,14 @@ function Calender() {
       <div className={style["calender-wrapper"]}>
         <div className={style["calender-left"]}>
           <Link className={style["calender-left__btn"]}>
-            <span>+ {t('calender.events.btn')}</span>
+            <span>+ {t("calender.events.btn")}</span>
           </Link>
 
           <div className={style["calender__event-wrapper"]}>
-            <h3>{t('calender.events.title')}</h3>
+            <h3>{t("calender.events.title")}</h3>
 
             <div className={style["calender-events"]}>
-              {events.map(({type}) => (
+              {events.map(({ type }) => (
                 <div className={style["calender-event"]}>
                   <div className={style["event-message__side-left"]}>
                     <img src="/public/image/event-image.png" alt="" />
@@ -40,7 +40,9 @@ function Calender() {
                     <span className={style["event-address"]}>
                       {t(`calender.events.${type}.address`)}
                     </span>
-                    <span className={style["event-location"]}>{t(`calender.events.${type}.location`)}</span>
+                    <span className={style["event-location"]}>
+                      {t(`calender.events.${type}.location`)}
+                    </span>
 
                     <div className={style["event-participants"]}>
                       <img src="/public/image/Man Image.png" alt="" />
@@ -53,12 +55,11 @@ function Calender() {
                   </div>
                 </div>
               ))}
-
-              <div className={style["calender-event__btn"]}>
-                <Link>
-                  <span>{t('calender.events.btn2')}</span>
-                </Link>
-              </div>
+            </div>
+            <div className={style["calender-event__btn"]}>
+              <Link>
+                <span>{t("calender.events.btn2")}</span>
+              </Link>
             </div>
           </div>
         </div>
