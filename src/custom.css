@@ -125,6 +125,10 @@ body {
   background-color: var(--bg);
 }
 
+[dir="rtl"] button {
+  font-family: AzarMehr;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

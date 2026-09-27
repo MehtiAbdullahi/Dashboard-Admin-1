@@ -141,3 +141,26 @@
   color: #ffa756;
   background-color: #ffa7562b;
 }
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 425px) {
+  .order-status {
+    font-size: 1.2rem;
+  }
+  .order-status span {
+    width: 100%;
+    max-width: 4rem;
+  }
+  .tr .td {
+    font-size: 1.1rem;
+  }
+}

@@ -17,7 +17,7 @@ function Sidebar({ setShowSideBar }) {
       { name: "sidebar.usersList", path: "/users-list" },
       { name: "sidebar.favorites", path: "/favorites" },
       { name: "sidebar.inbox", path: "/inbox" },
-      // { name: "sidebar.orderLists", path: "/orderlists" },
+      { name: "sidebar.orderLists", path: "/orderlists" },
       { name: "sidebar.productStock", path: "/productstock" },
     ],
 

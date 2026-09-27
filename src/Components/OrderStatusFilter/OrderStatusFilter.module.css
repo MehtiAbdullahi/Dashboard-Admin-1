@@ -1,0 +1,184 @@
+.box {
+  position: absolute;
+  background: var(--card-bg);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 8px 24px var(--shadow1);
+  box-sizing: border-box;
+  top: 7rem;
+  right: 0;
+  left: 0;
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100px);
+  transition:
+    transform 0.15s ease-in-out,
+    opacity 0.2s ease-in-out,
+    visibility 0.1s ease-in-out;
+}
+
+.box.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.pill {
+  border: 1px solid var(--border2);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pill:hover {
+  background: var(--card-bg-hover);
+}
+
+.pillActive,
+.pillActive:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-white);
+}
+
+.note {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-6);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border2);
+  margin-bottom: 16px;
+}
+
+.applyBtn {
+  width: 100%;
+  border: none;
+  background: var(--primary);
+  color: var(--text-white);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.applyBtn:hover {
+  opacity: 0.9;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 1024px) {
+  .box {
+    width: 32rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .pill {
+    font-size: 1.1rem;
+  }
+  .applyBtn,
+  .note {
+    font-size: 1.2rem;
+  }
+  .applyBtn {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 24rem;
+  }
+}
+
+@media (max-width: 595px) {
+  .box {
+    position: relative;
+    padding: 1rem;
+    border: none;
+    inset: 0;
+    box-shadow: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    transform: none;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      height 0.2s ease-in-out,
+      opacity 0.2s ease-out,
+      visibility 0.2s ease;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .box.show {
+    position: none;
+    height: 19rem;
+    visibility: visible;
+    opacity: 1;
+  }
+  .title {
+    display: none;
+  }
+  .options {
+    justify-content: center;
+  }
+  .applyBtn {
+    width: 50%;
+  }
+  .note {
+    text-align: start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .box.show {
+    height: 25rem;
+  }
+}
