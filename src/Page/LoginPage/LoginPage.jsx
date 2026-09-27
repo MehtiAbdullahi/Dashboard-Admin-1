@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Input from "../../Components/Input/Input";
 import style from "./LoginPage.module.css";
 import { useEffect, useState } from "react";
@@ -89,18 +89,6 @@ function LoginPage() {
         )}
       </AnimatePresence>
       <div className={style["login-wrapper"]}>
-        <HelpWidget
-          FAQ={[
-            {
-              q: "برای Admin بودن با اکانت زیر لاگین کنید",
-              a: "ایمیل: mehtiabdullahi@gmail.com  رمز: 1111",
-            },
-            {
-              q: "برای User بودن با اکانت زیر لاگین کنید",
-              a: "ایمیل: reaz@gmail.com  رمز: 2222",
-            },
-          ]}
-        />
         <div className={style["login-page"]}>
           <div className={style["login-box__wrapper"]}>
             <AnimatePresence>

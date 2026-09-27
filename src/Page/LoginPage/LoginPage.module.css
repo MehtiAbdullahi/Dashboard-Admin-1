@@ -30,7 +30,7 @@
 .login-box__wrapper {
   width: 100%;
   max-width: 36.7rem;
-  background-color: #fff;
+  background-color: var(--card-bg);
   padding: 2rem 3rem 4rem 3rem;
   border-radius: 1rem;
 }
@@ -97,6 +97,7 @@
   background-color: var(--card-bg2);
   outline: none;
   border: 0.1rem solid var(--border4);
+  color: var(--text);
   width: 94%;
   height: 4rem;
   padding: 0 1rem 0.1rem 1rem;

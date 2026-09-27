@@ -43,13 +43,13 @@ function App() {
     fetchSession();
   }, []);
 
-  // useEffect(() => {
-  //   if (session === null) {
-  //     navigate("/login");
-  //   } else {
-  //     navigate("/");
-  //   }
-  // }, [session]);
+  useEffect(() => {
+    if (session === null) {
+      navigate("/login");
+    } else {
+      navigate("/");
+    }
+  }, [session]);
 
   useEffect(() => {
     dispatch(initializeAuth());
