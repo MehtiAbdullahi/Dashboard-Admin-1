@@ -35,6 +35,7 @@
 .landing-body__wrapper h1 {
   font-weight: 400;
   font-size: 3.2rem;
+  text-wrap: nowrap;
 }
 
 

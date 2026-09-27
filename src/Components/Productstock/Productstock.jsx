@@ -1,14 +1,16 @@
 import { useTranslation } from "react-i18next";
 import style from "./Productstock.module.css";
 import classNames from "classnames";
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 function Productstock() {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <>
       <div className={style["product-stock__header"]}>
-        <h1>{t('productStock.title')}</h1>
+        <h1>{t("productStock.title")}</h1>
         <span className={style["product-stock__top-input"]}>
           <svg
             width="16"
@@ -36,7 +38,7 @@ function Productstock() {
               />
             </g>
           </svg>
-          <input type="text" placeholder={t('productStock.placeHolder')} />
+          <input type="text" placeholder={t("productStock.placeHolder")} />
         </span>
       </div>
       <div
@@ -46,13 +48,21 @@ function Productstock() {
           className={classNames(style["product-stock__top"], style["thead"])}
         >
           <div className={style["tr"]}>
-            <span className={style["th"]}>{t('productStock.table.iamge')}</span>
-            <span className={style["th"]}>{t('productStock.table.productName')}</span>
-            <span className={style["th"]}>{t('productStock.table.category')}</span>
-            <span className={style["th"]}>{t('productStock.table.price')}</span>
-            <span className={style["th"]}>{t('productStock.table.piece')}</span>
-            <span className={style["th"]}>{t('productStock.table.availableColor')}</span>
-            <span className={style["th"]}>{t('productStock.table.actions')}</span>
+            <span className={style["th"]}>{t("productStock.table.iamge")}</span>
+            <span className={style["th"]}>
+              {t("productStock.table.productName")}
+            </span>
+            <span className={style["th"]}>
+              {t("productStock.table.category")}
+            </span>
+            <span className={style["th"]}>{t("productStock.table.price")}</span>
+            <span className={style["th"]}>{t("productStock.table.piece")}</span>
+            <span className={style["th"]}>
+              {t("productStock.table.availableColor")}
+            </span>
+            <span className={style["th"]}>
+              {t("productStock.table.actions")}
+            </span>
           </div>
         </div>
 
@@ -85,86 +95,8 @@ function Productstock() {
             <div className={style["td"]}>
               <div className={style["product__edit-delet"]}>
                 <span>
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 17 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.6">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M8.79693 9.52467L6.32227 9.87867L6.6756 7.40334L13.0396 1.03934C13.6254 0.453551 14.5751 0.453551 15.1609 1.03934C15.7467 1.62513 15.7467 2.57488 15.1609 3.16067L8.79693 9.52467Z"
-                        stroke="black"
-                        stroke-width="1.2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12.332 1.74667L14.4534 3.86801"
-                        stroke="black"
-                        stroke-width="1.2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12.5996 9.60067V14.6007C12.5996 15.153 12.1519 15.6007 11.5996 15.6007H1.59961C1.04732 15.6007 0.599609 15.153 0.599609 14.6007V4.60067C0.599609 4.04839 1.04732 3.60067 1.59961 3.60067H6.59961"
-                        stroke="black"
-                        stroke-width="1.2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </svg>
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 17 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12.6 15H4.2C3.53726 15 3 14.4627 3 13.8V3H13.8V13.8C13.8 14.4627 13.2627 15 12.6 15Z"
-                      stroke="#EF3826"
-                      stroke-width="1.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M6.60117 11.4V6.6"
-                      stroke="#EF3826"
-                      stroke-width="1.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M10.2008 11.4V6.6"
-                      stroke="#EF3826"
-                      stroke-width="1.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M0.599609 3H16.1996"
-                      stroke="#EF3826"
-                      stroke-width="1.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.2004 0.599998H6.60039C5.93765 0.599998 5.40039 1.13726 5.40039 1.8V3H11.4004V1.8C11.4004 1.13726 10.8631 0.599998 10.2004 0.599998Z"
-                      stroke="#EF3826"
-                      stroke-width="1.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+                  <FaEdit />
+                  <RiDeleteBin6Line />
                 </span>
               </div>
             </div>

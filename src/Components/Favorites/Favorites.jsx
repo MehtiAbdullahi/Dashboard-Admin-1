@@ -23,7 +23,7 @@ function Favorites() {
       />
       <h1>{t("favorite.title")}</h1>
       <div className={style["product-boxs"]}>
-        {!loading && <Loader />}
+        {loading && <Loader />}
         {error && <Error titleKey={`noProducts`} />}
         {!loading &&
           !error &&
