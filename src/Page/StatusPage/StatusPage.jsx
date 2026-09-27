@@ -7,7 +7,7 @@ function NotAccessPage() {
       <div className={style["not-access__wrapper"]}>
         <div className={style["not-access"]}>
           <div className={style["not-access__box"]}>
-            <img src="/public/image/Bg/404.png" alt="" />
+            <img src="image/Bg/404.png" alt="" />
             <div className="not-access__box-bottom">
               <h2 className={style["not-access__title"]}>
                 You do not have access to this page!

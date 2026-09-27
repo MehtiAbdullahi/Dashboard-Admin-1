@@ -27,7 +27,7 @@ function Calender() {
               {events.map(({ type }) => (
                 <div className={style["calender-event"]}>
                   <div className={style["event-message__side-left"]}>
-                    <img src="/public/image/event-image.png" alt="" />
+                    <img src="image/event-image.png" alt="" />
                   </div>
 
                   <div className={style["event-message__side-right"]}>
@@ -45,9 +45,9 @@ function Calender() {
                     </span>
 
                     <div className={style["event-participants"]}>
-                      <img src="/public/image/Man Image.png" alt="" />
-                      <img src="/public/image/Man Image-1.png" alt="" />
-                      <img src="/public/image/Man Image-2.png" alt="" />
+                      <img src="image/Man Image.png" alt="" />
+                      <img src="image/Man Image-1.png" alt="" />
+                      <img src="image/Man Image-2.png" alt="" />
                       <span className={style["event__participants-more"]}>
                         26+
                       </span>

@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { supabase } from "./lib/supabase";
 import {
   clearSession,
+  fetchUserProfileImage,
   initializeAuth,
   setSession,
 } from "./Redux/Store/authSlice";
@@ -47,7 +48,7 @@ function App() {
     if (session === null) {
       navigate("/login");
     } else {
-      navigate("/");
+      navigate("/dashboard");
     }
   }, [session]);
 
@@ -57,7 +58,6 @@ function App() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
-
       if (session) {
         dispatch(setSession(session));
       } else {
@@ -70,6 +70,12 @@ function App() {
       subscription.unsubscribe();
     };
   }, [dispatch]);
+
+  useEffect(() => {
+    if (session) {
+      dispatch(fetchUserProfileImage());
+    }
+  }, [session, dispatch]);
 
   const routes = useRoutes(route);
 

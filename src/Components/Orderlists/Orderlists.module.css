@@ -39,7 +39,14 @@
 .filter__order-status,
 .filter-date {
   position: relative;
-  border-left: 0.1rem solid;
+  border-left: 0.1rem solid var(--border);
+}
+
+[dir="ltr"] .filter-icon,
+[dir="ltr"] .filter__order-type,
+[dir="ltr"] .filter__order-status,
+[dir="ltr"] .filter-date {
+  border-right: 0.1rem solid var(--border);
 }
 
 .filter__order-type svg,

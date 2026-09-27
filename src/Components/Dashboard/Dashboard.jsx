@@ -48,7 +48,7 @@ function Dashboard() {
             </div>
 
             <span>
-              <img src="/public/image/Icon-3.png" alt="" />
+              <img src="image/Icon-3.png" alt="" />
             </span>
           </div>
 
@@ -82,7 +82,7 @@ function Dashboard() {
             </div>
 
             <span>
-              <img src="/public/image/Icon-2.png" alt="" />
+              <img src="image/Icon-2.png" alt="" />
             </span>
           </div>
 
@@ -116,7 +116,7 @@ function Dashboard() {
             </div>
 
             <span>
-              <img src="/public/image/Icon-1.png" alt="" />
+              <img src="image/Icon-1.png" alt="" />
             </span>
           </div>
 
@@ -157,7 +157,7 @@ function Dashboard() {
             </div>
 
             <span>
-              <img src="/public/image/Icon.png" alt="" />
+              <img src="image/Icon.png" alt="" />
             </span>
           </div>
 

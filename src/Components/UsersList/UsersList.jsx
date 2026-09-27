@@ -122,7 +122,7 @@ function UsersList() {
               <div className={classNames(style["td"])}>
                 <img
                   className={style["user-item__img"]}
-                  src="profileImg"
+                  src="image/Users/Untitled-3.png"
                   alt=""
                 />
               </div>

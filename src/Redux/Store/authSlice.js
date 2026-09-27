@@ -67,11 +67,47 @@ export const logoutUser = createAsyncThunk(
   },
 );
 
+export const fetchUserProfileImage = createAsyncThunk(
+  "auth/fetchUserProfileImage",
+  async (_, { getState, rejectWithValue }) => {
+    const { user } = getState().auth;
+
+    if (!user) return null;
+
+    // مرحله ۱: مسیر فایل عکس رو از جدول profiles می‌گیریم
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("profile_img")
+      .eq("id", user.id)
+      .single();
+
+    if (error) {
+      return rejectWithValue(error.message);
+    }
+
+    if (!data?.profile_img) {
+      return null; // کاربر هنوز عکسی آپلود نکرده
+    }
+
+    // مرحله ۲: چون باکت private هست، باید signed URL بسازیم
+    const { data: signedData, error: signedError } = await supabase.storage
+      .from("users-image")
+      .createSignedUrl(data.profile_img, 60 * 60);
+
+    if (signedError) {
+      return rejectWithValue(signedError.message);
+    }
+
+    return signedData.signedUrl;
+  },
+);
+
 const initialState = {
   session: null,
   user: null,
   loading: true,
   error: null,
+  profileImageUrl: null,
 };
 
 const authSlice = createSlice({
@@ -129,6 +165,12 @@ const authSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
+      .addCase(fetchUserProfileImage.fulfilled, (state, action) => {
+        state.profileImageUrl = action.payload;
+      })
+      .addCase(fetchUserProfileImage.rejected, (state) => {
+        state.profileImageUrl = null;
+      });
   },
 });
 

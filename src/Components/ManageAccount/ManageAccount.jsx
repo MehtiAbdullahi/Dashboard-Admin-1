@@ -4,6 +4,7 @@ import style from "./ManageAccount.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { getUser, updateUser } from "../../Redux/Store/Users";
+import { fetchUserProfileImage } from "../../Redux/Store/authSlice";
 import { AnimatePresence } from "framer-motion";
 import Loader from "../Loader/Loader";
 import { supabase } from "../../lib/supabase";
@@ -12,7 +13,10 @@ function ManageAccount() {
   const fileInputRef = useRef(null);
 
   const [loggedInUser, setLoggedInUser] = useState();
-  const [imgUrl, setImgUrl] = useState(null);
+
+  // فقط برای پیش‌نمایش فایلی که کاربر تازه انتخاب کرده ولی هنوز Save نزده
+  const [previewUrl, setPreviewUrl] = useState(null);
+
   const [formValues, setFormValues] = useState({
     id: "",
     name: "",
@@ -28,6 +32,10 @@ function ManageAccount() {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.auth.user);
+
+  // عکس نهایی و ذخیره‌شده کاربر؛ همین مقدار توی Navbar هم استفاده میشه
+  const profileImageUrl = useSelector((state) => state.auth.profileImageUrl);
+
   const { users, loading } = useSelector((state) => state.allUsers);
 
   const { t } = useTranslation();
@@ -87,19 +95,6 @@ function ManageAccount() {
     return filePath;
   };
 
-  const getImgUrl = async (filePath) => {
-    const { data, error: signedUrlError } = await supabase.storage
-      .from("users-image")
-      .createSignedUrl(filePath, 60 * 60);
-
-    if (signedUrlError) {
-      console.error("Error Creating Signed URL:", signedUrlError.message);
-      return null;
-    }
-
-    return data.signedUrl;
-  };
-
   const seveUserInfo = async (e) => {
     e.preventDefault();
 
@@ -121,9 +116,11 @@ function ManageAccount() {
     try {
       await dispatch(updateUser(updatedUser)).unwrap();
 
-      const newImageUrl = await getImgUrl(imagePath);
+      // بعد از ذخیره موفق، Redux رو آپدیت می‌کنیم تا هم اینجا هم Navbar عکس جدید رو ببینن
+      dispatch(fetchUserProfileImage());
 
-      setImgUrl(newImageUrl);
+      // دیگه نیازی به پیش‌نمایش موقت نیست، از این به بعد از Redux می‌خونیم
+      setPreviewUrl(null);
 
       setLoggedInUser((prev) => ({
         ...prev,
@@ -153,8 +150,10 @@ function ManageAccount() {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
       setFormValues((prev) => ({ ...prev, profile_img: file }));
-      const previewUrl = URL.createObjectURL(file);
-      setImgUrl(previewUrl);
+
+      // فقط یک پیش‌نمایش موقت محلی؛ هنوز توی دیتابیس/Redux ذخیره نشده
+      const preview = URL.createObjectURL(file);
+      setPreviewUrl(preview);
     }
   };
 
@@ -163,53 +162,35 @@ function ManageAccount() {
   }, [formValues]);
 
   useEffect(() => {
-    const getUserImage = async () => {
-      if (!user?.id || !users?.length) {
-        return;
-      }
+    if (!user?.id || !users?.length) {
+      return;
+    }
 
-      const userFound = users.find((item) => item.id === user.id);
+    const userFound = users.find((item) => item.id === user.id);
 
-      if (!userFound) {
-        return;
-      }
+    if (!userFound) {
+      return;
+    }
 
-      let imageUrl = null;
+    setFormValues((prev) => ({
+      ...prev,
+      id: user.id,
+      name: userFound.name,
+      lastname: userFound.lastname,
+      username: userFound.username,
+      email: userFound.email,
+      age: userFound.age,
+      phone: userFound.phone,
+      role: userFound.role,
+      profile_img: userFound.profile_img,
+    }));
 
-      if (userFound.profile_img) {
-        imageUrl = await getImgUrl(userFound.profile_img);
-      }
-
-      setFormValues((prev) => ({
-        ...prev,
-        id: user.id,
-        name: userFound.name,
-        lastname: userFound.lastname,
-        username: userFound.username,
-        email: userFound.email,
-        age: userFound.age,
-        phone: userFound.phone,
-        role: userFound.role,
-        profile_img: userFound.profile_img,
-      }));
-
-      setLoggedInUser({
-        ...userFound,
-        profile_img: imageUrl,
-      });
-
-      setImgUrl(imageUrl);
-    };
-
-    getUserImage();
+    setLoggedInUser(userFound);
   }, [user, users]);
 
   useEffect(() => {
     getInfoUser();
   }, []);
-
-  console.log("loggedInUser:", loggedInUser);
-  console.log("image:", loggedInUser?.profile_img);
 
   return (
     <>
@@ -225,7 +206,14 @@ function ManageAccount() {
         <div className={style["manage-account__profile"]}>
           <div className={style["manage-account__profile-img"]}>
             <div>
-              <img src={imgUrl || "/public/image/Users/2a2e7f0f60b750dfb36c15c268d0118d.jpg"} alt="" />
+              <img
+                src={
+                  previewUrl ||
+                  profileImageUrl ||
+                  `${import.meta.env.BASE_URL}image/Users/2a2e7f0f60b750dfb36c15c268d0118d.jpg`
+                }
+                alt=""
+              />
             </div>
             <span onClick={handleUpdateImgClick}>
               {t("manageYourAccount.text")}
@@ -241,7 +229,7 @@ function ManageAccount() {
             <form action="">
               <div className={style["manage-account__form"]}>
                 {inputs.map(({ type, label, name }) => (
-                  <div>
+                  <div key={name}>
                     <Input
                       type={type}
                       label={label}

@@ -22,6 +22,7 @@ import style from "./Navbar.module.css";
 function Navbar({ setShowSideBar }) {
   const dispatch = useDispatch();
   const notifications = useSelector((state) => state.notifications);
+  const profileImageUrl = useSelector((state) => state.auth.profileImageUrl);
 
   const [loggedInUser, setLoggedInUser] = useState();
   const [isShow, setIsShow] = useState(false);
@@ -96,7 +97,7 @@ function Navbar({ setShowSideBar }) {
         {/* <div className={style.navbar}> */}
         <div className={style.navbarRight}>
           <div className={style.navbarRightProfile}>
-            <img src="/public/icons/Icon-3.png" alt="" />
+            <img src={profileImageUrl || "icons/Icon-3.png"} alt="" />
             <div className={style.profileTexts}>
               <h5>
                 {loggedInUser?.name
@@ -160,11 +161,11 @@ function Navbar({ setShowSideBar }) {
             <img
               src={`${
                 languageSelected === "english"
-                  ? "/public/image/flags/Flag-English.png"
+                  ? "image/flags/Flag-English.png"
                   : languageSelected === "arabic"
-                    ? "/public/image/flags/sa Saudi Arabia.png"
+                    ? "image/flags/sa Saudi Arabia.png"
                     : languageSelected === "persian"
-                      ? "/public/image/flags/IR.png"
+                      ? "image/flags/IR.png"
                       : ""
               }`}
               alt=""
@@ -201,7 +202,7 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <span>
-                    <img src="/public/image/flags/Flag-English.png" alt="" />
+                    <img src="image/flags/Flag-English.png" alt="" />
 
                     <li>{t("navbar.languagesSubmenu.enlang")}</li>
                   </span>
@@ -215,7 +216,7 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <span>
-                    <img src="/public/image/flags/sa Saudi Arabia.png" alt="" />
+                    <img src="image/flags/sa Saudi Arabia.png" alt="" />
 
                     <li>{t("navbar.languagesSubmenu.arlang")}</li>
                   </span>
@@ -229,7 +230,7 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <span>
-                    <img src="/public/image/flags/IR.png" alt="" />
+                    <img src="image/flags/IR.png" alt="" />
 
                     <li>{t("navbar.languagesSubmenu.falang")}</li>
                   </span>
@@ -310,7 +311,13 @@ function Navbar({ setShowSideBar }) {
             className={style.navbarProfileImg}
             onClick={() => setShowSubmenu(!showSubmenu)}
           >
-            <img src="/public/image/Users/Untitled-3.png" alt="" />
+            <img
+              src={
+                profileImageUrl ||
+                "image/Users/2a2e7f0f60b750dfb36c15c268d0118d.jpg"
+              }
+              alt=""
+            />
           </div>
           <div
             className={classNames(
@@ -328,10 +335,16 @@ function Navbar({ setShowSideBar }) {
                 onClick={() => setShowProfileMenu(!showProfileMenu)}
               >
                 <div className={style.submenuProfileMobileNameLast}>
-                  <img src="/public/icons/Icon-3.png" alt="" />
+                  <img src={profileImageUrl || "icons/Icon-3.png"} alt="" />
                   <div className={style.profileTexts}>
-                    <h5>مهدی</h5>
-                    <h6>عبداللهی</h6>
+                    <h5>
+                      {loggedInUser?.name
+                        ? loggedInUser?.name
+                        : t("navbar.defaultNmae")}
+                    </h5>
+                    <h6>
+                      {loggedInUser?.lastname ? loggedInUser?.lastname : ""}
+                    </h6>
                   </div>
                 </div>
                 <FaChevronDown />
@@ -419,7 +432,7 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <div className="">
-                    <img src="/public/image/flags/Flag-English.png" alt="" />
+                    <img src="image/flags/Flag-English.png" alt="" />
                     <span>{t("navbar.languagesSubmenu.enlang")}</span>
                   </div>
                   {languageSelected === "english" && <FaCheck />}
@@ -433,7 +446,7 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <div className="">
-                    <img src="/public/image/flags/sa Saudi Arabia.png" alt="" />
+                    <img src="image/flags/sa Saudi Arabia.png" alt="" />
                     <span>{t("navbar.languagesSubmenu.arlang")}</span>
                   </div>
                   {languageSelected === "arabic" && <FaCheck />}
@@ -447,7 +460,10 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <div className="">
-                    <img src={`${import.meta.env.BASE_URL}image/flags/IR.png`} alt="" />
+                    <img
+                      src={`${import.meta.env.BASE_URL}image/flags/IR.png`}
+                      alt=""
+                    />
                     <span>{t("navbar.languagesSubmenu.falang")}</span>
                   </div>
                   {languageSelected === "persian" && <FaCheck />}

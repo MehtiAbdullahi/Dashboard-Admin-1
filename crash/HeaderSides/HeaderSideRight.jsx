@@ -43,7 +43,7 @@ function HeaderSideRight() {
                 <div className="box-footer">
                   <div className="box-footer__logo-left">
                     <img
-                      src="/public/icons/biglogolight.png"
+                     src="icons/biglogolight.png"
                       alt=""
                       className="icon"
                     />
@@ -61,7 +61,7 @@ function HeaderSideRight() {
                 </div>
               </div>
               <img
-                src="/public/images/SmalBanners/1AidBr0zDkBIu8IEom0JoIve5WEu-207x310.jpg"
+                src="images/SmalBanners/1AidBr0zDkBIu8IEom0JoIve5WEu-207x310.jpg"
                 alt="movie banner"
                 className="box-banner__movie"
               />
@@ -105,7 +105,7 @@ function HeaderSideRight() {
                 <div className="box-footer">
                   <div className="box-footer__logo-left">
                     <img
-                      src="/public/icons/biglogolight.png"
+                     src="icons/biglogolight.png"
                       alt=""
                       className="icon"
                     />
@@ -123,7 +123,7 @@ function HeaderSideRight() {
                 </div>
               </div>
               <img
-                src="/public/images/SmalBanners/8gaLnPjMqhqKmdnTZZ8y5jrjPXW-207x310.jpg"
+                src="images/SmalBanners/8gaLnPjMqhqKmdnTZZ8y5jrjPXW-207x310.jpg"
                 alt="movie banner"
                 className="box-banner__movie"
               />
@@ -167,7 +167,7 @@ function HeaderSideRight() {
                 <div className="box-footer">
                   <div className="box-footer__logo-left">
                     <img
-                      src="/public/icons/biglogolight.png"
+                     src="icons/biglogolight.png"
                       alt=""
                       className="icon"
                     />
@@ -185,7 +185,7 @@ function HeaderSideRight() {
                 </div>
               </div>
               <img
-                src="/public/images/SmalBanners/kmnYNgXMyn640CTJmqMB5MnemzM-207x310.webp"
+                src="images/SmalBanners/kmnYNgXMyn640CTJmqMB5MnemzM-207x310.webp"
                 alt="movie banner"
                 className="box-banner__movie"
               />
@@ -229,7 +229,7 @@ function HeaderSideRight() {
                 <div className="box-footer">
                   <div className="box-footer__logo-left">
                     <img
-                      src="/public/icons/biglogolight.png"
+                     src="icons/biglogolight.png"
                       alt=""
                       className="icon"
                     />
@@ -247,7 +247,7 @@ function HeaderSideRight() {
                 </div>
               </div>
               <img
-                src="/public/images/SmalBanners/oesQnZf83r2Zwj6hzir5t27C29M-207x310.webp"
+                src="images/SmalBanners/oesQnZf83r2Zwj6hzir5t27C29M-207x310.webp"
                 alt="movie banner"
                 className="box-banner__movie"
               />
@@ -291,7 +291,7 @@ function HeaderSideRight() {
                 <div className="box-footer">
                   <div className="box-footer__logo-left">
                     <img
-                      src="/public/icons/biglogolight.png"
+                     src="icons/biglogolight.png"
                       alt=""
                       className="icon"
                     />
@@ -309,7 +309,7 @@ function HeaderSideRight() {
                 </div>
               </div>
               <img
-                src="/public/images/SmalBanners/MV5BYzFlNjY5OTktODhkMS00Y2Q4LTlmNzAtODcwOWQyN2MwZTUwXkEyXkFqcGc@._V1_SX500-210x310.jpg"
+                src="images/SmalBanners/MV5BYzFlNjY5OTktODhkMS00Y2Q4LTlmNzAtODcwOWQyN2MwZTUwXkEyXkFqcGc@._V1_SX500-210x310.jpg"
                 alt="movie banner"
                 className="box-banner__movie"
               />
@@ -353,7 +353,7 @@ function HeaderSideRight() {
                 <div className="box-footer">
                   <div className="box-footer__logo-left">
                     <img
-                      src="/public/icons/biglogolight.png"
+                     src="icons/biglogolight.png"
                       alt=""
                       className="icon"
                     />
@@ -371,7 +371,7 @@ function HeaderSideRight() {
                 </div>
               </div>
               <img
-                src="/public/images/SmalBanners/MV5BNGY5NmFmOGItYTY4My00M2JlLTkzYTMtZTUzN2YyZmUzMTlmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX500-207x310.jpg"
+                src="images/SmalBanners/MV5BNGY5NmFmOGItYTY4My00M2JlLTkzYTMtZTUzN2YyZmUzMTlmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX500-207x310.jpg"
                 alt="movie banner"
                 className="box-banner__movie"
               />

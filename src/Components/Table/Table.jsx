@@ -88,7 +88,7 @@ function Table() {
                 {/* Image */}
                 <div className={style["td"]}>
                   <span className={style["product-stock__img"]}>
-                    <img src="/public/image/Products/watch 2.png" alt="Apple Watch Series 4" />
+                    <img src="image/Products/watch 2.png" alt="Apple Watch Series 4" />
                   </span>
                 </div>
 

@@ -336,6 +336,7 @@
 .navbarRightProfile img {
   width: 3rem;
   height: 100%;
+  border-radius: 5px;
 }
 
 .navbarRightProfile span {

@@ -17,7 +17,7 @@ function Contact() {
 
       <div className={style["contact-body__wrapper"]}>
         <div className={style["contact-box"]}>
-          <img src="/public/image/Users/person (1).png" alt="" />
+          <img src="image/Users/person (1).png" alt="" />
 
           <div className={style["contact-box__info"]}>
             <span className={style["contact-name"]}>Duane Dean</span>
@@ -44,7 +44,7 @@ function Contact() {
         </div>
 
         <div className={style["contact-box"]}>
-          <img src="/public/image/Users/person (2).png" alt="" />
+          <img src="image/Users/person (2).png" alt="" />
 
           <div className={style["contact-box__info"]}>
             <span className={style["contact-name"]}>Duane Dean</span>
@@ -71,7 +71,7 @@ function Contact() {
         </div>
 
         <div className={style["contact-box"]}>
-          <img src="/public/image/Users/person (3).png" alt="" />
+          <img src="image/Users/person (3).png" alt="" />
 
           <div className={style["contact-box__info"]}>
             <span className={style["contact-name"]}>Duane Dean</span>
@@ -98,7 +98,7 @@ function Contact() {
         </div>
 
         <div className={style["contact-box"]}>
-          <img src="/public/image/Users/person (4).png" alt="" />
+          <img src="image/Users/person (4).png" alt="" />
 
           <div className={style["contact-box__info"]}>
             <span className={style["contact-name"]}>Duane Dean</span>
@@ -125,7 +125,7 @@ function Contact() {
         </div>
 
         <div className={style["contact-box"]}>
-          <img src="/public/image/Users/person (5).png" alt="" />
+          <img src="image/Users/person (5).png" alt="" />
 
           <div className={style["contact-box__info"]}>
             <span className={style["contact-name"]}>Duane Dean</span>
@@ -152,7 +152,7 @@ function Contact() {
         </div>
 
         <div className={style["contact-box"]}>
-          <img src="/public/image/Users/person (6).png" alt="" />
+          <img src="image/Users/person (6).png" alt="" />
 
           <div className={style["contact-box__info"]}>
             <span className={style["contact-name"]}>Duane Dean</span>
