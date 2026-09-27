@@ -46,6 +46,7 @@
 
 .product__stars-rating span {
   font-size: 1.4rem;
+  text-wrap: nowrap;
 }
 
 .product__title-price h3 {

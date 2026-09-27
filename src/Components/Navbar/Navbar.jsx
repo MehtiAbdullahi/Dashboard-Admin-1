@@ -460,7 +460,7 @@ function Navbar({ setShowSideBar }) {
                 className={style.notificationIconMobile}
                 onClick={() => setShowNotifMobile(!showNotifMobile)}
               >
-                <div className="">
+                <div>
                   <svg
                     width="24"
                     height="26"
@@ -482,7 +482,7 @@ function Navbar({ setShowSideBar }) {
                       fill="#FF0000"
                     />
                   </svg>
-                  <p>پیام ها</p>
+                  <p>{t("notifications.title")}</p>
                 </div>
                 <div className="">
                   <span>{notifications.length}</span>

@@ -44,7 +44,7 @@
   },
   "notifications": {
     "title": "Notifications",
-    "textMore": "View All Notifications",
+    "textMore": "View all notifications",
     "WELCOME_ADMIN": {
       "title": "Welcome!",
       "description": "Welcome to your admin panel."
@@ -62,7 +62,7 @@
 
     "NEW_USER": {
       "title": "New User",
-      "description": "A new user has been added to the platform."
+      "description": "A new user has joined the platform."
     }
   },
   "login": {
@@ -98,8 +98,8 @@
     "errorEmail": "Please enter a valid email.",
     "errorPassword": "Please enter a valid password.",
     "rateLimit": {
-      "email": "This email already exists",
-      "username": "This username already exists"
+      "email": "This email is already registered",
+      "username": "This username is already taken"
     }
   },
   "dashboard": {
@@ -114,7 +114,7 @@
     "dealsDetails": "Deals Details",
     "productName": "Product",
     "Location": "Location",
-    "rate": "Rate",
+    "rate": "Rating",
     "count": "Total Count",
     "category": "Category",
     "amount": "Amount",
@@ -124,7 +124,7 @@
   "products": {
     "title": "Products",
     "featuredTitle": "Enjoy free home delivery this summer.",
-    "featuredText": "Designer Shirts – choose from the latest designer shirt trends.",
+    "featuredText": "Designer shirts – choose from this season's most fashionable designer shirts.",
     "getStarted": "Get Started",
     "editProduct": "Edit Product"
   },
@@ -132,7 +132,7 @@
     "title": "All Users",
     "profile": "Profile",
     "username": "Username",
-    "name": "Name",
+    "name": "First Name",
     "lastName": "Last Name",
     "email": "Email",
     "rule": "Role",
@@ -146,14 +146,14 @@
     "placeholder": "Search",
     "conpose": "Compose",
     "myEmail": {
-      "title": "My Email",
+      "title": "My Emails",
       "inbox": "Inbox",
       "starred": "Starred",
       "Sent": "Sent",
       "Draft": "Draft",
       "Spam": "Spam",
       "Important": "Important",
-      "Bin": "Bin"
+      "Bin": "Trash"
     },
     "lables": {
       "title": "Labels",
@@ -161,15 +161,44 @@
       "social": "Social",
       "work": "Work",
       "friends": "Friends",
-      "createNewLable": "Create New Label"
+      "createNewLable": "Create new label"
     }
   },
   "orderLists": {
     "title": "Order Lists",
     "filterList": {
-      "date": "Date",
-      "orderType": "Order Type",
-      "orderStatus": "Order Status",
+      "date": {
+        "title": "Date",
+        "text": "You can select multiple dates.",
+        "btn": "Apply"
+      },
+      "orderType": {
+        "title": "Select Order Type",
+        "text": "You can select multiple order types.",
+        "btn": "Apply",
+        "items": {
+          "text": "Health & Medicine",
+          "text2": "Books & Stationery",
+          "text3": "Services & Industry",
+          "text4": "Fashion & Beauty",
+          "text5": "Home & Living",
+          "text6": "Electronics",
+          "text7": "Mobile & Phones",
+          "text8": "Accessories"
+        }
+      },
+      "orderStatus": {
+        "title": "Select Order Status",
+        "text": "You can select multiple order statuses.",
+        "btn": "Apply",
+        "items": {
+          "text": "Completed",
+          "text2": "Processing",
+          "text3": "Rejected",
+          "text4": "Pending",
+          "text5": "Shipping"
+        }
+      },
       "resetFilter": "Reset Filter"
     },
     "productTable": {
@@ -202,17 +231,17 @@
   },
   "subscription": {
     "title": "Subscription",
-    "text": "Monthly Cost",
-    "text2": "Start your 30-day free trial",
+    "text": "Monthly cost",
+    "text2": "Start your free 30-day trial",
     "textBtn": "Get Started",
     "options": {
-      "op1": "Free Setup",
-      "op2": "10 GB Bandwidth Limit",
-      "op3": "20 User Connections",
-      "op4": "Analytics Report",
-      "op5": "Public API Access",
-      "op6": "Plugin Integrations",
-      "op7": "Custom Content Management"
+      "op1": "Free setup",
+      "op2": "10GB bandwidth limit",
+      "op3": "20 user connections",
+      "op4": "Analytics reports",
+      "op5": "Public API access",
+      "op6": "Plugin integrations",
+      "op7": "Custom content management"
     },
     "basic": {
       "title": "Basic"
@@ -229,16 +258,16 @@
     "events": {
       "btn": "Add New Event",
       "title": "You're going to",
-      "btn2": "See More",
+      "btn2": "See more",
       "event1": {
         "title": "Design Conference",
-        "address": "56 Devion Mission Suite 157,",
-        "location": "Meganburg",
+        "address": "56 Devon Mission Suite 157,",
+        "location": "Miganberg",
         "date": "2026-09-10"
       },
       "event2": {
         "title": "Weekend Festival",
-        "address": "853 Moor Flats, Suite 158",
+        "address": "853 Moore Fields, Suite 158",
         "location": "Sweden",
         "date": "2026-09-15"
       },
@@ -250,7 +279,7 @@
       },
       "event4": {
         "title": "Ultra Europe 2026",
-        "address": "Sterfield Tunnel Apartment, No. 506, Unit 963",
+        "address": "Sterfield Tunnel Apartments, No. 506, Unit 963",
         "location": "San Marino",
         "date": "2026-09-25"
       }
@@ -274,11 +303,11 @@
   },
   "invoice": {
     "title": "Invoice",
-    "from": "From:",
-    "to": "To:",
+    "from": "Invoice From:",
+    "to": "Invoice To:",
     "invoiceDate": "Invoice Date:",
     "dueDate": "Due Date:",
-    "serialNo": "Serial No.",
+    "serialNo": "No.",
     "description": "Description",
     "quantity": "Quantity",
     "baseCost": "Base Cost",
@@ -322,16 +351,16 @@
     "onHold": "On Hold"
   },
   "errors": {
-    "noProducts": "Sorry, the product could not be loaded from the server!",
+    "noProducts": "Unfortunately, products could not be loaded from the server!",
     "networkError": "Something went wrong. Please try again.",
-    "noTodos": "No to-dos to display"
+    "noTodos": "There are no to-dos to display"
   },
   "manageYourAccount": {
     "title": "Manage Account",
-    "text": "Update Photo",
+    "text": "Update photo",
     "btn": "Save",
     "lables": {
-      "Name": "Name",
+      "Name": "First Name",
       "lastName": "Last Name",
       "Password": "Password",
       "Username": "Username",

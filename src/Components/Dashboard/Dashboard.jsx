@@ -22,7 +22,7 @@ function Dashboard() {
 
   return (
     <>
-      <HelpWidget
+      {/* <HelpWidget
         FAQ={[
           {
             q: "آیا داشبورد تکمیل هست؟",
@@ -37,7 +37,7 @@ function Dashboard() {
             a: `این داشبورد فعلا قابلیت login , signup و اپدیت اطلاعات اکانت رو داره`,
           },
         ]}
-      />
+      /> */}
       <h1>{t("dashboard.title")}</h1>
       <div className={style["statistics-total__wrapper"]}>
         <div className={style["statistics-total__box"]}>

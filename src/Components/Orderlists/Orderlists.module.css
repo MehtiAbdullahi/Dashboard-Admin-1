@@ -73,7 +73,7 @@
   height: 100%;
 }
 
-[dir="rtl"] .filter__reset-filter {
+.filter__reset-filter {
   flex-direction: row-reverse;
   justify-content: start;
 }
@@ -201,6 +201,9 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
       opacity 0.4s ease-out,
       visibility 0.4s ease;
   }
+  [dir="ltr"] .filters-wrapper {
+    left: 0;
+  }
   .filters-wrapper.show {
     opacity: 1;
     visibility: visible;
@@ -208,8 +211,7 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
   }
   .filter-date,
   .filter__order-type,
-  .filter__order-status,
-  .filter__reset-filter {
+  .filter__order-status {
     height: 2rem;
     justify-content: space-between;
   }
@@ -221,6 +223,9 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
   }
   .filter__reset-filter {
     padding-right: 2rem;
+  }
+  [dir="ltr"] .filter__reset-filter {
+    padding-left: 2rem;
   }
 }
 

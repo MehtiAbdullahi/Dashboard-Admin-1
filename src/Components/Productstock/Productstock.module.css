@@ -209,6 +209,9 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
     text-wrap: nowrap;
     direction: ltr;
   }
+  .product-stock__header {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 425px) {
