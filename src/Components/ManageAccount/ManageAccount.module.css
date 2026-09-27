@@ -60,6 +60,7 @@
   outline: none;
   border: 0.1rem solid var(--input-border);
   background-color: var(--input-bg);
+  color: var(--text);
   margin-top: 1rem;
   width: 100%;
   max-width: 20rem;
