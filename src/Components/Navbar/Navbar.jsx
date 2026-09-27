@@ -447,7 +447,7 @@ function Navbar({ setShowSideBar }) {
                   }}
                 >
                   <div className="">
-                    <img src="/public/image/flags/IR.png" alt="" />
+                    <img src={`${import.meta.env.BASE_URL}image/flags/IR.png`} alt="" />
                     <span>{t("navbar.languagesSubmenu.falang")}</span>
                   </div>
                   {languageSelected === "persian" && <FaCheck />}
