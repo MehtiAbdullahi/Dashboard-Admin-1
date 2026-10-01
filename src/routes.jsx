@@ -1,27 +1,47 @@
-import { Children } from "react";
-import Landing from "./Page/Landing/Landing";
-import Dashboard from "./Components/Dashboard/Dashboard";
-import LoginPage from "./Page/LoginPage/LoginPage";
-import SignUpPage from "./Page/SignUpPage/SignUpPage";
-import StatusPage from "./Page/StatusPage/StatusPage";
+import { Children, lazy, Suspense } from "react";
 
-import Products from "./Components/Products/Products.jsx";
-import Favorites from "./Components/Favorites/Favorites.jsx";
-import Inbox from "./Components/Inbox/Inbox.jsx";
-import Orderlists from "./Components/Orderlists/Orderlists.jsx";
-import Productstock from "./Components/Productstock/Productstock.jsx";
-import Pricing from "./Components/Pricing/Pricing.jsx";
-import Calender from "./Components/Calender/Calender.jsx";
-import ToDo from "./Components/To-Do/ToDo.jsx";
-import Contact from "./Components/Contact/Contact.jsx";
-import Invoice from "./Components/Invoice/Invoice.jsx";
-import UIelements from "./Components/UIelements/UIelements.jsx";
-import Team from "./Components/Team/Team.jsx";
-import Table from "./Components/Table/Table.jsx";
-import Settings from "./Components/Settings/Settings.jsx";
-import UsersList from "./Components/UsersList/UsersList.jsx";
-import ManageAccount from "./Components/ManageAccount/ManageAccount.jsx";
+const Landing = lazy(() => import("./Page/Landing/Landing"));
+const Dashboard = lazy(() => import("./Components/Dashboard/Dashboard"));
+const LoginPage = lazy(() => import("./Page/LoginPage/LoginPage"));
+const SignUpPage = lazy(() => import("./Page/SignUpPage/SignUpPage"));
+const StatusPage = lazy(() => import("./Page/StatusPage/StatusPage"));
+const Products = lazy(() => import("./Components/Products/Products.jsx"));
+const Favorites = lazy(() => import("./Components/Favorites/Favorites.jsx"));
+const Inbox = lazy(() => import("./Components/Inbox/Inbox.jsx"));
+const Orderlists = lazy(() => import("./Components/Orderlists/Orderlists.jsx"));
+const Productstock = lazy(
+  () => import("./Components/Productstock/Productstock.jsx"),
+);
+const Pricing = lazy(() => import("./Components/Pricing/Pricing.jsx"));
+const Calender = lazy(() => import("./Components/Calender/Calender.jsx"));
+const ToDo = lazy(() => import("./Components/To-Do/ToDo.jsx"));
+const Contact = lazy(() => import("./Components/Contact/Contact.jsx"));
+const Invoice = lazy(() => import("./Components/Invoice/Invoice.jsx"));
+const UIelements = lazy(() => import("./Components/UIelements/UIelements.jsx"));
+const Team = lazy(() => import("./Components/Team/Team.jsx"));
+const Table = lazy(() => import("./Components/Table/Table.jsx"));
+const Settings = lazy(() => import("./Components/Settings/Settings.jsx"));
+const UsersList = lazy(() => import("./Components/UsersList/UsersList.jsx"));
+const ManageAccount = lazy(
+  () => import("./Components/ManageAccount/ManageAccount.jsx"),
+);
+
 import { Navigate } from "react-router-dom";
+import Loader from "./Components/Loader/Loader.jsx";
+
+const withSuspense = (element) => (
+  <Suspense
+    fallback={
+      <>
+        <div className="loader-wrapper">
+          <Loader />
+        </div>
+      </>
+    }
+  >
+    {element}
+  </Suspense>
+);
 
 let routes = [
   {
@@ -32,35 +52,35 @@ let routes = [
         index: true,
         element: <Navigate to="/dashboard" replace />,
       },
-      { path: "dashboard", element: <Dashboard /> },
-      { path: "products", element: <Products /> },
-      { path: "users-list", element: <UsersList /> },
-      { path: "favorites", element: <Favorites /> },
-      { path: "inbox", element: <Inbox /> },
-      { path: "orderlists", element: <Orderlists /> },
-      { path: "productstock", element: <Productstock /> },
-      { path: "pricing", element: <Pricing /> },
-      { path: "calender", element: <Calender /> },
-      { path: "todo", element: <ToDo /> },
-      { path: "contact", element: <Contact /> },
-      { path: "invoice", element: <Invoice /> },
-      { path: "uIelements", element: <UIelements /> },
-      { path: "team", element: <Team /> },
-      { path: "table", element: <Table /> },
-      { path: "manage-account", element: <ManageAccount /> },
+      { path: "dashboard", element: withSuspense(<Dashboard />) },
+      { path: "products", element: withSuspense(<Products />) },
+      { path: "users-list", element: withSuspense(<UsersList />) },
+      { path: "favorites", element: withSuspense(<Favorites />) },
+      { path: "inbox", element: withSuspense(<Inbox />) },
+      { path: "orderlists", element: withSuspense(<Orderlists />) },
+      { path: "productstock", element: withSuspense(<Productstock />) },
+      { path: "pricing", element: withSuspense(<Pricing />) },
+      { path: "calender", element: withSuspense(<Calender />) },
+      { path: "todo", element: withSuspense(<ToDo />) },
+      { path: "contact", element: withSuspense(<Contact />) },
+      { path: "invoice", element: withSuspense(<Invoice />) },
+      { path: "uIelements", element: withSuspense(<UIelements />) },
+      { path: "team", element: withSuspense(<Team />) },
+      { path: "table", element: withSuspense(<Table />) },
+      { path: "manage-account", element: withSuspense(<ManageAccount />) },
     ],
   },
   {
     path: "/login",
-    element: <LoginPage />,
+    element: withSuspense(<LoginPage />),
   },
   {
     path: "/sign-up",
-    element: <SignUpPage />,
+    element: withSuspense(<SignUpPage />),
   },
   {
     path: "/status-page",
-    element: <StatusPage />,
+    element: withSuspense(<StatusPage />),
   },
 ];
 
