@@ -1,5 +1,10 @@
 .table-wrapper {
   width: 100%;
+  /* Keeps wide tables from stretching parent flex/grid layouts: the tables
+     scroll inside themselves instead of making the whole page scroll. */
+  min-width: 0;
+  max-width: 100%;
+  contain: inline-size;
   margin-top: 2rem;
 }
 
@@ -16,7 +21,13 @@
 
 .table-order__top-wrapper {
   width: 100%;
-  overflow: hidden;
+  /* scrolls horizontally on narrow screens, still clips the rounded corners */
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--input-border) transparent;
 
   border: 0.1rem solid var(--input-border);
   border-radius: 1rem;
@@ -26,6 +37,11 @@
 
 .table-order__top-wrapper .table {
   width: 100%;
+}
+
+.table-order__top-wrapper:focus-visible {
+  outline: 0.2rem solid currentColor;
+  outline-offset: -0.2rem;
 }
 
 .thead {
@@ -70,6 +86,7 @@
 
   min-width: 0;
   padding: 1.5rem 1.2rem;
+  overflow-wrap: anywhere;
 
   font-size: 1.4rem;
   font-weight: 600;
@@ -94,7 +111,12 @@
 .product-stock__wrapper {
   width: 100%;
 
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--input-border) transparent;
 
   border: 0.1rem solid var(--input-border);
   border-radius: 1rem;
@@ -133,6 +155,7 @@
 
   min-width: 0;
   padding: 1.5rem 1rem;
+  overflow-wrap: anywhere;
 
   font-size: 1.4rem;
   font-weight: 600;
@@ -160,6 +183,7 @@
   align-items: center;
 
   width: 100%;
+  box-sizing: border-box;
 
   border-top: 0.1rem solid var(--input-border);
 }
@@ -173,6 +197,7 @@
   min-height: 8rem;
 
   padding: 1.5rem 1rem;
+  overflow-wrap: anywhere;
 
   font-size: 1.4rem;
   font-weight: 400;
@@ -191,6 +216,10 @@
   overflow: hidden;
 
   border-radius: 0.8rem;
+}
+
+.product-stock__img {
+  flex-shrink: 0;
 }
 
 .product-stock__img img {
@@ -252,4 +281,170 @@
   flex-shrink: 0;
 
   cursor: pointer;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+/* ---------- ≤ 1200px : compact tables, scroll instead of squeezing ---------- */
+@media (max-width: 1200px) {
+  /* Order table: keep a readable minimum width, scroll if there isn't room */
+  .table-order__top-wrapper .table {
+    min-width: 72rem;
+  }
+
+  .table-order__top .th {
+    padding: 1.2rem 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  /* Product table: header + body share the same minimum width so they
+     scroll together */
+  .product-stock__top,
+  .product-stock__body {
+    min-width: 66rem;
+  }
+
+  .product-stock__top .th {
+    padding: 1.2rem 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  .product-stock__box .td {
+    min-height: 7rem;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  .product-stock__img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+/* ---------- ≤ 640px : phones (product table becomes cards) ---------- */
+@media (max-width: 640px) {
+  .table-wrapper {
+    margin-top: 1.2rem;
+  }
+
+  .table-order__wrapper {
+    margin: 1.2rem 0;
+  }
+
+  .table-order__top-wrapper,
+  .product-stock__wrapper {
+    border-radius: 0.8rem;
+  }
+
+  .table-order__top-wrapper .table {
+    min-width: 70rem;
+  }
+
+  .all-lists__wrapper {
+    margin-top: 1.6rem;
+  }
+
+  /* Product table → stacked cards. Labels come from data-label (i18n). */
+  .product-stock__wrapper {
+    overflow: hidden;
+  }
+
+  .product-stock__top {
+    display: none;
+  }
+
+  .product-stock__body {
+    min-width: 0;
+  }
+
+  .product-stock__box {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.2rem 1.6rem;
+  }
+
+  .product-stock__box .td {
+    justify-content: space-between;
+    gap: 1.6rem;
+
+    min-height: 0;
+    padding: 0.9rem 0;
+
+    font-size: 1.4rem;
+    text-align: end;
+  }
+
+  .product-stock__box .td::before {
+    content: attr(data-label);
+
+    flex-shrink: 0;
+
+    font-weight: 600;
+    text-align: start;
+    opacity: 0.7;
+  }
+
+  /* image cell & actions cell have no label */
+  .product-stock__box .td:not([data-label])::before {
+    content: none;
+  }
+
+  .product-stock__box .td:first-child {
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .product-stock__box .td:last-child {
+    justify-content: flex-end;
+
+    margin-top: 0.6rem;
+    padding-bottom: 0;
+
+    border-top: 0.1rem solid var(--input-border);
+  }
+
+  .product-stock__img {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+/* ---------- ≤ 480px : small phones ---------- */
+@media (max-width: 480px) {
+  .table-order__top-wrapper .table {
+    min-width: 64rem;
+  }
+
+  .table-order__top .th {
+    padding: 1rem 0.6rem;
+    font-size: 1.2rem;
+  }
+
+  .product-stock__box {
+    padding: 1rem 1.2rem;
+  }
+
+  .product-stock__box .td {
+    gap: 1.2rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------- touch devices : comfortable tap targets for edit / delete ---------- */
+@media (max-width: 640px) and (pointer: coarse) {
+  .product__edit-delet > span {
+    gap: 0;
+  }
+
+  .product__edit-delet svg {
+    box-sizing: content-box;
+    padding: 1.3rem; /* 17px icon + 2×13px ≈ 43px hit area */
+  }
 }
