@@ -145,6 +145,13 @@ body {
   background: var(--border3);
 }
 
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .loader {
   position: absolute;
   margin: auto;
