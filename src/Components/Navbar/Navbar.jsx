@@ -7,6 +7,8 @@ import { FaMoon } from "react-icons/fa";
 import { MdKeyboardArrowUp, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { TbExclamationMark } from "react-icons/tb";
 import { HiOutlineBars3 } from "react-icons/hi2";
+import { IoIosSearch } from "react-icons/io";
+import { FaAngleDown } from "react-icons/fa6";
 
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
@@ -174,18 +176,7 @@ function Navbar({ setShowSideBar }) {
               <span onClick={() => setShowLanguage((prev) => !prev)}>
                 {t(`navbar.languages.${languageSelected}`)}
               </span>
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 9 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.08333 3.25838L0.995812 0.170854C0.768006 -0.0569515 0.39866 -0.0569515 0.170854 0.170854C-0.0569515 0.39866 -0.0569515 0.768006 0.170854 0.995812L3.67085 4.49581C3.89866 4.72362 4.26801 4.72362 4.49581 4.49581L7.99581 0.995812C8.22362 0.768006 8.22362 0.39866 7.99581 0.170854C7.76801 -0.0569515 7.39866 -0.0569515 7.17085 0.170854L4.08333 3.25838Z"
-                  fill="#646464"
-                />
-              </svg>
+              <FaAngleDown />
               <ul
                 className={`${style.languageItems} ${
                   showLanguage ? style.show : ""
@@ -555,32 +546,7 @@ function Navbar({ setShowSideBar }) {
         <div className={style.navbarLeft}>
           <div className={style.navbarLeftSearchInput}>
             <span>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g opacity="0.5">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9.1441 11.9863C11.8739 10.8261 13.1464 7.67265 11.9863 4.94282C10.8261 2.21298 7.67265 0.940497 4.94281 2.10065C2.21297 3.2608 0.94049 6.41426 2.10064 9.1441C3.2608 11.8739 6.41426 13.1464 9.1441 11.9863Z"
-                    stroke="black"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M10.8408 10.8407L15.0061 15.0066"
-                    stroke="black"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </g>
-              </svg>
+              <IoIosSearch />
             </span>
             <input type="text" placeholder={t("navbar.inputPlaceHolder")} />
           </div>

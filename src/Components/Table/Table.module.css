@@ -279,8 +279,14 @@
 .product__edit-delet svg {
   display: block;
   flex-shrink: 0;
-
+  color: var(--text);
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
+}
+
+.product__edit-delet svg:last-child {
+  color: red;
 }
 
 /* 
