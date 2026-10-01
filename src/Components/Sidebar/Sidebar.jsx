@@ -41,8 +41,12 @@ function Sidebar({ setShowSideBar }) {
     ],
   };
 
-  const navLinkClass = ({ isActive }) =>
-    isActive ? `${style.navLink} ${style.selected}` : style.navLink;
+  const getNavLinkClass =
+    (extraClass) =>
+    ({ isActive }) =>
+      classNames(style.navLink, extraClass, {
+        [style.selected]: isActive,
+      });
 
   return (
     <>
@@ -62,8 +66,9 @@ function Sidebar({ setShowSideBar }) {
             <ul className={style.sidebarItems}>
               {sidebarItems.mainItem.map(({ name, path }) => (
                 <NavLink
+                  key={path}
                   to={path}
-                  className={classNames(navLinkClass, style.navLinkSidebar)}
+                  className={getNavLinkClass(style.navLinkSidebar)}
                 >
                   <span></span>
                   <li>{t(name)}</li>
@@ -79,8 +84,9 @@ function Sidebar({ setShowSideBar }) {
             <ul className={style.sidebarItems}>
               {sidebarItems.pages.map(({ name, path }) => (
                 <NavLink
+                  key={path}
                   to={path}
-                  className={classNames(navLinkClass, style.navLinkSidebar)}
+                  className={getNavLinkClass(style.navLinkSidebar)}
                 >
                   <span></span>
                   <li>{t(name)}</li>
@@ -94,8 +100,9 @@ function Sidebar({ setShowSideBar }) {
             <ul className={style.sidebarItems}>
               {sidebarItems.otherItems.map(({ name, path, className }) => (
                 <NavLink
+                  key={path}
                   to={path}
-                  className={classNames(navLinkClass, `style.${className}`)}
+                  className={getNavLinkClass(style.navLinkSidebar)}
                 >
                   <span></span>
                   <li>{t(name)}</li>
