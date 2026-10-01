@@ -347,7 +347,12 @@ function Navbar({ setShowSideBar }) {
                     </h6>
                   </div>
                 </div>
-                <FaChevronDown />
+                <FaChevronDown
+                  className={classNames(
+                    style.profileIconChevron,
+                    showProfileMenu ? style.show : "",
+                  )}
+                />
               </div>
               <ul
                 className={`${style.profileSubmenuMobile} ${
@@ -502,7 +507,12 @@ function Navbar({ setShowSideBar }) {
                 </div>
                 <div className="">
                   <span>{notifications.length}</span>
-                  <FaChevronDown />
+                  <FaChevronDown
+                    className={classNames(
+                      style.mobileNotifIconChevron,
+                      showNotifMobile ? style.show : "",
+                    )}
+                  />
                 </div>
               </div>
               <div

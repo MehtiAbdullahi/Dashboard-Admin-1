@@ -72,6 +72,8 @@
 
 .navbarMobileSubmenuCloseIcon {
   float: left;
+  width: 2rem;
+  height: 2rem;
 }
 
 .navbarLanguageMobileWrapper {
@@ -317,10 +319,14 @@
   height: 3rem;
 }
 
+.mobileNotifIconChevron,
+.profileIconChevron,
 .langMobileIconChevron {
   transition: all 200ms ease-in-out;
 }
 
+.mobileNotifIconChevron.show,
+.profileIconChevron.show,
 .langMobileIconChevron.show {
   transform: rotate(180deg);
 }
