@@ -109,6 +109,10 @@ body.dark {
   font-family: AzarMehr;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   font-size: 10px;
 }
