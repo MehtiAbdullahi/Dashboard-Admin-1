@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import style from "./StatusPage.module.css";
+import { useTranslation } from "react-i18next";
 
-function NotAccessPage() {
+function StatusPage({ notaccess, message }) {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={style["not-access__wrapper"]}>
@@ -10,14 +13,14 @@ function NotAccessPage() {
             <img src="image/Bg/404.png" alt="" />
             <div className="not-access__box-bottom">
               <h2 className={style["not-access__title"]}>
-                You do not have access to this page!
+                {t("statusPage.notaccess.title")}
               </h2>
               <Link
                 onClick={() => localStorage.clear()}
                 to="/login"
                 className={style["not-access__btn"]}
               >
-                Back To Login
+                {t("statusPage.btn")}
               </Link>
             </div>
           </div>
@@ -27,4 +30,4 @@ function NotAccessPage() {
   );
 }
 
-export default NotAccessPage;
+export default StatusPage;

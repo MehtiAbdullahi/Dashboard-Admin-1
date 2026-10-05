@@ -20,6 +20,7 @@
   border-radius: 2rem;
   width: 40rem;
   max-width: 35rem;
+  margin: 0 2rem;
 }
 
 .not-access__box img {
@@ -27,10 +28,7 @@
   border-radius: 1rem;
   width: 100%;
   height: auto;
-}
-
-.not-access__box-bottom {
-  /* width: 100%; */
+  margin-bottom: 3rem;
 }
 
 .not-access__title {
