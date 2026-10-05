@@ -32,10 +32,8 @@ function Landing() {
       </div>
       {showSideBar && (
         <div
-          className={classNames(
-            style["background"],
-            // showSideBar ? style["show"] : "",
-          )}
+          onClick={() => setShowSideBar(false)}
+          className={classNames(style["background"])}
         ></div>
       )}
     </>

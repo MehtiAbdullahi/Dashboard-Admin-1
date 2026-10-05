@@ -48,21 +48,21 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
 
 */
 
-@media (max-width: 102.4rem) {
+@media (max-width: 1024px) {
   .landing-body__wrapper h1 {
     font-size: 2.6rem;
   }
 }
 
-@media (max-width: 76.8rem) {
+@media (max-width: 768px) {
   .landing-body__wrapper h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .sidebar-wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    width: 28rem;
+    width: auto;
     height: 100vh;
 
     z-index: 99999999;
@@ -72,6 +72,11 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
     transition:
       transform 0.3s ease,
       visibility 0.3s ease;
+  }
+
+  .sidebar-wrapper.showSideBar {
+    transform: translateX(0);
+    visibility: visible;
   }
 
   [dir="rtl"] .sidebar-wrapper {
@@ -85,19 +90,5 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
     position: fixed;
     inset: 0;
     opacity: 0.4;
-    /* opacity: 0;
-  display: none;
-  transition: all 0.13s ease-in; */
-  }
-
-  .sidebar-wrapper.showSideBar {
-    transform: translateX(0);
-    visibility: visible;
-  }
-}
-
-@media (max-width: 76.8rem) {
-  .landing-body__wrapper h1 {
-    font-size: 2rem;
   }
 }

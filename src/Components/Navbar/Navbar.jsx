@@ -559,10 +559,8 @@ function Navbar({ setShowSideBar }) {
       </div>
       {showSubmenu && (
         <div
-          className={classNames(
-            style["background"],
-            // showSideBar ? style["show"] : "",
-          )}
+          onClick={() => setShowSubmenu(false)}
+          className={classNames(style["background"])}
         ></div>
       )}
     </>
