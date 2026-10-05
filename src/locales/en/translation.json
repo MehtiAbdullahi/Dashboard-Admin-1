@@ -393,6 +393,10 @@
     "success": {
       "title": "Success",
       "text": "Operation completed successfully"
+    },
+    "successSignUp": {
+      "title": "Confirm Email",
+      "text": "An account verification link has been sent to your email!"
     }
   },
   "statusPage": {

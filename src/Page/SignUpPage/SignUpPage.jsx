@@ -33,6 +33,7 @@ function SignUpPage() {
     validPassword: false,
     limitEmail: false,
     limitUsernmae: false,
+    successSignUp: false,
   });
 
   const createUserHandler = async (e) => {
@@ -53,7 +54,7 @@ function SignUpPage() {
                 username,
               }),
             ).unwrap();
-            navigate("/success-signup");
+            setHasError((prev) => ({ ...prev, successSignUp: true }));
           } catch (error) {
             // if (error === 'email rate limit exceeded') {
             //   setHasError(prev => ({...prev, limitEmail: true}))
@@ -94,6 +95,7 @@ function SignUpPage() {
         validEmail: false,
         validPassword: false,
         invalidCredentials: false,
+        successSignUp: false,
       });
     }, 5000);
 
@@ -133,6 +135,15 @@ function SignUpPage() {
                   type={`invalidCredentials`}
                   setHasError={setHasError}
                   keyError="invalidCredentials"
+                />
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {hasError.successSignUp && (
+                <AlertError
+                  type={`successSignUp`}
+                  setHasError={setHasError}
+                  keyError="successSignUp"
                 />
               )}
             </AnimatePresence>

@@ -18,13 +18,7 @@
 .alert-border {
   position: absolute;
   inset: -70%;
-  background: conic-gradient(
-    #FBBF24,
-    #F59E0B,
-    #FB923C,
-    #F59E0B,
-    #FBBF24
-  );
+  background: conic-gradient(#fbbf24, #f59e0b, #fb923c, #f59e0b, #fbbf24);
   animation: inline-alert-spin 7s linear infinite;
 }
 
@@ -32,7 +26,7 @@
   position: relative;
   z-index: 1;
   border-radius: 1.25rem;
-  background: #FFFBEB;
+  background: #fffbeb;
   padding: 1.2rem 1.4rem;
   display: flex;
   align-items: flex-start;
@@ -44,7 +38,7 @@
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;
-  background: #FEF3C7;
+  background: #fef3c7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +54,7 @@
   margin: 0;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #92400E;
+  color: #92400e;
   line-height: 1.6;
 }
 
@@ -68,7 +62,7 @@
   margin: 0.2rem 0 0;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #92400E;
+  color: #92400e;
   opacity: 0.85;
   line-height: 1.6;
 }
@@ -78,7 +72,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #92400E;
+  color: #92400e;
   opacity: 0.55;
   padding: 0.3rem;
   border-radius: 0.6rem;
@@ -97,7 +91,7 @@
 
 .alert-progress {
   height: 100%;
-  background: #D97706;
+  background: #d97706;
   opacity: 0.5;
   animation: inline-alert-countdown 5000ms linear forwards;
 }

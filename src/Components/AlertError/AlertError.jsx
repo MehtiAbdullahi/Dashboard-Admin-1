@@ -50,7 +50,9 @@ function AlertError({ type, keyError, err, warning, setHasError }) {
             <button
               aria-label="بستن هشدار"
               className={style["alert-close-button"]}
-              onClick={() => setHasError((prev) => ({ ...prev, [keyError]: false }))}
+              onClick={() =>
+                setHasError((prev) => ({ ...prev, [keyError]: false }))
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

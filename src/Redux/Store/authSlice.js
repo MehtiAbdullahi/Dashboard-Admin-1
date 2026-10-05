@@ -33,26 +33,19 @@ export const loginUser = createAsyncThunk(
 export const signUpUser = createAsyncThunk(
   "auth/signUpUser",
   async ({ email, password, username }, { rejectWithValue }) => {
-    const { error: authError, data: authData } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: { username },
+      },
     });
 
-    if (authError) {
-      return rejectWithValue(authError.message);
+    if (error) {
+      return rejectWithValue(error.message);
     }
 
-    const { error: profileError } = await supabase.from("profiles").insert({
-      id: authData.user.id,
-      username,
-      email,
-    });
-
-    if (profileError) {
-      return rejectWithValue(profileError.message);
-    }
-
-    return authData;
+    return data;
   },
 );
 
