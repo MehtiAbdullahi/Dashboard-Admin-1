@@ -14,6 +14,11 @@ import { testEmail } from "../../Validators/regex";
 import { IoAlertSharp } from "react-icons/io5";
 import Loader from "../../Components/Loader/Loader";
 
+const adminAccount = {
+  email: "lekebaw235@deertees.com",
+  password: "09876mM%",
+};
+
 function LoginPage() {
   const dispatch = useDispatch();
   const { loading, session } = useSelector((state) => state.auth);
@@ -79,13 +84,25 @@ function LoginPage() {
     return () => clearTimeout(timer);
   }, [hasError]);
 
+  const loginWithAdminAccount = () => {
+    dispatch(loginUser(adminAccount));
+  };
+
   if (session) return <Navigate to="/dashboard" replace />;
 
   return (
     <>
+      <HelpWidget
+        FAQ={[
+          {
+            q: "خیلی مهم!",
+            a: "برای ورود به داشبورد باید با اکانت ادمین لاگین کنید و لازم نیست چیزی رو بنویسید.",
+          },
+        ]}
+      />
       <AnimatePresence>
         {loading && (
-          <div className={style["loader"]}>
+          <div className="loader-wrapper">
             <Loader />
           </div>
         )}
@@ -159,9 +176,18 @@ function LoginPage() {
                     <span>{t("login.textRememberPass")}</span>
                   </div>
                 </div>
-                <button type="submit" className={style["login-form__btn"]}>
-                  {t("login.textsignIn")}
-                </button>
+                <div className={style["login-form__btn-wrapper"]}>
+                  <button type="submit" className={style["login-form__btn"]}>
+                    {t("login.textsignIn")}
+                  </button>
+                  <button
+                    type="button"
+                    className={style["login-form__admin-btn"]}
+                    onClick={loginWithAdminAccount}
+                  >
+                    {t("login.btnLoginAdmin")}
+                  </button>
+                </div>
                 <p className={style["login-form__signup-text"]}>
                   {t("login.textNotHaveAcc")}
                   <Link to="/sign-up">{t("login.textCreateAcc")}</Link>

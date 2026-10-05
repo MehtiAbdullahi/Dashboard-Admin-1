@@ -122,28 +122,54 @@
   font-size: 1.4rem;
 }
 
+.login-form__btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.login-form__admin-btn,
 .login-form__btn {
   background-color: var(--primary);
   border: none;
   outline: none;
   color: var(--text-white);
   font-weight: 400;
-  padding: 0.8rem 0;
   border-radius: 1rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin-bottom: 1rem;
   cursor: pointer;
+  height: 4rem;
   transition: all ease-in 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.login-form__btn {
+  width: 100%;
+  max-width: 30%;
+}
+
+[dir="rtl"] .login-form__admin-btn,
 [dir="rtl"] .login-form__btn {
-  padding: 0.4rem 0;
   font-family: "AzarMehr" !important;
   font-weight: 700 !important;
 }
 
 .login-form__btn:hover {
   background-color: var(--text-8);
+}
+
+.login-form__admin-btn {
+  background-color: rgb(0, 163, 27);
+  width: 100%;
+  max-width: 70%;
+}
+
+.login-form__admin-btn:hover {
+  background-color: rgb(0, 187, 16);
 }
 
 .login-form__signup-text {

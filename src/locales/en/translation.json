@@ -75,7 +75,8 @@
     "textsignIn": "Sign In",
     "textNotHaveAcc": "Don't have an account?",
     "textCreateAcc": "Create an account",
-    "error": "Please enter a valid email"
+    "error": "Please enter a valid email",
+    "btnLoginAdmin": "Login with admin account"
   },
   "signup": {
     "title": "Create an Account",
