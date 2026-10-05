@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Input from "../../Components/Input/Input";
 import style from "./LoginPage.module.css";
 import { useEffect, useState } from "react";
@@ -16,7 +16,7 @@ import Loader from "../../Components/Loader/Loader";
 
 function LoginPage() {
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.auth);
+  const { loading, session } = useSelector((state) => state.auth);
 
   const { t } = useTranslation();
 
@@ -78,6 +78,8 @@ function LoginPage() {
 
     return () => clearTimeout(timer);
   }, [hasError]);
+
+  if (session) return <Navigate to="/dashboard" replace />;
 
   return (
     <>

@@ -1,9 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./StatusPage.module.css";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../Redux/Store/authSlice";
 
 function StatusPage({ notaccess, message }) {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleBackLogin = async (e) => {
+    e.preventDefault();
+    await dispatch(logoutUser());
+    navigate("/login");
+  };
 
   return (
     <>
@@ -16,7 +26,7 @@ function StatusPage({ notaccess, message }) {
                 {t("statusPage.notaccess.title")}
               </h2>
               <Link
-                onClick={() => localStorage.clear()}
+                onClick={handleBackLogin}
                 to="/login"
                 className={style["not-access__btn"]}
               >

@@ -1,6 +1,6 @@
 import route from "./routes";
 import "./App.css";
-import { useNavigate, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -8,14 +8,16 @@ import { supabase } from "./lib/supabase";
 import {
   clearSession,
   fetchUserProfileImage,
+  fetchUserRole,
   initializeAuth,
   setSession,
 } from "./Redux/Store/authSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { error, session } = useSelector((state) => state.auth);
+  const { session } = useSelector((state) => state.auth);
+
+  const userId = session?.user?.id;
 
   // ! Start Web Language
 
@@ -30,27 +32,6 @@ function App() {
   }, [i18n.language]);
 
   // ! End Web Language
-
-  const fetchSession = async () => {
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    setSession(session);
-  };
-
-  useEffect(() => {
-    fetchSession();
-  }, []);
-
-  useEffect(() => {
-    if (session === null) {
-      navigate("/login");
-    } else {
-      navigate("/dashboard");
-    }
-  }, [session]);
 
   useEffect(() => {
     dispatch(initializeAuth());
@@ -76,6 +57,12 @@ function App() {
       dispatch(fetchUserProfileImage());
     }
   }, [session, dispatch]);
+
+  useEffect(() => {
+    if (userId) {
+      dispatch(fetchUserRole());
+    }
+  }, [userId, dispatch]);
 
   const routes = useRoutes(route);
 

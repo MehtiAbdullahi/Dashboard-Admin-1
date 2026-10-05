@@ -1,6 +1,27 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { supabase } from "../../lib/supabase";
 
+export const fetchUserRole = createAsyncThunk(
+  "auth/fetchUserRole",
+  async (_, { getState, rejectWithValue }) => {
+    const { user } = getState().auth;
+
+    if (!user) return null;
+
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single();
+
+    if (error) {
+      return rejectWithValue(error.message);
+    }
+
+    return data.role;
+  },
+);
+
 export const initializeAuth = createAsyncThunk(
   "auth/initializeAuth",
   async () => {
@@ -101,6 +122,8 @@ const initialState = {
   loading: true,
   error: null,
   profileImageUrl: null,
+  role: null,
+  roleStatus: "idle",
 };
 
 const authSlice = createSlice({
@@ -118,6 +141,9 @@ const authSlice = createSlice({
       state.session = null;
       state.user = null;
       state.loading = false;
+      state.role = null;
+      state.roleStatus = "idle";
+      state.profileImageUrl = null;
     },
   },
 
@@ -138,10 +164,12 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
-      .addCase(loginUser.fulfilled, (state) => {
+      .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
+        state.session = action.payload.session;
+        state.user = action.payload.session?.user ?? null;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
@@ -163,6 +191,17 @@ const authSlice = createSlice({
       })
       .addCase(fetchUserProfileImage.rejected, (state) => {
         state.profileImageUrl = null;
+      })
+      .addCase(fetchUserRole.pending, (state) => {
+        state.roleStatus = "loading";
+      })
+      .addCase(fetchUserRole.fulfilled, (state, action) => {
+        state.role = action.payload;
+        state.roleStatus = "succeeded";
+      })
+      .addCase(fetchUserRole.rejected, (state) => {
+        state.role = null;
+        state.roleStatus = "failed";
       });
   },
 });

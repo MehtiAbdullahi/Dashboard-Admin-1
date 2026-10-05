@@ -1,5 +1,5 @@
-import { Children, lazy, Suspense } from "react";
-
+import { lazy, Suspense } from "react";
+const AdminRoute = lazy(() => import("./Components/AdminRoute/AdminRoute.jsx"));
 const Landing = lazy(() => import("./Page/Landing/Landing"));
 const Dashboard = lazy(() => import("./Components/Dashboard/Dashboard"));
 const LoginPage = lazy(() => import("./Page/LoginPage/LoginPage"));
@@ -45,29 +45,31 @@ const withSuspense = (element) => (
 
 let routes = [
   {
-    path: "/",
-    element: <Landing />,
+    element: <AdminRoute />,
     children: [
       {
-        index: true,
-        element: <Navigate to="/dashboard" replace />,
+        path: "/",
+        element: <Landing />,
+        children: [
+          { index: true, element: <Navigate to="/dashboard" replace /> },
+          { path: "dashboard", element: withSuspense(<Dashboard />) },
+          { path: "products", element: withSuspense(<Products />) },
+          { path: "users-list", element: withSuspense(<UsersList />) },
+          { path: "favorites", element: withSuspense(<Favorites />) },
+          { path: "inbox", element: withSuspense(<Inbox />) },
+          { path: "orderlists", element: withSuspense(<Orderlists />) },
+          { path: "productstock", element: withSuspense(<Productstock />) },
+          { path: "pricing", element: withSuspense(<Pricing />) },
+          { path: "calender", element: withSuspense(<Calender />) },
+          { path: "todo", element: withSuspense(<ToDo />) },
+          { path: "contact", element: withSuspense(<Contact />) },
+          { path: "invoice", element: withSuspense(<Invoice />) },
+          { path: "uIelements", element: withSuspense(<UIelements />) },
+          { path: "team", element: withSuspense(<Team />) },
+          { path: "table", element: withSuspense(<Table />) },
+          { path: "manage-account", element: withSuspense(<ManageAccount />) },
+        ],
       },
-      { path: "dashboard", element: withSuspense(<Dashboard />) },
-      { path: "products", element: withSuspense(<Products />) },
-      { path: "users-list", element: withSuspense(<UsersList />) },
-      { path: "favorites", element: withSuspense(<Favorites />) },
-      { path: "inbox", element: withSuspense(<Inbox />) },
-      { path: "orderlists", element: withSuspense(<Orderlists />) },
-      { path: "productstock", element: withSuspense(<Productstock />) },
-      { path: "pricing", element: withSuspense(<Pricing />) },
-      { path: "calender", element: withSuspense(<Calender />) },
-      { path: "todo", element: withSuspense(<ToDo />) },
-      { path: "contact", element: withSuspense(<Contact />) },
-      { path: "invoice", element: withSuspense(<Invoice />) },
-      { path: "uIelements", element: withSuspense(<UIelements />) },
-      { path: "team", element: withSuspense(<Team />) },
-      { path: "table", element: withSuspense(<Table />) },
-      { path: "manage-account", element: withSuspense(<ManageAccount />) },
     ],
   },
   {
