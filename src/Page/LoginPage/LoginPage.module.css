@@ -40,13 +40,13 @@
 }
 
 .login-box__top h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  margin-top: 2rem;
+  margin: 2rem 0 1.5rem 0;
 }
 
 .login-box__top p {
-  font-size: 1.02rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
   color: var(--text);
   opacity: 60%;
@@ -56,6 +56,11 @@
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
+}
+
+.login-form__pass-labels span,
+.login-form__wrapper form > div label {
+  font-size: 1.2rem;
 }
 
 .login-form__pass-wrapper {
@@ -175,6 +180,7 @@
 .login-form__signup-text {
   text-align: center;
   font-size: 1.4rem;
+  margin-top: 1rem;
 }
 
 .login-form__signup-text a {
