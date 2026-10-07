@@ -3,7 +3,7 @@ import style from "./Products.module.css";
 import ProductBox from "../ProductBox/ProductBox";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchProducts, updateProduct } from "../../Redux/Store/Products";
+import { getAllProducts } from "../../Redux/Store/Products";
 import HelpWidget from "../Help/Help";
 import Loader from "../Loader/Loader";
 import UpdateProductModal from "../UpdateProductModal/UpdateProductModal";
@@ -25,7 +25,7 @@ function Products() {
   const { products, loading, error } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(fetchProducts("https://fakestoreapi.com/products"));
+    dispatch(getAllProducts());
   }, []);
 
   const updateProductHandler = (e) => {
@@ -123,7 +123,7 @@ function Products() {
         {error && <Error titleKey={"noProducts"} />}
         {!loading &&
           !error &&
-          products.map((product) => (
+          products?.map((product) => (
             <ProductBox
               key={product.id}
               {...product}

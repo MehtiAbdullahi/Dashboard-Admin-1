@@ -1,33 +1,39 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { supabase } from "../../lib/supabase";
+
+export const getAllProducts = createAsyncThunk(
+  "get/getAllProducts",
+  async (_, { rejectWithValue }) => {
+    const { data: productData, error: productError } = await supabase
+      .from("products")
+      .select("*");
+
+    if (productError) {
+      return rejectWithValue(productError.message);
+    }
+
+    const productWithImgUrl = productData.map((p) => {
+      const { data: productImgUrlData } = supabase.storage
+        .from("product-images")
+        .getPublicUrl(p.image);
+
+      return {
+        ...p,
+        image: productImgUrlData.publicUrl,
+      };
+    });
+
+    console.log(productWithImgUrl);
+
+    return productWithImgUrl;
+  },
+);
 
 const initialState = {
   products: [],
   loading: false,
   error: null,
 };
-
-export const fetchProducts = createAsyncThunk(
-  "products/fetchProducts",
-  async (url) => {
-    const res = await fetch(url);
-    return await res.json();
-  },
-);
-
-export const updateProduct = createAsyncThunk(
-  "update/updateProducts",
-  async ({ url, ProductData }) => {
-    const res = await fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(ProductData),
-    });
-    const data = await res.json();
-    return data;
-  },
-);
 
 const productsReducer = createSlice({
   name: "products",
@@ -36,24 +42,19 @@ const productsReducer = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchProducts.pending, (state) => {
+      .addCase(getAllProducts.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-
-      .addCase(fetchProducts.fulfilled, (state, action) => {
+      .addCase(getAllProducts.fulfilled, (state, action) => {
         state.loading = false;
+        state.error = null;
         state.products = action.payload;
       })
-
-      .addCase(fetchProducts.rejected, (state, action) => {
+      .addCase(getAllProducts.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       });
-    builder.addCase(updateProduct.fulfilled, (state, action) => {
-      console.log("state", state);
-      console.log("action", action);
-    });
   },
 });
 

@@ -3,7 +3,15 @@ import style from "./ProductBox.module.css";
 import Rating from "../Rating/Rating";
 import { useTranslation } from "react-i18next";
 
-function ProductBox({ id, title, price, image, rating, getIdAsProduct }) {
+function ProductBox({
+  id,
+  title,
+  price,
+  image,
+  rate,
+  rate_count,
+  getIdAsProduct,
+}) {
   const { t } = useTranslation();
 
   return (
@@ -71,15 +79,15 @@ function ProductBox({ id, title, price, image, rating, getIdAsProduct }) {
         </div>
         <div className={style["product__stars-rating"]}>
           <div className={style["product-stars"]}>
-            <Rating rate={rating.rate} />
+            <Rating rate={rate} />
           </div>
           <span className={style["product__rating-number"]}>
-            ( {rating.count} )
+            ( {rate_count} )
           </span>
         </div>
         <div className={style["product__edit-btn"]}>
           <Link onClick={() => getIdAsProduct(id)}>
-            <span>{t('products.editProduct')}</span>
+            <span>{t("products.editProduct")}</span>
           </Link>
         </div>
       </div>
