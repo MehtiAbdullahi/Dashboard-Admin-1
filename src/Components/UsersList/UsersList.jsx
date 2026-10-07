@@ -14,6 +14,7 @@ import { MdEdit } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getUser } from "../../Redux/Store/Users";
+import Loader from "../Loader/Loader";
 
 function UsersList() {
   const dispatch = useDispatch();
@@ -35,15 +36,15 @@ function UsersList() {
   const [selectedFilter, setSelectedFilter] = useState("all");
   // const [inputValue, setInputValue] = useState("");
 
-  const { users, loading } = useSelector((state) => state.allUsers);
+  const { users, loading, error } = useSelector((state) => state.allUsers);
 
   const addFilterToState = (data) => {
     setSelectedFilter(data);
   };
 
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
+  // useEffect(() => {
+  //   console.log(users);
+  // }, [users]);
 
   useEffect(() => {
     dispatch(getUser());
@@ -118,41 +119,57 @@ function UsersList() {
               style["tbody"],
             )}
           >
-            <div className={classNames(style["user-item"], style["tr"])}>
-              <div className={classNames(style["td"])}>
-                <img
-                  className={style["user-item__img"]}
-                  src="image/Users/Untitled-3.png"
-                  alt=""
-                />
-              </div>
-              <span className={classNames(style["td"])}>username</span>
-              <span className={classNames(style["td"])}>name</span>
-              <span className={classNames(style["td"])}>lastname</span>
-              <span className={classNames(style["td"])}>email</span>
-              <div className={style["td"]}>
-                <span
-                // className={
-                //   style[`${rule === "user" ? "is-user" : "is-admin"}`]
-                // }
-                >
-                  rule
-                </span>
-              </div>
-              <div
-                className={classNames(style["td"], style["user-item__actuibs"])}
-              >
-                <span className={style["user-item__icon-info"]}>
-                  <FaInfo />
-                </span>
-                <span className={style["user-item__icon-edit"]}>
-                  <MdEdit />
-                </span>
-                <span className={style["user-item__icon-delete"]}>
-                  <MdDeleteOutline />
-                </span>
-              </div>
-            </div>
+            {loading && <Loader />}
+            {!loading &&
+              !error &&
+              users?.map(
+                ({ name, username, lastname, role, email, profile_img }) => (
+                  <div className={classNames(style["user-item"], style["tr"])}>
+                    <div className={classNames(style["td"])}>
+                      <img
+                        className={style["user-item__img"]}
+                        src={`${profile_img ? profile_img : `${import.meta.env.BASE_URL}image/Users/2a2e7f0f60b750dfb36c15c268d0118d.jpg`}`}
+                        alt=""
+                      />
+                    </div>
+                    <span className={classNames(style["td"])}>{username}</span>
+                    <span className={classNames(style["td"])}>
+                      {name ? name : "..."}
+                    </span>
+                    <span className={classNames(style["td"])}>
+                      {lastname ? lastname : "..."}
+                    </span>
+                    <span className={classNames(style["td"])}>
+                      {email ? email : "..."}
+                    </span>
+                    <div className={style["td"]}>
+                      <span
+                        className={
+                          style[`${role === "user" ? "is-user" : "is-admin"}`]
+                        }
+                      >
+                        {role}
+                      </span>
+                    </div>
+                    <div
+                      className={classNames(
+                        style["td"],
+                        style["user-item__actuibs"],
+                      )}
+                    >
+                      <span className={style["user-item__icon-info"]}>
+                        <FaInfo />
+                      </span>
+                      <span className={style["user-item__icon-edit"]}>
+                        <MdEdit />
+                      </span>
+                      <span className={style["user-item__icon-delete"]}>
+                        <MdDeleteOutline />
+                      </span>
+                    </div>
+                  </div>
+                ),
+              )}
           </div>
         </div>
       </div>

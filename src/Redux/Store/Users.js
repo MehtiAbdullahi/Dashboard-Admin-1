@@ -1,15 +1,40 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { supabase } from "../../lib/supabase";
 
-export const getUser = createAsyncThunk("get/getUser", async () => {
-  const { data, error } = await supabase.from("profiles").select("*");
+export const getUser = createAsyncThunk(
+  "get/getUser",
+  async (_, { rejectWithValue }) => {
+    const { data: profilesData, error: profilesError } = await supabase
+      .from("profiles")
+      .select("*");
 
-  if (error) {
-    throw error;
-  }
+    if (profilesError) {
+      return rejectWithValue(profilesError.message);
+    }
 
-  return data;
-});
+    const usersWithUrlImg = profilesData.map((u) => {
+      if (!u.profile_img) {
+        return {
+          ...u,
+          profile_img: null,
+        };
+      }
+
+      const { data } = supabase.storage
+        .from("users-image")
+        .getPublicUrl(u.profile_img);
+
+      return {
+        ...u,
+        profile_img: data.publicUrl,
+      };
+    });
+
+    console.log(usersWithUrlImg);
+
+    return usersWithUrlImg;
+  },
+);
 
 export const updateUser = createAsyncThunk(
   "update/updateUser",

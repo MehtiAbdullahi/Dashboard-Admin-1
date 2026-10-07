@@ -153,6 +153,12 @@
   margin: 1rem 0;
 }
 
+.users-body__items-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .user-item {
   display: flex;
   justify-content: center;
