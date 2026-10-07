@@ -31,6 +31,16 @@ function App() {
     document.documentElement.dir = language === "en" ? "ltr" : "rtl";
   }, [i18n.language]);
 
+  const languageSeved = JSON.parse(localStorage.getItem("lan"));
+  const themeSeved = localStorage.getItem("theme");
+
+  useEffect(() => {
+    document.body.classList.add(themeSeved);
+    document.documentElement.lang = languageSeved;
+    document.documentElement.dir = languageSeved === "en" ? "ltr" : "rtl";
+    i18n.changeLanguage(languageSeved);
+  }, []);
+
   // ! End Web Language
 
   useEffect(() => {

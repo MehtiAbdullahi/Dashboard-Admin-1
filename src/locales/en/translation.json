@@ -31,9 +31,9 @@
       "arlang": "Arabic"
     },
     "languages": {
-      "persian": "Persian",
-      "english": "English",
-      "arabic": "Arabic"
+      "fa": "Persian",
+      "en": "English",
+      "ar": "Arabic"
     },
     "userSubmenu": {
       "manageAcc": "Manage Account",

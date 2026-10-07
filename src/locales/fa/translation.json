@@ -31,9 +31,9 @@
       "arlang": "عربی"
     },
     "languages": {
-      "persian": "فارسی",
-      "english": "انگلیسی",
-      "arabic": "عربی"
+      "fa": "فارسی",
+      "en": "انگلیسی",
+      "ar": "عربی"
     },
     "userSubmenu": {
       "manageAcc": "مدیریت حساب",

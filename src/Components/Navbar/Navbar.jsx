@@ -45,7 +45,7 @@ function Navbar({ setShowSideBar }) {
   const lanLocalStorage = JSON.parse(localStorage.getItem("lan"));
 
   const [languageSelected, setLanguageSelected] = useState(
-    lanLocalStorage || "english",
+    lanLocalStorage || "en",
   );
 
   const getInfoUser = async () => {
@@ -65,9 +65,9 @@ function Navbar({ setShowSideBar }) {
 
   useEffect(() => {
     i18n.changeLanguage(
-      languageSelected === "persian"
+      languageSelected === "fa"
         ? "fa"
-        : languageSelected === "arabic"
+        : languageSelected === "ar"
           ? "ar"
           : "en",
     );
@@ -162,11 +162,11 @@ function Navbar({ setShowSideBar }) {
           <div className={style.navbarRightLanguage}>
             <img
               src={`${
-                languageSelected === "english"
+                languageSelected === "en"
                   ? "image/flags/Flag-English.png"
-                  : languageSelected === "arabic"
+                  : languageSelected === "ar"
                     ? "image/flags/sa Saudi Arabia.png"
-                    : languageSelected === "persian"
+                    : languageSelected === "fa"
                       ? "image/flags/IR.png"
                       : ""
               }`}
@@ -187,7 +187,7 @@ function Navbar({ setShowSideBar }) {
                 </h3>
                 <div
                   onClick={() => {
-                    setLanguageSelected("english");
+                    setLanguageSelected("en");
 
                     hideLanguageItems();
                   }}
@@ -197,11 +197,11 @@ function Navbar({ setShowSideBar }) {
 
                     <li>{t("navbar.languagesSubmenu.enlang")}</li>
                   </span>
-                  {languageSelected === "english" ? <IoMdCheckmark /> : ""}
+                  {languageSelected === "en" ? <IoMdCheckmark /> : ""}
                 </div>
                 <div
                   onClick={() => {
-                    setLanguageSelected("arabic");
+                    setLanguageSelected("ar");
 
                     hideLanguageItems();
                   }}
@@ -211,11 +211,11 @@ function Navbar({ setShowSideBar }) {
 
                     <li>{t("navbar.languagesSubmenu.arlang")}</li>
                   </span>
-                  {languageSelected === "arabic" ? <IoMdCheckmark /> : ""}
+                  {languageSelected === "ar" ? <IoMdCheckmark /> : ""}
                 </div>
                 <div
                   onClick={() => {
-                    setLanguageSelected("persian");
+                    setLanguageSelected("fa");
 
                     hideLanguageItems();
                   }}
@@ -225,7 +225,7 @@ function Navbar({ setShowSideBar }) {
 
                     <li>{t("navbar.languagesSubmenu.falang")}</li>
                   </span>
-                  {languageSelected === "persian" ? <IoMdCheckmark /> : ""}
+                  {languageSelected === "fa" ? <IoMdCheckmark /> : ""}
                 </div>
               </ul>
             </div>
@@ -393,11 +393,11 @@ function Navbar({ setShowSideBar }) {
                 <div className={style.navbarLanguageIconName}>
                   <img
                     src={`${
-                      languageSelected === "english"
+                      languageSelected === "en"
                         ? "/public/image/flags/Flag-English.png"
-                        : languageSelected === "arabic"
+                        : languageSelected === "ar"
                           ? "/public/image/flags/sa Saudi Arabia.png"
-                          : languageSelected === "persian"
+                          : languageSelected === "fa"
                             ? "/public/image/flags/IR.png"
                             : ""
                     }`}
@@ -420,9 +420,9 @@ function Navbar({ setShowSideBar }) {
                 }`}
               >
                 <li
-                  className={languageSelected === "english" && style.selected}
+                  className={languageSelected === "en" && style.selected}
                   onClick={() => {
-                    setLanguageSelected("english");
+                    setLanguageSelected("en");
 
                     hideLanguageItems();
                   }}
@@ -431,12 +431,12 @@ function Navbar({ setShowSideBar }) {
                     <img src="image/flags/Flag-English.png" alt="" />
                     <span>{t("navbar.languagesSubmenu.enlang")}</span>
                   </div>
-                  {languageSelected === "english" && <FaCheck />}
+                  {languageSelected === "en" && <FaCheck />}
                 </li>
                 <li
-                  className={languageSelected === "arabic" && style.selected}
+                  className={languageSelected === "ar" && style.selected}
                   onClick={() => {
-                    setLanguageSelected("arabic");
+                    setLanguageSelected("ar");
 
                     hideLanguageItems();
                   }}
@@ -445,12 +445,12 @@ function Navbar({ setShowSideBar }) {
                     <img src="image/flags/sa Saudi Arabia.png" alt="" />
                     <span>{t("navbar.languagesSubmenu.arlang")}</span>
                   </div>
-                  {languageSelected === "arabic" && <FaCheck />}
+                  {languageSelected === "ar" && <FaCheck />}
                 </li>
                 <li
-                  className={languageSelected === "persian" && style.selected}
+                  className={languageSelected === "fa" && style.selected}
                   onClick={() => {
-                    setLanguageSelected("persian");
+                    setLanguageSelected("fa");
 
                     hideLanguageItems();
                   }}
@@ -462,7 +462,7 @@ function Navbar({ setShowSideBar }) {
                     />
                     <span>{t("navbar.languagesSubmenu.falang")}</span>
                   </div>
-                  {languageSelected === "persian" && <FaCheck />}
+                  {languageSelected === "fa" && <FaCheck />}
                 </li>
               </ul>
             </div>
