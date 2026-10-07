@@ -163,6 +163,11 @@
   font-weight: 700 !important;
 }
 
+[lang="ar"] .login-form__admin-btn,
+[lang="ar"] .login-form__btn {
+  font-size: 1.2rem;
+}
+
 .login-form__btn:hover {
   background-color: var(--text-8);
 }
