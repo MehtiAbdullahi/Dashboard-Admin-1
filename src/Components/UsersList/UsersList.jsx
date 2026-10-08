@@ -8,13 +8,11 @@ import { useTranslation } from "react-i18next";
 
 import { CiSearch } from "react-icons/ci";
 import { FaAngleDown } from "react-icons/fa6";
-import { MdDeleteOutline } from "react-icons/md";
-import { FaInfo } from "react-icons/fa6";
-import { MdEdit } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getUser } from "../../Redux/Store/Users";
 import Loader from "../Loader/Loader";
+import User from "../User/User";
 
 function UsersList() {
   const dispatch = useDispatch();
@@ -33,8 +31,8 @@ function UsersList() {
     ],
   };
 
-  const [selectedFilter, setSelectedFilter] = useState("all");
-  // const [inputValue, setInputValue] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("All");
+  const [hiddenUsers, setHiddenUsers] = useState([]);
 
   const { users, loading, error } = useSelector((state) => state.allUsers);
 
@@ -42,32 +40,35 @@ function UsersList() {
     setSelectedFilter(data);
   };
 
-  // useEffect(() => {
-  //   console.log(users);
-  // }, [users]);
-
   useEffect(() => {
     dispatch(getUser());
   }, []);
 
-  // const filteredUsers = users.filter((user) => {
-  //   if (selectedFilter === "all") {
-  //     return true;
-  //   }
+  useEffect(() => {
+    console.log(hiddenUsers);
+  }, [hiddenUsers]);
 
-  //   if (selectedFilter === "just-admin") {
-  //     return user.rule === "admin";
-  //   }
+  const filteredUsers = users.filter((user) => {
+    if (hiddenUsers.includes(user.id)) {
+      return false;
+    }
 
-  //   if (selectedFilter === "just-user") {
-  //     return user.rule === "user";
-  //   }
-  // });
+    if (selectedFilter === "All") {
+      return true;
+    }
 
-  // const searchHandler = (e) => {
-  //   setInputValue(e.target.value);
-  //   filteredUsers();
-  // };
+    if (selectedFilter === "Just admin") {
+      return user.role === "admin";
+    }
+
+    if (selectedFilter === "Just user") {
+      return user.role === "user";
+    }
+  });
+
+  const deleteUserHandler = (id) => {
+    setHiddenUsers((prev) => [...prev, id]);
+  };
 
   return (
     <>
@@ -89,17 +90,13 @@ function UsersList() {
           </div> */}
           <div className={style["users-top__filter-wrapper"]}>
             <span>
-              {selectedFilter === "all"
-                ? "All"
-                : selectedFilter === "just-admin"
-                  ? "Just Admin"
-                  : "Just User"}
+              {selectedFilter}
               <ul>
-                <li onClick={() => addFilterToState("all")}>All</li>
-                <li onClick={() => addFilterToState("just-admin")}>
+                <li onClick={() => addFilterToState("All")}>All</li>
+                <li onClick={() => addFilterToState("Just admin")}>
                   Just Admins
                 </li>
-                <li onClick={() => addFilterToState("just-user")}>Just User</li>
+                <li onClick={() => addFilterToState("Just user")}>Just User</li>
               </ul>
               <FaAngleDown />
             </span>
@@ -122,54 +119,9 @@ function UsersList() {
             {loading && <Loader />}
             {!loading &&
               !error &&
-              users?.map(
-                ({ name, username, lastname, role, email, profile_img }) => (
-                  <div className={classNames(style["user-item"], style["tr"])}>
-                    <div className={classNames(style["td"])}>
-                      <img
-                        className={style["user-item__img"]}
-                        src={`${profile_img ? profile_img : `${import.meta.env.BASE_URL}image/Users/2a2e7f0f60b750dfb36c15c268d0118d.jpg`}`}
-                        alt=""
-                      />
-                    </div>
-                    <span className={classNames(style["td"])}>{username}</span>
-                    <span className={classNames(style["td"])}>
-                      {name ? name : "..."}
-                    </span>
-                    <span className={classNames(style["td"])}>
-                      {lastname ? lastname : "..."}
-                    </span>
-                    <span className={classNames(style["td"])}>
-                      {email ? email : "..."}
-                    </span>
-                    <div className={style["td"]}>
-                      <span
-                        className={
-                          style[`${role === "user" ? "is-user" : "is-admin"}`]
-                        }
-                      >
-                        {role}
-                      </span>
-                    </div>
-                    <div
-                      className={classNames(
-                        style["td"],
-                        style["user-item__actuibs"],
-                      )}
-                    >
-                      <span className={style["user-item__icon-info"]}>
-                        <FaInfo />
-                      </span>
-                      <span className={style["user-item__icon-edit"]}>
-                        <MdEdit />
-                      </span>
-                      <span className={style["user-item__icon-delete"]}>
-                        <MdDeleteOutline />
-                      </span>
-                    </div>
-                  </div>
-                ),
-              )}
+              filteredUsers?.map((u) => (
+                <User key={u.id} {...u} deleteUser={deleteUserHandler} />
+              ))}
           </div>
         </div>
       </div>

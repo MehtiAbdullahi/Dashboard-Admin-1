@@ -1,0 +1,204 @@
+/* 
+
+! -=-=-=-=-=-=-=-=-=-=-=-=-
+
+  ?    Special Style
+
+! -=-=-=-=-=-=-=-=-=-=-=-=-
+
+*/
+
+.is-user,
+.is-admin {
+  width: 1rem;
+  color: var(--text);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 400;
+}
+
+.is-admin {
+  border: 1px solid rgb(255, 18, 192);
+}
+
+.is-user {
+  border: 1px solid rgb(47, 245, 255);
+}
+
+/* end */
+
+.user-item {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.user-item:not(:last-child) {
+  border-bottom: 0.1rem dotted var(--border3);
+}
+
+.user-item__img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.user-item__actuibs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-item__icon-info,
+.user-item__icon-edit,
+.user-item__icon-delete {
+  padding: 0.3rem;
+  margin: 0 0.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.user-item__icon-info:hover,
+.user-item__icon-edit:hover,
+.user-item__icon-delete:hover {
+  opacity: 50%;
+}
+
+.user-item__icon-info {
+  background-color: rgb(0, 191, 255);
+}
+
+.user-item__icon-edit {
+  background-color: rgb(255, 136, 18);
+}
+
+.user-item__icon-delete {
+  background-color: rgb(255, 0, 0);
+}
+
+.user-item__icon-info svg,
+.user-item__icon-edit svg,
+.user-item__icon-delete svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* 
+
+! -=-=-=-=-=-=-=-=-=-=-=-=-
+
+  ?       Table
+
+! -=-=-=-=-=-=-=-=-=-=-=-=-
+
+*/
+
+.tr {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.th {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.td {
+  font-size: 1.4rem;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+.tr {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.th {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.td {
+  font-size: 1.4rem;
+}
+
+/* 
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+          * Responsive
+
+TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+*/
+
+@media (max-width: 102.4rem) {
+}
+
+@media (max-width: 76.8rem) {
+  .user-item.tr {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .user-item.tr .td {
+    font-size: 1.2rem;
+  }
+  .user-item.tr .td:nth-child(3),
+  .user-item.tr .td:nth-child(4) {
+    display: none;
+  }
+  .sales-chart__top {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 42.5rem) {
+  .user-item.tr {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .user-item.tr .td {
+    font-size: 1.2rem;
+  }
+  .user-item.tr .td:nth-child(3),
+  .user-item.tr .td:nth-child(4),
+  .user-item.tr .td:nth-child(5),
+  .user-item.tr .td:nth-child(6) {
+    display: none;
+  }
+  .sales-chart__top {
+    font-size: 1.7rem;
+  }
+  .user-item__img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .user-item__actuibs {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .user-item__actuibs span {
+    padding: 0.1rem;
+  }
+  .user-item.tr .td {
+    font-size: 1rem;
+  }
+}

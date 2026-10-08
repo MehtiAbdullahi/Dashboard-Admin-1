@@ -2,33 +2,6 @@
 
 ! -=-=-=-=-=-=-=-=-=-=-=-=-
 
-  ?    Special Style
-
-! -=-=-=-=-=-=-=-=-=-=-=-=-
-
-*/
-
-.is-user,
-.is-admin {
-  width: 1rem;
-  color: var(--text);
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 400;
-}
-
-.is-admin {
-  background-color: rgba(103, 255, 103, 0.627);
-}
-
-.is-user {
-  background-color: rgba(255, 244, 25, 0.627);
-}
-
-/* 
-
-! -=-=-=-=-=-=-=-=-=-=-=-=-
-
   ?        Styles
 
 ! -=-=-=-=-=-=-=-=-=-=-=-=-
@@ -103,6 +76,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 1.5rem;
   border: 0.1rem solid var(--border);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -120,11 +94,11 @@
   opacity: 0;
   background-color: var(--card-bg);
   padding: 0.5rem 0;
-  left: -5.5rem;
-  right: 0;
+  left: 0;
   top: 2.7rem;
   box-shadow: 0 0 0.3rem 0 var(--shadow1);
   border-radius: 0.5rem;
+  border: 1px solid var(--border);
 }
 
 .users-top__filter-wrapper ul li {
@@ -137,6 +111,7 @@
 .users-top__filter-wrapper ul li:hover {
   opacity: 50%;
   background-color: var(--card-bg-hover);
+  color: black;
 }
 
 .users-top__filter-wrapper span:hover > ul {
@@ -155,7 +130,7 @@
 
 .users-body__items-wrapper {
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 

@@ -1,0 +1,235 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+  background: var(--text-7);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 44rem;
+  padding: 2.8rem;
+  border-radius: 1.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border2);
+  box-shadow: 0 20px 50px var(--shadow1);
+  color: var(--text);
+  animation: popIn 0.25s ease;
+}
+
+/* دکمه بستن */
+.close {
+  position: absolute;
+  top: 1.6rem;
+  inset-inline-end: 1.6rem;
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: none;
+  border-radius: 1rem;
+  background: var(--card-bg2);
+  color: var(--text-4);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.close:hover {
+  background: color-mix(in srgb, var(--text-2) 12%, transparent);
+  color: var(--text-2);
+}
+
+/* هدر */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 2.2rem;
+  padding-inline-end: 4.4rem;
+}
+.avatar {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.3rem solid var(--card-bg);
+  box-shadow: 0 0 0 0.2rem var(--primary);
+}
+.header__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* بج نقش (مثل بج وضعیت در DashStack) */
+.badge {
+  padding: 0.3rem 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.badge--user {
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
+  color: var(--primary);
+}
+.badge--admin {
+  background: color-mix(in srgb, var(--social) 14%, transparent);
+  color: var(--social);
+}
+
+/* اطلاعات کاربر */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-radius: 1.4rem;
+  background: var(--card-bg5);
+  border: 1px solid var(--border2);
+}
+.info__row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.info__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.2rem;
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  font-size: 2rem;
+}
+.info__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.info__label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-6);
+}
+.info__value {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  direction: ltr;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* انتخاب نقش */
+.section-title {
+  margin: 2.2rem 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-5);
+}
+.roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  border-radius: 1.2rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+}
+.roles__btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.9rem;
+  background: transparent;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-4);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.roles__btn:hover:not(.roles__btn--active) {
+  background: var(--card-bg-hover);
+}
+.roles__btn--active {
+  background: var(--primary);
+  color: var(--text-white);
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--primary) 35%, transparent);
+}
+.roles__btn--admin {
+  background: var(--social);
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--social) 35%, transparent);
+}
+
+/* دکمه‌ها */
+.footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.6rem;
+}
+.btn-save,
+.btn-cancel {
+  flex: 1;
+  padding: 1.1rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-save {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--text-white);
+}
+.btn-save:hover:not(:disabled) {
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--primary) 40%, transparent);
+  transform: translateY(-1px);
+}
+.btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-cancel {
+  border: 1px solid var(--border2);
+  background: var(--card-bg);
+  color: var(--text-4);
+}
+.btn-cancel:hover {
+  background: var(--card-bg-hover);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

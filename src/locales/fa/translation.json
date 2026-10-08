@@ -137,7 +137,18 @@
     "lastName": "نام خانوادگی",
     "email": "ایمیل",
     "rule": "نقش",
-    "actions": "اقدامات"
+    "actions": "اقدامات",
+    "updateUser": {
+      "title": "ویرایش کاربر",
+      "roleUser": "کاربر",
+      "roleAdmin": "ادمین",
+      "titleName": "نام کاربری",
+      "titleEmail": "ایمیل",
+      "userRole": "نقش کاربر",
+      "cancel": "انصراف",
+      "save": "ذخیره تغییرات",
+      "loading": "در حال ذخیره..."
+    }
   },
   "favorite": {
     "title": "محصولات مورد علاقه"

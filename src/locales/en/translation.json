@@ -137,7 +137,18 @@
     "lastName": "Last Name",
     "email": "Email",
     "rule": "Role",
-    "actions": "Actions"
+    "actions": "Actions",
+    "updateUser": {
+      "title": "Edit User",
+      "roleUser": "User",
+      "roleAdmin": "Admin",
+      "titleName": "Username",
+      "titleEmail": "Email",
+      "userRole": "User Role",
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "loading": "Saving..."
+    }
   },
   "favorite": {
     "title": "Favorite Products"
