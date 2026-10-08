@@ -5,7 +5,7 @@ import Input from "../Input/Input";
 import HelpWidget from "../Help/Help";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../Redux/Store/Products";
+import { getAllProducts } from "../../Redux/Store/Products";
 import Loader from "../Loader/Loader";
 import Error from "../ErrorComponent/Error";
 import { useTranslation } from "react-i18next";
@@ -17,8 +17,8 @@ function Dashboard() {
   const { products, error, loading } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(fetchProducts("https://fakestoreapi.com/products"));
-  }, []);
+    dispatch(getAllProducts());
+  }, [dispatch]);
 
   return (
     <>
@@ -242,37 +242,41 @@ function Dashboard() {
             {error && <Error titleKey={`noProducts`} />}
             {!loading &&
               !error &&
-              products.map(({ title, price, rating, category, image }) => (
-                <div
-                  className={classNames(
-                    style["deals-details__item-box"],
-                    style["tr"],
-                  )}
-                >
-                  <span className={style["td"]}>
-                    <div className={style["deals-details__box-img"]}>
-                      <img src={image} alt="" />
-                      <span>{title}</span>
-                    </div>
-                  </span>
-
-                  <span className={style["td"]}>6096 Marjolaine Landing</span>
-
-                  <span className={style["td"]}>
-                    {rating.rate} - {rating.count}
-                  </span>
-
-                  <span className={style["td"]}>{category}</span>
-
-                  <span className={style["td"]}>${price}</span>
-
-                  <div className={style["td"]}>
-                    <span className={style["deals-details__box-btn"]}>
-                      {t("dashboard.Delivered")}
+              products.map(
+                ({ title, price, rate, rate_count, category, image }) => (
+                  <div
+                    className={classNames(
+                      style["deals-details__item-box"],
+                      style["tr"],
+                    )}
+                  >
+                    <span className={style["td"]}>
+                      <div className={style["deals-details__box-img"]}>
+                        <img src={image} alt="" />
+                        <span>{title}</span>
+                      </div>
                     </span>
+
+                    <span className={style["td"]}>.....</span>
+
+                    <span className={style["td"]}>
+                      {rate} - {rate_count}
+                    </span>
+
+                    <span className={style["td"]}>
+                      {category ? category : "....."}
+                    </span>
+
+                    <span className={style["td"]}>${price}</span>
+
+                    <div className={style["td"]}>
+                      <span className={style["deals-details__box-btn"]}>
+                        {t("dashboard.Delivered")}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ),
+              )}
           </div>
         </div>
       </div>
