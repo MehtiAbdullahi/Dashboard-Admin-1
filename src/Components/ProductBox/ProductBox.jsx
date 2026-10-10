@@ -5,9 +5,10 @@ import { useTranslation } from "react-i18next";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Loader/Loader";
 import { FaSpinner } from "react-icons/fa";
+import { toggleFavorite } from "../../Redux/Store/Products";
 
 function ProductBox({
   id,
@@ -17,15 +18,26 @@ function ProductBox({
   rate,
   rate_count,
   getIdAsProduct,
-  addFavoriteProduct,
 }) {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.allUsers);
-  const { favoriteLoading } = useSelector((state) => state.products);
+  const { products, favoriteLoading } = useSelector((state) => state.products);
 
   const { favorite_products } = users.find((u) => u.id === user.id);
   const isFavorite = favorite_products.some((fp) => fp.id === id);
+
+  const addFavoriteProduct = (id) => {
+    const product = products.find((p) => p.id === id);
+
+    dispatch(
+      toggleFavorite({
+        product,
+        userId: user.id,
+      }),
+    );
+  };
 
   return (
     <div className={style["product-box"]}>

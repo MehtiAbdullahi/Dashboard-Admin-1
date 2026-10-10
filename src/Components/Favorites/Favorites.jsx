@@ -8,7 +8,12 @@ import { useTranslation } from "react-i18next";
 import HelpWidget from "../Help/Help";
 
 function Favorites() {
-  const { loading, error, products } = useSelector((state) => state.products);
+  const { loading, error } = useSelector((state) => state.products);
+  const { user } = useSelector((state) => state.auth);
+  const { users } = useSelector((state) => state.allUsers);
+
+  const { favorite_products } = users.find((u) => u.id === user.id);
+
   const { t } = useTranslation();
 
   return (
@@ -27,7 +32,9 @@ function Favorites() {
         {error && <Error titleKey={`noProducts`} />}
         {!loading &&
           !error &&
-          products.map((product) => <ProductBox {...product} />)}
+          favorite_products &&
+          favorite_products.map((product) => <ProductBox {...product} />)}
+        {favorite_products.length === 0 && <Error titleKey={`favoriteProductEmpty`} />}
       </div>
     </>
   );

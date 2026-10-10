@@ -365,7 +365,8 @@
   "errors": {
     "noProducts": "Unfortunately, products could not be loaded from the server!",
     "networkError": "Something went wrong. Please try again.",
-    "noTodos": "There are no to-dos to display"
+    "noTodos": "There are no to-dos to display",
+    "favoriteProductEmpty": "There are no favorite products."
   },
   "manageYourAccount": {
     "title": "Manage Account",

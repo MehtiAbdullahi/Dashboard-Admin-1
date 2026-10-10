@@ -365,7 +365,8 @@
   "errors": {
     "noProducts": "للأسف، تعذّر تحميل المنتجات من الخادم!",
     "networkError": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-    "noTodos": "لا توجد مهام لعرضها"
+    "noTodos": "لا توجد مهام لعرضها",
+    "favoriteProductEmpty": "لا توجد منتجات مفضلة."
   },
   "manageYourAccount": {
     "title": "إدارة الحساب",

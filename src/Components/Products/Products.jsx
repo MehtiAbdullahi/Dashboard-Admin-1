@@ -29,17 +29,6 @@ function Products() {
     dispatch(getAllProducts());
   }, []);
 
-  const addFavoriteProduct = (id) => {
-    const product = products.find((p) => p.id === id);
-
-    dispatch(
-      toggleFavorite({
-        product,
-        userId: user.id,
-      }),
-    );
-  };
-
   const updateProductHandler = (e) => {
     e.preventDefault();
     dispatch(
@@ -140,7 +129,6 @@ function Products() {
               key={product.id}
               {...product}
               getIdAsProduct={getIdAsProduct}
-              addFavoriteProduct={addFavoriteProduct}
             />
           ))}
       </div>
