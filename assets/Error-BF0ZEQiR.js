@@ -1,1 +1,0 @@
-import{I as e,S as t,k as n,z as r}from"./index-Er3W5jcR.js";import{n as i}from"./tb-B3fno0sR.js";var a={"error-wrapper":`_error-wrapper_1ptwv_1`};e();var o=n();function s({titleKey:e}){let{t:n}=t();return(0,o.jsxs)(`div`,{className:a[`error-wrapper`],children:[(0,o.jsx)(i,{}),(0,o.jsx)(`span`,{children:n(`errors.${e}`)})]})}var c=s;export{c as t};

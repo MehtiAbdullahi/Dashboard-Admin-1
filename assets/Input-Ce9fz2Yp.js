@@ -1,0 +1,1 @@
+import{A as e,B as t,L as n}from"./index-CvJuKqQ7.js";n();var r=e();function i({type:e,label:t,id:n,...i}){return(0,r.jsxs)(r.Fragment,{children:[t&&(0,r.jsx)(`label`,{htmlFor:n,children:t}),(0,r.jsx)(`input`,{id:n,type:e,...i})]})}var a=i;export{a as t};

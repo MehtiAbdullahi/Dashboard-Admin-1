@@ -1,1 +1,0 @@
-import{k as e}from"./index-Er3W5jcR.js";var t=e();function n(){return(0,t.jsx)(`div`,{children:`Settings`})}var r=n;export{r as default};
