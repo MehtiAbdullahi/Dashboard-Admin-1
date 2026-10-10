@@ -30,8 +30,6 @@ export const getUser = createAsyncThunk(
       };
     });
 
-    console.log(usersWithUrlImg);
-
     return usersWithUrlImg;
   },
 );
@@ -62,7 +60,17 @@ const initialState = {
 const usersReducer = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    updateUserFavorites: (state, action) => {
+      const { userId, favorites } = action.payload;
+
+      const user = state.users.find((u) => u.id === userId);
+
+      if (user) {
+        user.favorite_products = favorites;
+      }
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -107,3 +115,4 @@ const usersReducer = createSlice({
 });
 
 export default usersReducer.reducer;
+export const { updateUserFavorites } = usersReducer.actions;

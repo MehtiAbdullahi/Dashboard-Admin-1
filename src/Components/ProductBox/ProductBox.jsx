@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import style from "./ProductBox.module.css";
 import Rating from "../Rating/Rating";
 import { useTranslation } from "react-i18next";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
+import classNames from "classnames";
+import { useSelector } from "react-redux";
+import Loader from "../Loader/Loader";
+import { FaSpinner } from "react-icons/fa";
 
 function ProductBox({
   id,
@@ -11,8 +17,15 @@ function ProductBox({
   rate,
   rate_count,
   getIdAsProduct,
+  addFavoriteProduct,
 }) {
   const { t } = useTranslation();
+  const { user } = useSelector((state) => state.auth);
+  const { users } = useSelector((state) => state.allUsers);
+  const { favoriteLoading } = useSelector((state) => state.products);
+
+  const { favorite_products } = users.find((u) => u.id === user.id);
+  const isFavorite = favorite_products.some((fp) => fp.id === id);
 
   return (
     <div className={style["product-box"]}>
@@ -55,25 +68,21 @@ function ProductBox({
             <h3>{title} </h3>
             <h4>${price}</h4>
           </div>
-          <div className={style["product-favorite__icon"]}>
+          <div
+            className={classNames(
+              style["product-favorite__icon"],
+              isFavorite && style["active"],
+            )}
+            onClick={() => addFavoriteProduct(id)}
+          >
             <span>
-              <svg
-                width="19"
-                height="17"
-                viewBox="0 0 19 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M9.18771 15.5148L16.3787 8.01483C17.6749 6.71969 17.9961 4.74012 17.176 3.10158V3.10158C16.5642 1.87849 15.4019 1.02398 14.052 0.80497C12.7021 0.585957 11.3293 1.02914 10.3622 1.99608L9.18771 3.16983L8.01321 1.99608C7.04616 1.02914 5.67328 0.585957 4.3234 0.80497C2.97352 1.02398 1.81118 1.87849 1.19946 3.10158V3.10158C0.380482 4.73942 0.701309 6.71755 1.99596 8.01258L9.18771 15.5148Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              {favoriteLoading ? (
+                <FaSpinner className={style["loading-icon"]} />
+              ) : isFavorite ? (
+                <FaHeart />
+              ) : (
+                <FaRegHeart />
+              )}
             </span>
           </div>
         </div>

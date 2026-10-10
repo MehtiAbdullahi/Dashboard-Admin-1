@@ -49,6 +49,11 @@
   text-wrap: nowrap;
 }
 
+.product__stars-rating div svg {
+  width: 2rem;
+  height: 100%;
+}
+
 .product__title-price h3 {
   font-size: 1.8rem;
   color: var(--text);
@@ -65,15 +70,40 @@
   margin-top: 1rem;
 }
 
+.product-favorite__icon {
+  cursor: pointer;
+}
+
+.product-favorite__icon.active svg {
+  color: red;
+}
+
 .product-favorite__icon span {
   background-color: var(--card-bg4);
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   border-radius: 50%;
 }
 
-.product-favorite__icon svg path {
-  stroke: var(--text);
+.product-favorite__icon svg {
+  width: 2rem;
+  height: 100%;
+}
+
+.loading-icon {
+  animation: spin 0.8s linear infinite;
+  color: var(--text) !important;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .product__edit-btn a {
@@ -155,6 +185,10 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
     font-size: 1.1rem;
     padding: 0.3rem 1rem;
   }
+  .product__stars-rating div svg {
+    width: 1.5rem;
+    height: 100%;
+  }
 }
 
 @media (max-width: 42.5rem) {
@@ -188,6 +222,10 @@ TODO -o-o-o-o-o-o-o-o-o-o-o-o-o-o-
   }
   .product__title-price h4 {
     font-size: 1rem;
+  }
+  .product__stars-rating div svg {
+    width: 1rem;
+    height: 100%;
   }
 }
 

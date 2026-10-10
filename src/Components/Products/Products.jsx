@@ -3,7 +3,7 @@ import style from "./Products.module.css";
 import ProductBox from "../ProductBox/ProductBox";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllProducts } from "../../Redux/Store/Products";
+import { toggleFavorite, getAllProducts } from "../../Redux/Store/Products";
 import HelpWidget from "../Help/Help";
 import Loader from "../Loader/Loader";
 import UpdateProductModal from "../UpdateProductModal/UpdateProductModal";
@@ -23,10 +23,22 @@ function Products() {
 
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.products);
+  const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
+
+  const addFavoriteProduct = (id) => {
+    const product = products.find((p) => p.id === id);
+
+    dispatch(
+      toggleFavorite({
+        product,
+        userId: user.id,
+      }),
+    );
+  };
 
   const updateProductHandler = (e) => {
     e.preventDefault();
@@ -128,6 +140,7 @@ function Products() {
               key={product.id}
               {...product}
               getIdAsProduct={getIdAsProduct}
+              addFavoriteProduct={addFavoriteProduct}
             />
           ))}
       </div>
