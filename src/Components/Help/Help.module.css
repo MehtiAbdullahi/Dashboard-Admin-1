@@ -244,6 +244,7 @@
   border-top: 0.1rem dashed rgba(245, 184, 65, 0.18);
   margin-top: 0.2rem;
   padding-top: 0.8rem;
+  white-space: pre-line;
 }
 
 @media (max-width: 48rem) {
