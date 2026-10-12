@@ -9,16 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Loader/Loader";
 import { FaSpinner } from "react-icons/fa";
 import { toggleFavorite } from "../../Redux/Store/Products";
+import EditProductModal from "../../EditProductModal/EditProductModal";
+import { useState } from "react";
 
-function ProductBox({
-  id,
-  title,
-  price,
-  image,
-  rate,
-  rate_count,
-  getIdAsProduct,
-}) {
+function ProductBox({ id, title, price, image, rate, rate_count }) {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalId, setModalId] = useState();
+
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -39,10 +36,23 @@ function ProductBox({
     );
   };
 
+  const openModalHandler = (id) => {
+    setModalId(id);
+    setOpenModal(true);
+  };
+
   return (
-    <div className={style["product-box"]}>
-      <div className={style["product-box__top"]}>
-        {/* <div className={style["right-left__arrow"]}>
+    <>
+      {openModal && (
+        <EditProductModal
+          product={modalId}
+          closeModalUpdate={() => setOpenModal(false)}
+          // onSave={handleSave}
+        />
+      )}
+      <div className={style["product-box"]}>
+        <div className={style["product-box__top"]}>
+          {/* <div className={style["right-left__arrow"]}>
           <span className={style["arrow-right"]}>
             <svg
               width="9"
@@ -72,47 +82,48 @@ function ProductBox({
             </svg>
           </span>
         </div> */}
-        <img src={image} alt="" />
-      </div>
-      <div className={style["product-box__bottom"]}>
-        <div className={style["product-info"]}>
-          <div className={style["product__title-price"]}>
-            <h3>{title} </h3>
-            <h4>${price}</h4>
-          </div>
-          <div
-            className={classNames(
-              style["product-favorite__icon"],
-              isFavorite && style["active"],
-            )}
-            onClick={() => addFavoriteProduct(id)}
-          >
-            <span>
-              {favoriteLoading ? (
-                <FaSpinner className={style["loading-icon"]} />
-              ) : isFavorite ? (
-                <FaHeart />
-              ) : (
-                <FaRegHeart />
+          <img src={image} alt="" />
+        </div>
+        <div className={style["product-box__bottom"]}>
+          <div className={style["product-info"]}>
+            <div className={style["product__title-price"]}>
+              <h3>{title} </h3>
+              <h4>${price}</h4>
+            </div>
+            <div
+              className={classNames(
+                style["product-favorite__icon"],
+                isFavorite && style["active"],
               )}
+              onClick={() => addFavoriteProduct(id)}
+            >
+              <span>
+                {favoriteLoading ? (
+                  <FaSpinner className={style["loading-icon"]} />
+                ) : isFavorite ? (
+                  <FaHeart />
+                ) : (
+                  <FaRegHeart />
+                )}
+              </span>
+            </div>
+          </div>
+          <div className={style["product__stars-rating"]}>
+            <div className={style["product-stars"]}>
+              <Rating rate={rate} />
+            </div>
+            <span className={style["product__rating-number"]}>
+              ( {rate_count} )
             </span>
           </div>
-        </div>
-        <div className={style["product__stars-rating"]}>
-          <div className={style["product-stars"]}>
-            <Rating rate={rate} />
+          <div className={style["product__edit-btn"]}>
+            <Link onClick={() => openModalHandler(id)}>
+              <span>{t("products.editProduct")}</span>
+            </Link>
           </div>
-          <span className={style["product__rating-number"]}>
-            ( {rate_count} )
-          </span>
-        </div>
-        <div className={style["product__edit-btn"]}>
-          <Link onClick={() => getIdAsProduct(id)}>
-            <span>{t("products.editProduct")}</span>
-          </Link>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

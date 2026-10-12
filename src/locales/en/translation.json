@@ -127,7 +127,26 @@
     "featuredTitle": "Enjoy free home delivery this summer.",
     "featuredText": "Designer shirts – choose from this season's most fashionable designer shirts.",
     "getStarted": "Get Started",
-    "editProduct": "Edit Product"
+    "editProduct": "Edit Product",
+    "productEditBox": {
+      "title": "Edit Product",
+      "caption": "Update product information",
+      "imgTitle": "Product Image",
+      "imgCaption": "JPG or PNG formats, max 2MB",
+      "imgBtn": "Change Image",
+      "productTitle": "Product Title",
+      "productInputPlaceholder": "Enter the product title.",
+      "productPrice": "Price",
+      "productCategory": "Category",
+      "titleOption": "Select",
+      "titleOption1": "Clothing",
+      "titleOption2": "Electronics",
+      "titleOption3": "Home Appliances",
+      "productDesTitle": "Description",
+      "productDesPlaceholder": "Product description...",
+      "saveBtn": "Save Changes",
+      "cancelBtn": "Cancel"
+    }
   },
   "usersList": {
     "title": "All Users",

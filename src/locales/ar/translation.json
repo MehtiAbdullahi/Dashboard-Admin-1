@@ -127,7 +127,26 @@
     "featuredTitle": "استمتع بالتوصيل المجاني إلى المنزل هذا الصيف.",
     "featuredText": "قمصان مصممين – اختر من بين أحدث صيحات الموضة لهذا الموسم.",
     "getStarted": "ابدأ الآن",
-    "editProduct": "تعديل المنتج"
+    "editProduct": "تعديل المنتج",
+    "productEditBox": {
+      "title": "تعديل المنتج",
+      "caption": "تحديث معلومات المنتج",
+      "imgTitle": "صورة المنتج",
+      "imgCaption": "صيغ JPG أو PNG، بحد أقصى 2 ميجابايت",
+      "imgBtn": "تغيير الصورة",
+      "productTitle": "اسم المنتج",
+      "productInputPlaceholder": "أدخل عنوان المنتج.",
+      "productPrice": "السعر",
+      "productCategory": "الفئة",
+      "titleOption": "اختر",
+      "titleOption1": "الملابس",
+      "titleOption2": "الإلكترونيات",
+      "titleOption3": "الأجهزة المنزلية",
+      "productDesTitle": "الوصف",
+      "productDesPlaceholder": "وصف المنتج...",
+      "saveBtn": "حفظ التغييرات",
+      "cancelBtn": "إلغاء"
+    }
   },
   "usersList": {
     "title": "جميع المستخدمين",

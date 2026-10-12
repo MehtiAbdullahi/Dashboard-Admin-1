@@ -127,7 +127,26 @@
     "featuredTitle": "در این تابستان از تحویل رایگان در منزل لذت ببرید.",
     "featuredText": "پیراهن‌های طراحان – از میان پیراهن‌های مد روزِ طراحان انتخاب کنید.",
     "getStarted": "شروع کنید",
-    "editProduct": "ویرایش محصول"
+    "editProduct": "ویرایش محصول",
+    "productEditBox": {
+      "title": "ویرایش محصول",
+      "caption": "اطلاعات محصول را بروزرسانی کنید",
+      "imgTitle": "تصویر محصول",
+      "imgCaption": "فرمت‌های JPG یا PNG، حداکثر ۲ مگابایت",
+      "imgBtn": "تغییر تصویر",
+      "productTitle": "عنوان محصول",
+      "productInputPlaceholder": "عنوان محصول را وارد کنید",
+      "productPrice": "قیمت",
+      "productCategory": "دسته بندی",
+      "titleOption": "انتخاب کنید",
+      "titleOption1": "پوشاک",
+      "titleOption2": "الکترونیک",
+      "titleOption3": "لوازم منزل",
+      "productDesTitle": "توضیحات",
+      "productDesPlaceholder": "توضیحات محصول...",
+      "saveBtn": "ذخیره تغییرات",
+      "cancleBtn": "انصراف"
+    }
   },
   "usersList": {
     "title": "همه کاربران",
