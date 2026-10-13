@@ -1,9 +1,12 @@
 .signup-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
   background: url("/public/image/Bg/Shape.png") no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%;
-  height: 100vh;
   font-weight: 300;
 }
 
@@ -12,19 +15,22 @@
 }
 
 .signup-page {
+  box-sizing: border-box;
   display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5rem;
+  min-height: 100%;
+  padding: clamp(2rem, 4vh, 4rem) clamp(1.6rem, 0.8rem + 4vw, 5rem);
 }
 
 .signup-box__wrapper {
+  container-type: inline-size;
+  box-sizing: border-box;
   width: 100%;
-  max-width: 36.7rem;
-  background-color: var(--card-bg);
-  padding: 2rem 3rem 4rem 3rem;
+  max-width: clamp(36.7rem, 30rem + 6vw, 48rem);
+  margin: auto;
+  padding: 2rem clamp(2rem, 1.2rem + 1.6vw, 3.6rem)
+    clamp(2.4rem, 1.6rem + 1.6vw, 4rem);
   border-radius: 1rem;
+  background-color: var(--card-bg);
 }
 
 .signup-box__top {
@@ -32,26 +38,28 @@
 }
 
 .signup-box__top h2 {
-  font-size: 3rem;
+  margin: 2rem 0 1rem;
+  font-size: clamp(2.4rem, 1.8rem + 3cqw, 3rem);
   font-weight: 400;
-  margin: 2rem 0 1rem 0;
+  line-height: 1.4;
 }
 
 .signup-box__top p {
-  font-size: 1.2rem;
   margin-top: 1rem;
   color: var(--text);
+  font-size: clamp(1.2rem, 0.9rem + 1.3cqw, 1.4rem);
+  line-height: 1.6;
   opacity: 60%;
 }
 
 .signup-form__wrapper form {
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
 }
 
 .signup-form__wrapper form > div label {
- font-size: 1.2rem;
+  font-size: clamp(1.2rem, 0.9rem + 1.3cqw, 1.4rem);
 }
 
 .signup-form__email-wrapper {
@@ -61,12 +69,14 @@
 }
 
 .signup-form__email-wrapper p {
-  font-size: 1.2rem;
-  margin-right: 0.5rem;
-  font-weight: 600;
-  color: red;
   display: flex;
   align-items: center;
+  gap: 0.4rem;
+  margin-inline-start: 0.5rem;
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .signup-form__username-wrapper {
@@ -74,20 +84,21 @@
 }
 
 .signup-form__pass-wrapper p {
-  font-size: 1.4rem;
-  margin-top: 1rem;
-  color: red;
   display: flex;
   align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: red;
+  font-size: clamp(1.2rem, 0.9rem + 1.3cqw, 1.4rem);
+  line-height: 1.5;
 }
 
 .signup-form__pass-input {
   margin-bottom: 0.5rem;
-  color: var(--text);
 }
 
 .signup-form__pass-input:focus + .signup-form__pass-rules {
-  height: 12rem;
+  max-height: 24rem;
   opacity: 1;
   visibility: visible;
 }
@@ -96,33 +107,39 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-right: 1rem;
-  transition: all 0.15s ease-in;
+  max-height: 0;
+  margin-inline-end: 1rem;
   overflow: hidden;
-
-  height: 0;
   opacity: 0;
   visibility: hidden;
-}
-
-.signup-form__pass-labels {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  transition:
+    max-height 0.15s ease-in,
+    opacity 0.15s ease-in,
+    visibility 0.15s ease-in;
 }
 
 .signup-form__username-input,
 .signup-form__email-input,
 .signup-form__pass-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4.4rem;
   margin-top: 1rem;
-  background-color: var(--card-bg2);
-  outline: none;
+  padding: 0 1rem 0.1rem;
   border: 0.1rem solid var(--border4);
-  width: 94%;
-  height: 4rem;
-  padding: 0 1rem 0.1rem 1rem;
   border-radius: 0.5rem;
+  outline: none;
+  background-color: var(--card-bg2);
+  color: var(--text);
+  font-size: 1.6rem;
   font-weight: 300;
+}
+
+.signup-form__username-input:focus-visible,
+.signup-form__email-input:focus-visible,
+.signup-form__pass-input:focus-visible {
+  outline: 0.2rem solid var(--primary);
+  outline-offset: 0.1rem;
 }
 
 .signup-form__username-input.error,
@@ -139,27 +156,37 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin: 1rem 0;
   color: var(--text);
   opacity: 60%;
-  margin: 1rem 0;
 }
 
 .signup-form__pass-remember span {
   font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 .signup-form__btn {
-  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  margin: 3rem 0 1rem;
+  padding: 0.8rem 1.2rem;
   border: none;
-  outline: none;
-  color: var(--text-white);
-  font-weight: 400;
-  padding: 0.8rem 0;
   border-radius: 1rem;
-  font-size: 2rem;
+  background-color: var(--primary);
+  color: var(--text-white);
+  font-size: clamp(1.6rem, 1.2rem + 1.6cqw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
   cursor: pointer;
-  transition: all ease-in 0.1s;
-  margin: 3rem 0 1rem 0;
+  transition: background-color 0.1s ease-in;
+}
+
+.signup-form__btn:focus-visible {
+  outline: 0.2rem solid var(--primary);
+  outline-offset: 0.2rem;
 }
 
 [dir="rtl"] .signup-form__btn {
@@ -167,17 +194,45 @@
   font-weight: 700;
 }
 
-.signup-form__btn:hover {
-  background-color: var(--text-8);
-}
-
 .signup-form__signup-text {
-  text-align: center;
-  font-size: 1.4rem;
   margin-top: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .signup-form__signup-text a {
   color: var(--text-8);
   text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .signup-form__btn:hover {
+    background-color: var(--text-8);
+  }
+}
+
+@media (max-height: 50rem) {
+  .signup-form__wrapper form {
+    margin-top: 2rem;
+  }
+
+  .signup-form__username-wrapper {
+    margin: 1.4rem 0;
+  }
+
+  .signup-form__btn {
+    margin-top: 2rem;
+  }
+
+  .signup-box__top h2 {
+    margin-top: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signup-form__btn,
+  .signup-form__pass-rules {
+    transition: none;
+  }
 }

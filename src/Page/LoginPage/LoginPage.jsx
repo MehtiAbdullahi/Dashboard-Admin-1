@@ -1,23 +1,30 @@
+import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import Input from "../../Components/Input/Input";
-import style from "./LoginPage.module.css";
-import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
-import HelpWidget from "../../Components/Help/Help";
-import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../Redux/Store/authSlice";
-import AlertError from "../../Components/AlertError/AlertError";
+import { useTranslation } from "react-i18next";
 import { AnimatePresence } from "framer-motion";
+import Swal from "sweetalert2";
 import classNames from "classnames";
-import { testEmail } from "../../Validators/regex";
 import { IoAlertSharp } from "react-icons/io5";
+import style from "./LoginPage.module.css";
+import Input from "../../Components/Input/Input";
+import HelpWidget from "../../Components/Help/Help";
+import AlertError from "../../Components/AlertError/AlertError";
 import Loader from "../../Components/Loader/Loader";
+import { loginUser } from "../../Redux/Store/authSlice";
+import { testEmail } from "../../Validators/regex";
 
 const adminAccount = {
   email: "lekebaw235@deertees.com",
   password: "09876mM%",
 };
+
+const helpFaq = [
+  {
+    q: "خیلی مهم!",
+    a: "برای ورود به داشبورد باید با اکانت ادمین لاگین کنید و لازم نیست چیزی رو بنویسید.",
+  },
+];
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -72,14 +79,7 @@ function LoginPage() {
 
   return (
     <>
-      <HelpWidget
-        FAQ={[
-          {
-            q: "خیلی مهم!",
-            a: "برای ورود به داشبورد باید با اکانت ادمین لاگین کنید و لازم نیست چیزی رو بنویسید.",
-          },
-        ]}
-      />
+      <HelpWidget FAQ={helpFaq} />
       <AnimatePresence>
         {loading && (
           <div className="loader-wrapper">
@@ -92,8 +92,8 @@ function LoginPage() {
           {hasError.alert && (
             <AlertError
               duration={4000}
-              className={"alertLogin"}
-              type={`login`}
+              className="alertLogin"
+              type="login"
               setHasError={setHasError}
               keyError="alert"
             />
@@ -103,8 +103,8 @@ function LoginPage() {
           {hasError.invalidCredentials && (
             <AlertError
               duration={4000}
-              className={"alertLogin"}
-              type={`invalidCredentials`}
+              className="alertLogin"
+              type="invalidCredentials"
               setHasError={setHasError}
               keyError="invalidCredentials"
             />
@@ -117,13 +117,15 @@ function LoginPage() {
               <p>{t("login.text")}</p>
             </div>
             <div className={style["login-form__wrapper"]}>
-              <form action="" onSubmit={handleLogin}>
+              <form onSubmit={handleLogin}>
                 <div className={style["login-form__email-wrapper"]}>
                   <Input
-                    type={"text"}
-                    id={"inputEmail"}
+                    type="text"
+                    id="inputEmail"
                     label={t("login.lableEmail")}
-                    placeholder={"esteban_schiller@gmail.com"}
+                    placeholder="esteban_schiller@gmail.com"
+                    inputMode="email"
+                    autoComplete="email"
                     className={classNames(
                       style["login-form__email-input"],
                       hasError.email && !email ? style["error"] : "",
@@ -146,8 +148,9 @@ function LoginPage() {
                     </span>
                   </div>
                   <Input
-                    type={"password"}
-                    id={"inputPassword"}
+                    type="password"
+                    id="inputPassword"
+                    autoComplete="current-password"
                     className={classNames(
                       style["login-form__pass-input"],
                       hasError.password && !password ? style["error"] : "",
@@ -156,7 +159,7 @@ function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <div className={style["login-form__pass-remember"]}>
-                    <Input type={"checkbox"} />
+                    <Input type="checkbox" />
                     <span>{t("login.textRememberPass")}</span>
                   </div>
                 </div>

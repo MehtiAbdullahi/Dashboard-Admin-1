@@ -1,25 +1,22 @@
-import { Link, useNavigate } from "react-router-dom";
-import style from "./SignUpPage.module.css";
-import Input from "../../Components/Input/Input";
-// import HelpWidget from "../../Components/Help/Help";
-import { useTranslation } from "react-i18next";
-import { SupabaseClient } from "@supabase/supabase-js/dist/index.cjs";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signUpUser } from "../../Redux/Store/authSlice";
-import AlertError from "../../Components/AlertError/AlertError";
+import { useTranslation } from "react-i18next";
 import { AnimatePresence } from "framer-motion";
 import classNames from "classnames";
-import { testEmail, testPassword } from "../../Validators/regex";
-import Loader from "../../Components/Loader/Loader";
 import { IoAlertSharp } from "react-icons/io5";
+import style from "./SignUpPage.module.css";
+import Input from "../../Components/Input/Input";
+import AlertError from "../../Components/AlertError/AlertError";
+import Loader from "../../Components/Loader/Loader";
 import RulePassword from "../../Components/RulePassword/RulePassword";
+import { signUpUser } from "../../Redux/Store/authSlice";
+import { testEmail, testPassword } from "../../Validators/regex";
 
 function SignUpPage() {
   const { loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -56,12 +53,8 @@ function SignUpPage() {
             ).unwrap();
             setHasError((prev) => ({ ...prev, successSignUp: true }));
           } catch (error) {
-            // if (error === 'email rate limit exceeded') {
-            //   setHasError(prev => ({...prev, limitEmail: true}))
-            // }
             console.log(error);
           }
-          setHasError((prev) => ({ ...prev, validEmail: false }));
           setHasError((prev) => ({ ...prev, validEmail: false }));
         } else {
           setHasError((prev) => ({ ...prev, validPassword: true }));
@@ -113,8 +106,8 @@ function SignUpPage() {
         <AnimatePresence>
           {hasError.alert && (
             <AlertError
-              className={"alertSignUp"}
-              type={`login`}
+              className="alertSignUp"
+              type="login"
               setHasError={setHasError}
               keyError="alert"
             />
@@ -123,8 +116,8 @@ function SignUpPage() {
         <AnimatePresence>
           {hasError.invalidCredentials && (
             <AlertError
-              className={"alertSignUp"}
-              type={`invalidCredentials`}
+              className="alertSignUp"
+              type="invalidCredentials"
               setHasError={setHasError}
               keyError="invalidCredentials"
             />
@@ -133,8 +126,8 @@ function SignUpPage() {
         <AnimatePresence>
           {hasError.successSignUp && (
             <AlertError
-              className={"alertSignUp"}
-              type={`successSignUp`}
+              className="alertSignUp"
+              type="successSignUp"
               setHasError={setHasError}
               keyError="successSignUp"
             />
@@ -147,13 +140,15 @@ function SignUpPage() {
               <p>{t("signup.text")}</p>
             </div>
             <div className={style["signup-form__wrapper"]}>
-              <form action="" onSubmit={(e) => createUserHandler(e)}>
+              <form onSubmit={createUserHandler}>
                 <div className={style["signup-form__email-wrapper"]}>
                   <Input
-                    type={"text"}
-                    id={"inputEmail"}
+                    type="text"
+                    id="inputEmail"
                     label={t("signup.lableEmail")}
-                    placeholder={"esteban_schiller@gmail.com"}
+                    placeholder="esteban_schiller@gmail.com"
+                    inputMode="email"
+                    autoComplete="email"
                     className={classNames(
                       style["signup-form__email-input"],
                       hasError.email && !email ? style["error"] : "",
@@ -170,10 +165,11 @@ function SignUpPage() {
                 </div>
                 <div className={style["signup-form__username-wrapper"]}>
                   <Input
-                    type={"text"}
-                    id={"Username"}
+                    type="text"
+                    id="Username"
                     label={t("signup.lableUsername")}
                     placeholder={t("signup.placeHolderInputUsername")}
+                    autoComplete="username"
                     className={classNames(
                       style["signup-form__username-input"],
                       hasError.username && !username ? style["error"] : "",
@@ -187,6 +183,7 @@ function SignUpPage() {
                     type="password"
                     id="inputPassword"
                     label={t("signup.lablePass")}
+                    autoComplete="new-password"
                     className={classNames(
                       style["signup-form__pass-input"],
                       hasError.password && !password ? style["error"] : "",
@@ -205,7 +202,7 @@ function SignUpPage() {
                   )}
                 </div>
                 <div className={style["signup-form__pass-remember"]}>
-                  <Input type={"checkbox"} />
+                  <Input type="checkbox" />
                   <span>{t("signup.textTermsConditions")}</span>
                 </div>
                 <button type="submit" className={style["signup-form__btn"]}>
