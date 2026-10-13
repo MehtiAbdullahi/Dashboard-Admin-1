@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-
-import style from "./Calender.module.css";
-import { useTranslation } from "react-i18next";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import CalenderLibrary from "../CalenderLibrary/CalenderLibrary";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import style from "./Calender.module.css";
+import CalenderLibrary from "../CalenderLibrary/CalenderLibrary";
 
 function Calender() {
   const { t } = useTranslation();
@@ -24,10 +22,15 @@ function Calender() {
             <h3>{t("calender.events.title")}</h3>
 
             <div className={style["calender-events"]}>
-              {events.map(({ type }) => (
-                <div className={style["calender-event"]}>
+              {events.map(({ id, type }, index) => (
+                <div key={id ?? index} className={style["calender-event"]}>
                   <div className={style["event-message__side-left"]}>
-                    <img src="image/event-image.png" alt="" />
+                    <img
+                      src="image/event-image.png"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
 
                   <div className={style["event-message__side-right"]}>
@@ -45,9 +48,24 @@ function Calender() {
                     </span>
 
                     <div className={style["event-participants"]}>
-                      <img src="image/Man Image.png" alt="" />
-                      <img src="image/Man Image-1.png" alt="" />
-                      <img src="image/Man Image-2.png" alt="" />
+                      <img
+                        src="image/Man Image.png"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <img
+                        src="image/Man Image-1.png"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <img
+                        src="image/Man Image-2.png"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
                       <span className={style["event__participants-more"]}>
                         26+
                       </span>
@@ -56,6 +74,7 @@ function Calender() {
                 </div>
               ))}
             </div>
+
             <div className={style["calender-event__btn"]}>
               <Link>
                 <span>{t("calender.events.btn2")}</span>

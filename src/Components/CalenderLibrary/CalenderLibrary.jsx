@@ -1,10 +1,17 @@
-import "./CalenderLibrary.module.css";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+
+const calendarPlugins = [dayGridPlugin, timeGridPlugin, interactionPlugin];
+
+const headerToolbar = {
+  left: "today",
+  center: "prev,title,next",
+  right: "dayGridMonth,timeGridWeek,timeGridDay",
+};
 
 function CalenderLibrary() {
   const { t } = useTranslation();
@@ -12,19 +19,15 @@ function CalenderLibrary() {
 
   return (
     <FullCalendar
-      plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+      plugins={calendarPlugins}
       initialView="dayGridMonth"
       events={events}
-      headerToolbar={{
-        left: "today",
-        center: "prev,title,next",
-        right: "dayGridMonth,timeGridWeek,timeGridDay",
-      }}
+      headerToolbar={headerToolbar}
       buttonText={{
-        today: `${t("calender.calender.today")}`,
-        month: `${t("calender.calender.month")}`,
-        week: `${t("calender.calender.week")}`,
-        day: `${t("calender.calender.day")}`,
+        today: t("calender.calender.today"),
+        month: t("calender.calender.month"),
+        week: t("calender.calender.week"),
+        day: t("calender.calender.day"),
       }}
     />
   );
