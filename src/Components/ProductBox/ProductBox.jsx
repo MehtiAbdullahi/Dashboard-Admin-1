@@ -45,7 +45,7 @@ function ProductBox({ id, title, price, image, rate, rate_count }) {
     <>
       {openModal && (
         <EditProductModal
-          product={modalId}
+          productId={modalId}
           closeModalUpdate={() => setOpenModal(false)}
           // onSave={handleSave}
         />

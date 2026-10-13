@@ -71,6 +71,27 @@ export const toggleFavorite = createAsyncThunk(
   },
 );
 
+// export const updateProduct = createAsyncThunk(
+//   "update/updateProduct",
+//   async ({ id, productData }, { rejectWithValue }) => {
+//     const { data, error } = await supabase
+//       .from("products")
+//       .update(productData)
+//       .eq("id", id)
+//       .select()
+//       .single();
+
+//     console.log("Data ->", data);
+//     console.log("Product Data ->", productData);
+
+//     if (error) {
+//       return rejectWithValue(error.message);
+//     }
+
+//     return data;
+//   },
+// );
+
 const initialState = {
   products: [],
   loading: false,
@@ -81,7 +102,17 @@ const initialState = {
 const productsReducer = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    updateProduct(state, action) {
+      const { id, changes } = action.payload;
+
+      const product = state.products.find((p) => p.id === id);
+
+      if (product) {
+        Object.assign(product, changes);
+      }
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -112,3 +143,4 @@ const productsReducer = createSlice({
 });
 
 export default productsReducer.reducer;
+export const { updateProduct } = productsReducer.actions;

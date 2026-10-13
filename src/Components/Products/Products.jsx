@@ -12,64 +12,17 @@ import { useTranslation } from "react-i18next";
 
 function Products() {
   const { t } = useTranslation();
-  const [showUpdateProduct, setShowUpdateProduct] = useState(false);
-  const [productID, setProductID] = useState("");
-
-  const [inputTitle, setInputTitle] = useState("");
-  const [inputPrice, setInputPrice] = useState("");
-  const [inputDescription, setInputDescription] = useState("");
-  const [inputCategory, setInputCategory] = useState("");
-  const [inputImage, setInputImage] = useState("");
 
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.products);
-  const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
 
-  const updateProductHandler = (e) => {
-    e.preventDefault();
-    dispatch(
-      updateProduct({
-        uel: `https://fakestoreapi.com/products/${productID}`,
-        ProductData: {
-          id: productID,
-          title: inputTitle,
-          price: inputPrice,
-          description: inputDescription,
-          category: inputCategory,
-          image: inputImage,
-        },
-      }),
-    );
-    changeStatusShowModal();
-  };
-
-  const getIdAsProduct = (id) => {
-    setProductID(id);
-    changeStatusShowModal();
-  };
-
-  const changeStatusShowModal = () => {
-    setShowUpdateProduct((prev) => !prev);
-  };
 
   return (
     <>
-      {/* {showUpdateProduct ? (
-        <UpdateProductModal
-          changeStatusShowModal={changeStatusShowModal}
-          updateProductHandler={updateProductHandler}
-          setInputTitle={setInputTitle}
-          setInputPrice={setInputPrice}
-          setInputDescription={setInputDescription}
-          setInputCategory={setInputCategory}
-        />
-      ) : (
-        ""
-      )} */}
       <HelpWidget
         FAQ={[
           {
@@ -128,7 +81,6 @@ function Products() {
             <ProductBox
               key={product.id}
               {...product}
-              getIdAsProduct={getIdAsProduct}
             />
           ))}
       </div>
