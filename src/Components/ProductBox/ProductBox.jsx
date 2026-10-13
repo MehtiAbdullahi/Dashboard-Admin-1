@@ -12,7 +12,15 @@ import { toggleFavorite } from "../../Redux/Store/Products";
 import EditProductModal from "../../EditProductModal/EditProductModal";
 import { useState } from "react";
 
-function ProductBox({ id, title, price, image, rate, rate_count }) {
+function ProductBox({
+  id,
+  title,
+  price,
+  image,
+  rate,
+  rate_count,
+  hasEditBtn = true,
+}) {
   const [openModal, setOpenModal] = useState(false);
   const [modalId, setModalId] = useState();
 
@@ -116,11 +124,13 @@ function ProductBox({ id, title, price, image, rate, rate_count }) {
               ( {rate_count} )
             </span>
           </div>
-          <div className={style["product__edit-btn"]}>
-            <Link onClick={() => openModalHandler(id)}>
-              <span>{t("products.editProduct")}</span>
-            </Link>
-          </div>
+          {hasEditBtn && (
+            <div className={style["product__edit-btn"]}>
+              <Link onClick={() => openModalHandler(id)}>
+                <span>{t("products.editProduct")}</span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>

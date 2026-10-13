@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import style from "./Products.module.css";
 import ProductBox from "../ProductBox/ProductBox";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { toggleFavorite, getAllProducts } from "../../Redux/Store/Products";
-import HelpWidget from "../Help/Help";
+import { useEffect } from "react";
+import { getAllProducts } from "../../Redux/Store/Products";
 import Loader from "../Loader/Loader";
 import UpdateProductModal from "../UpdateProductModal/UpdateProductModal";
 import Error from "../ErrorComponent/Error";
@@ -20,17 +19,8 @@ function Products() {
     dispatch(getAllProducts());
   }, []);
 
-
   return (
     <>
-      <HelpWidget
-        FAQ={[
-          {
-            q: "چرا هیچ محصولی نیست؟",
-            a: "اگر محصولی لود نشده است از فیلتر شکن استفاده کنید",
-          },
-        ]}
-      />
       <h1>{t("products.title")}</h1>
       <div className={style["featured-wrapper"]}>
         <div className={style["featured-texts"]}>
@@ -78,10 +68,7 @@ function Products() {
         {!loading &&
           !error &&
           products?.map((product) => (
-            <ProductBox
-              key={product.id}
-              {...product}
-            />
+            <ProductBox key={product.id} {...product} />
           ))}
       </div>
     </>

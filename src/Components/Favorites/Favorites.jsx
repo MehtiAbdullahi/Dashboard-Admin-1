@@ -33,7 +33,7 @@ function Favorites() {
         {!loading &&
           !error &&
           favorite_products &&
-          favorite_products.map((product) => <ProductBox {...product} />)}
+          favorite_products.map((product) => <ProductBox {...product} hasEditBtn={false}/>)}
         {favorite_products.length === 0 && <Error titleKey={`favoriteProductEmpty`} />}
       </div>
     </>
