@@ -64,26 +64,6 @@ function LoginPage() {
     }
   };
 
-  useEffect(() => {
-    const hasActiveError = Object.values(hasError).some(Boolean);
-
-    if (!hasActiveError) {
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setHasError({
-        alert: false,
-        email: false,
-        password: false,
-        validEmail: false,
-        invalidCredentials: false,
-      });
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [hasError]);
-
   const loginWithAdminAccount = () => {
     dispatch(loginUser(adminAccount));
   };
@@ -108,26 +88,30 @@ function LoginPage() {
         )}
       </AnimatePresence>
       <div className={style["login-wrapper"]}>
+        <AnimatePresence>
+          {hasError.alert && (
+            <AlertError
+              duration={4000}
+              className={"alertLogin"}
+              type={`login`}
+              setHasError={setHasError}
+              keyError="alert"
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {hasError.invalidCredentials && (
+            <AlertError
+              duration={4000}
+              className={"alertLogin"}
+              type={`invalidCredentials`}
+              setHasError={setHasError}
+              keyError="invalidCredentials"
+            />
+          )}
+        </AnimatePresence>
         <div className={style["login-page"]}>
           <div className={style["login-box__wrapper"]}>
-            <AnimatePresence>
-              {hasError.alert && (
-                <AlertError
-                  type={`login`}
-                  setHasError={setHasError}
-                  keyError="alert"
-                />
-              )}
-            </AnimatePresence>
-            <AnimatePresence>
-              {hasError.invalidCredentials && (
-                <AlertError
-                  type={`invalidCredentials`}
-                  setHasError={setHasError}
-                  keyError="invalidCredentials"
-                />
-              )}
-            </AnimatePresence>
             <div className={style["login-box__top"]}>
               <h2>{t("login.title")}</h2>
               <p>{t("login.text")}</p>

@@ -18,7 +18,9 @@ function ToDo() {
   const { t } = useTranslation();
 
   const [showInputSearch, setShowInputSearch] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = useState({
+    todo: false,
+  });
   const [inputValue, setInputValue] = useState("");
 
   const dispatch = useDispatch();
@@ -28,25 +30,21 @@ function ToDo() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  useEffect(() => {
-    if (hasError) {
-      const timer = setTimeout(() => {
-        setHasError(false);
-      }, 5000);
-
-      return () => clearTimeout(timer); // پاکسازی مهمه!
-    }
-  }, [hasError]);
-
   const changeStatusShow = () => {
     setShowInputSearch((prev) => !prev);
   };
 
   const createNewTodo = () => {
     if (inputValue.length === 0) {
-      setHasError(true);
+      setHasError((p) => ({
+        ...p,
+        todo: true,
+      }));
     } else {
-      setHasError(false);
+      setHasError((p) => ({
+        ...p,
+        todo: false,
+      }));
 
       const newTodo = {
         id: crypto.randomUUID(),
@@ -63,7 +61,14 @@ function ToDo() {
   return (
     <>
       <AnimatePresence>
-        {hasError && <AlertError type={`todo`} setHasError={setHasError} />}
+        {hasError.todo && (
+          <AlertError
+            duration={4000}
+            keyError="todo"
+            type="todo"
+            setHasError={setHasError}
+          />
+        )}
       </AnimatePresence>
       <div className={style["todo-header"]}>
         <h1>{t("todo.title")}</h1>

@@ -104,49 +104,44 @@ function SignUpPage() {
 
   return (
     <>
-      {/* <HelpWidget
-        FAQ={[
-          {
-            q: "چرا نمیشه اکانت ساخت؟",
-            a: "دوست عزیز در این پروژه فعلا بک اند در دسترس نیست",
-          },
-        ]}
-      /> */}
       {loading && (
         <div className="loader">
           <Loader />
         </div>
       )}
       <div className={style["signup-wrapper"]}>
+        <AnimatePresence>
+          {hasError.alert && (
+            <AlertError
+              className={"alertSignUp"}
+              type={`login`}
+              setHasError={setHasError}
+              keyError="alert"
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {hasError.invalidCredentials && (
+            <AlertError
+              className={"alertSignUp"}
+              type={`invalidCredentials`}
+              setHasError={setHasError}
+              keyError="invalidCredentials"
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {hasError.successSignUp && (
+            <AlertError
+              className={"alertSignUp"}
+              type={`successSignUp`}
+              setHasError={setHasError}
+              keyError="successSignUp"
+            />
+          )}
+        </AnimatePresence>
         <div className={style["signup-page"]}>
           <div className={style["signup-box__wrapper"]}>
-            <AnimatePresence>
-              {hasError.alert && (
-                <AlertError
-                  type={`login`}
-                  setHasError={setHasError}
-                  keyError="alert"
-                />
-              )}
-            </AnimatePresence>
-            <AnimatePresence>
-              {hasError.invalidCredentials && (
-                <AlertError
-                  type={`invalidCredentials`}
-                  setHasError={setHasError}
-                  keyError="invalidCredentials"
-                />
-              )}
-            </AnimatePresence>
-            <AnimatePresence>
-              {hasError.successSignUp && (
-                <AlertError
-                  type={`successSignUp`}
-                  setHasError={setHasError}
-                  keyError="successSignUp"
-                />
-              )}
-            </AnimatePresence>
             <div className={style["signup-box__top"]}>
               <h2>{t("signup.title")}</h2>
               <p>{t("signup.text")}</p>

@@ -1,79 +1,115 @@
-import { MdErrorOutline } from "react-icons/md";
-import style from "./AlertError.module.css";
+import { motion, useReducedMotion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { MdErrorOutline, MdWarningAmber, MdClose } from "react-icons/md";
+import cx from "classnames";
+import style from "./AlertError.module.css";
 
-function AlertError({ type, keyError, err, warning, setHasError }) {
+const DURATION = 5000;
+
+function AlertError({
+  type,
+  keyError,
+  err,
+  warning = false,
+  setHasError,
+  duration = DURATION,
+  className,
+}) {
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
+
+  const variant = warning ? "warning" : "error";
+  const Icon = warning ? MdWarningAmber : MdErrorOutline;
+
+  const handleClose = () =>
+    setHasError((prev) => ({ ...prev, [keyError]: false }));
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      y: reduceMotion ? 0 : -16,
+      scale: reduceMotion ? 1 : 0.96,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 380,
+        damping: 28,
+        staggerChildren: 0.07,
+        delayChildren: 0.08,
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: reduceMotion ? 1 : 0.94,
+      height: 0,
+      marginBlockEnd: 0,
+      transition: { duration: 0.22, ease: "easeInOut" },
+    },
+  };
+
+  const iconVariants = {
+    hidden: { scale: 0, rotate: reduceMotion ? 0 : -45 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      transition: { type: "spring", stiffness: 500, damping: 16 },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: reduceMotion ? 0 : -8 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.28, ease: "easeOut" },
+    },
+  };
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0 }}
       key="box"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      style={{ width: "100%", overflow: "visible" }}
     >
-      <div role="alert" className={style["alert"]}>
-        <div className={style["alert-container"]}>
-          <div className={style["alert-border"]}></div>
+      <div
+        role="alert"
+        aria-live="assertive"
+        className={cx(style["alert"], style[`variant-${variant}`], className)}
+        style={{ "--alert-duration": `${duration}ms` }}
+      >
+        <div className={style["card"]}>
+          <motion.div variants={iconVariants} className={style["icon-wrapper"]}>
+            <Icon className={style["icon"]} aria-hidden="true" />
+          </motion.div>
 
-          <div className={style["alert-content"]}>
-            <div className={style["alert-icon-wrapper"]}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#ffcc00"
-                strokeWidth="2.3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="m15 9-6 6" />
-                <path d="m9 9 6 6" />
-              </svg>
-            </div>
+          <div className={style["text"]}>
+            <motion.p variants={textVariants} className={style["title"]}>
+              {t(`alertError.${type}.title`)}
+            </motion.p>
 
-            <div className={style["alert-text"]}>
-              <p className={style["alert-title"]}>
-                {t(`alertError.${type}.title`)}
-              </p>
-
-              <p className={style["alert-message"]}>
-                {t(`alertError.${type}.text`)}
-              </p>
-            </div>
-
-            <button
-              aria-label="بستن هشدار"
-              className={style["alert-close-button"]}
-              onClick={() =>
-                setHasError((prev) => ({ ...prev, [keyError]: false }))
-              }
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
+            <motion.p variants={textVariants} className={style["message"]}>
+              {t(`alertError.${type}.text`)}
+            </motion.p>
           </div>
 
-          <div className={style["alert-progress-container"]}>
-            <div className={style["alert-progress"]}></div>
+          <button
+            type="button"
+            aria-label={t("alertError.close", "بستن هشدار")}
+            className={style["close-button"]}
+            onClick={handleClose}
+          >
+            <MdClose className={style["close-icon"]} aria-hidden="true" />
+          </button>
+
+          <div className={style["progress-track"]} aria-hidden="true">
+            <div className={style["progress"]} onAnimationEnd={handleClose} />
           </div>
         </div>
       </div>

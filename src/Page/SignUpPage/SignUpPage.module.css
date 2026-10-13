@@ -7,6 +7,10 @@
   font-weight: 300;
 }
 
+.signup-wrapper :global(div.alertSignUp) {
+  position: absolute;
+}
+
 .signup-page {
   display: flex;
   height: 100%;

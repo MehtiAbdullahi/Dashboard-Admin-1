@@ -1,116 +1,326 @@
+@property --alert-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ───────── Wrapper + variants ───────── */
 .alert {
-  opacity: 1;
-  transform: translateY(0rem) scale(1);
-  transition:
-    opacity 220ms,
-    transform 220ms;
-  margin-bottom: 1rem;
+  --accent: var(--text-2);
+  --alert-duration: 5000ms;
+
+  --pad-block: 1.6rem;
+  --pad-inline: 1.8rem;
+  --gap: 1.4rem;
+  --icon-size: 4.4rem;
+  --radius: 2rem;
+
+  container-type: inline-size;
+  width: 100%;
+  margin-block-end: clamp(0.8rem, 0.5rem + 1vw, 1.4rem);
 }
 
-.alert-container {
+.variant-error {
+  --accent: var(--text-2);
+}
+
+.variant-warning {
+  --accent: var(--work);
+}
+
+/* ───────── Card ───────── */
+.card {
   position: relative;
-  border-radius: 1.4rem;
-  padding: 0.15rem;
-  overflow: hidden;
   isolation: isolate;
-}
-
-.alert-border {
-  position: absolute;
-  inset: -70%;
-  background: conic-gradient(#fbbf24, #f59e0b, #fb923c, #f59e0b, #fbbf24);
-  animation: inline-alert-spin 7s linear infinite;
-}
-
-.alert-content {
-  position: relative;
-  z-index: 1;
-  border-radius: 1.25rem;
-  background: #fffbeb;
-  padding: 1.2rem 1.4rem;
+  overflow: hidden;
+  box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: var(--gap);
+  padding: var(--pad-block) var(--pad-inline);
+  padding-block-end: calc(var(--pad-block) + 0.4rem);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 5%, var(--card-bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  box-shadow:
+    0 1.2rem 3rem -1.4rem color-mix(in srgb, var(--accent) 55%, transparent),
+    0 0.2rem 0.8rem var(--shadow1);
+  transition:
+    box-shadow 250ms ease,
+    transform 250ms ease;
+  margin: 2rem;
 }
 
-.alert-icon-wrapper {
+.card:hover {
+  transform: translateY(-0.2rem);
+  box-shadow:
+    0 1.6rem 3.4rem -1.4rem color-mix(in srgb, var(--accent) 65%, transparent),
+    0 0.4rem 1.2rem var(--shadow1);
+}
+
+/* درخشش نرم گوشه */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 0% 0%,
+    color-mix(in srgb, var(--accent) 16%, transparent),
+    transparent 55%
+  );
+}
+
+:global([dir="rtl"]) .card::after {
+  background: radial-gradient(
+    circle at 100% 0%,
+    color-mix(in srgb, var(--accent) 16%, transparent),
+    transparent 55%
+  );
+}
+
+/* نور چرخان فقط روی خود بوردر */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 0.15rem;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--alert-angle),
+    transparent 0%,
+    transparent 62%,
+    color-mix(in srgb, var(--accent) 35%, transparent) 78%,
+    var(--accent) 90%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  animation: alert-border-spin 4.5s linear infinite;
+}
+
+/* ───────── Icon ───────── */
+.icon-wrapper {
+  position: relative;
   flex-shrink: 0;
-  width: 2.6rem;
-  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
   border-radius: 50%;
-  background: #fef3c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.1rem;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
-.alert-text {
+.icon-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 0.2rem solid var(--accent);
+  opacity: 0;
+  animation: alert-ring 2.4s ease-out 3;
+}
+
+.icon {
+  width: 55%;
+  height: 55%;
+  display: block;
+}
+
+/* ───────── Text ───────── */
+.text {
   flex: 1 1 0%;
   min-width: 0;
-}
-
-.alert-title {
-  margin: 0;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: #92400e;
-  line-height: 1.6;
-}
-
-.alert-message {
-  margin: 0.2rem 0 0;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #92400e;
-  opacity: 0.85;
-  line-height: 1.6;
-}
-
-.alert-close-button {
-  flex-shrink: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #92400e;
-  opacity: 0.55;
-  padding: 0.3rem;
-  border-radius: 0.6rem;
   display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-block-start: 0.2rem;
+  overflow-wrap: anywhere;
 }
 
-.alert-progress-container {
+.title {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.25rem + 0.4vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.message {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.1rem + 0.3vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.8;
+  color: var(--text-4);
+  opacity: 0.8;
+}
+
+/* ───────── Close button ───────── */
+.close-button {
   position: relative;
-  z-index: 1;
-  height: 0.2rem;
-  margin: 0 1.25rem 0.2rem;
-  border-radius: 0.2rem;
-  background: rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+  background: transparent;
+  color: var(--text-4);
+  opacity: 0.6;
+  cursor: pointer;
+  transition:
+    opacity 180ms,
+    background-color 180ms,
+    color 180ms,
+    transform 180ms;
 }
 
-.alert-progress {
+/* ناحیه‌ی لمسی بزرگ‌تر بدون تغییر ظاهر */
+.close-button::after {
+  content: "";
+  position: absolute;
+  inset: -0.6rem;
+}
+
+.close-button:hover {
+  opacity: 1;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  transform: rotate(90deg);
+}
+
+.close-button:active {
+  transform: scale(0.88);
+}
+
+.close-button:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+  opacity: 1;
+}
+
+.close-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+@media (pointer: coarse) {
+  .close-button::after {
+    inset: -0.9rem;
+  }
+}
+
+/* ───────── Progress ───────── */
+.progress-track {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 0.4rem;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.progress {
   height: 100%;
-  background: #d97706;
-  opacity: 0.5;
-  animation: inline-alert-countdown 5000ms linear forwards;
+  width: 100%;
+  border-radius: 0 0.4rem 0.4rem 0;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 55%, white)
+  );
+  animation: alert-countdown var(--alert-duration) linear forwards;
 }
 
-@keyframes inline-alert-spin {
-  from {
-    transform: rotate(0deg);
+:global([dir="rtl"]) .progress {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+/* با هاور یا فوکوس، شمارش‌معکوس متوقف می‌شود */
+.alert:hover .progress,
+.alert:focus-within .progress {
+  animation-play-state: paused;
+}
+
+/* ───────── Responsive (بر اساس عرض خود کامپوننت) ───────── */
+@container (max-width: 42rem) {
+  .alert {
+    --pad-block: 1.3rem;
+    --pad-inline: 1.4rem;
+    --gap: 1.1rem;
+    --icon-size: 3.8rem;
+    --radius: 1.8rem;
+  }
+}
+
+@container (max-width: 28rem) {
+  .alert {
+    --pad-block: 1.1rem;
+    --pad-inline: 1.1rem;
+    --gap: 0.9rem;
+    --icon-size: 3.4rem;
+    --radius: 1.6rem;
   }
 
+  .close-button {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+@container (min-width: 90rem) {
+  .alert {
+    --pad-block: 2rem;
+    --pad-inline: 2.4rem;
+    --icon-size: 5rem;
+  }
+}
+
+/* ───────── Reduced motion ───────── */
+@media (prefers-reduced-motion: reduce) {
+  .card::before,
+  .icon-wrapper::before {
+    animation: none;
+  }
+
+  .card,
+  .close-button {
+    transition: none;
+  }
+}
+
+/* ───────── Keyframes ───────── */
+@keyframes alert-border-spin {
   to {
-    transform: rotate(360deg);
+    --alert-angle: 360deg;
   }
 }
 
-@keyframes inline-alert-countdown {
+@keyframes alert-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes alert-countdown {
   from {
     width: 100%;
   }
-
   to {
     width: 0%;
   }

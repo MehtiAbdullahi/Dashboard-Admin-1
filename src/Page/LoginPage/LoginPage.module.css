@@ -19,6 +19,10 @@
   position: relative;
 }
 
+.login-wrapper :global(div.alertLogin) {
+  position: absolute;
+}
+
 .login-page {
   display: flex;
   height: 100%;

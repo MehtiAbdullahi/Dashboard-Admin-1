@@ -12,9 +12,10 @@ import { MdOutlineCategory } from "react-icons/md";
 import style from "./EditProductModal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { updateProduct } from "../Redux/Store/Products";
 import AlertError from "../Components/AlertError/AlertError";
+import { AnimatePresence } from "framer-motion";
 
 function EditProductModal({ productId, closeModalUpdate }) {
   const dispatch = useDispatch();
@@ -85,40 +86,29 @@ function EditProductModal({ productId, closeModalUpdate }) {
     event.target.value = "";
   };
 
-  useEffect(() => {
-    const hasActiveError = Object.values(hasError).some(Boolean);
-
-    if (!hasActiveError) {
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setHasError({
-        titleError: false,
-        PriceError: false,
-      });
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [hasError]);
-
   return (
     <>
       <div className={style["modal-overlay"]}>
-        {hasError.titleError && (
-          <AlertError
-            keyError="titleError"
-            type="updateProductTitle"
-            setHasError={setHasError}
-          />
-        )}
-        {hasError.PriceError && (
-          <AlertError
-            keyError="PriceError"
-            type="updateProductPrice"
-            setHasError={setHasError}
-          />
-        )}
+        <AnimatePresence>
+          {hasError.titleError && (
+            <AlertError
+              duration={3000}
+              keyError="titleError"
+              type="updateProductTitle"
+              setHasError={setHasError}
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {hasError.PriceError && (
+            <AlertError
+              duration={3000}
+              keyError="PriceError"
+              type="updateProductPrice"
+              setHasError={setHasError}
+            />
+          )}
+        </AnimatePresence>
         <div
           className={style["modal"]}
           role="dialog"
@@ -183,7 +173,7 @@ function EditProductModal({ productId, closeModalUpdate }) {
                 <div className={style["input-wrapper"]}>
                   <FiTag className={style["input-icon"]} />
                   <input
-                      className={hasError.titleError && style["error"]}
+                    className={hasError.titleError && style["error"]}
                     type="text"
                     value={pTitle}
                     onChange={(e) => setPTitle(e.target.value)}
