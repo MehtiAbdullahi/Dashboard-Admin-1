@@ -1,0 +1,1 @@
+import{j as e}from"./index-C1G6C93L.js";var t=e();function n(){return(0,t.jsx)(`div`,{children:`Settings`})}var r=n;export{r as default};
