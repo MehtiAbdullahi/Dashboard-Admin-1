@@ -429,6 +429,14 @@
     "successSignUp": {
       "title": "Confirm Email",
       "text": "An account verification link has been sent to your email!"
+    },
+    "updateProductTitle": {
+      "title": "Error",
+      "text": "Please enter the product name"
+    },
+    "updateProductPrice": {
+      "title": "Error",
+      "text": "Please enter the product price"
     }
   },
   "statusPage": {

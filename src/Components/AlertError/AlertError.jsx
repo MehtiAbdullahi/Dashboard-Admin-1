@@ -13,7 +13,7 @@ function AlertError({ type, keyError, err, warning, setHasError }) {
       exit={{ opacity: 0, scale: 0 }}
       key="box"
     >
-      <div dir="rtl" role="alert" className={style["alert"]}>
+      <div role="alert" className={style["alert"]}>
         <div className={style["alert-container"]}>
           <div className={style["alert-border"]}></div>
 

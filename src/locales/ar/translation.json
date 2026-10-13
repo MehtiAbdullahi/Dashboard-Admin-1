@@ -429,6 +429,14 @@
     "successSignUp": {
       "title": "التحقق من البريد الإلكتروني",
       "text": "تم إرسال رابط التحقق من الحساب إلى بريدك الإلكتروني.!"
+    },
+    "updateProductTitle": {
+      "title": "خطأ",
+      "text": "يرجى إدخال اسم المنتج"
+    },
+    "updateProductPrice": {
+      "title": "خطأ",
+      "text": "يرجى إدخال سعر المنتج"
     }
   },
   "statusPage": {

@@ -429,7 +429,16 @@
     "successSignUp": {
       "title": "تایید ایمیل",
       "text": "لینک تایید حساب به ایمیل شما ارسال شد!"
+    },
+    "updateProductTitle": {
+      "title": "خطا",
+      "text": "لطفا اسم محصول رو بنویسید"
+    },
+    "updateProductPrice": {
+      "title": "خطا",
+      "text": "لطفا قیمت محصول رو بنویسید"
     }
+    
   },
   "statusPage": {
     "notaccess": {
