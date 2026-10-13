@@ -1,16 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import classNames from "classnames";
+import { FaRegHeart, FaSpinner } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
 import style from "./ProductBox.module.css";
 import Rating from "../Rating/Rating";
-import { useTranslation } from "react-i18next";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa6";
-import classNames from "classnames";
-import { useDispatch, useSelector } from "react-redux";
-import Loader from "../Loader/Loader";
-import { FaSpinner } from "react-icons/fa";
 import { toggleFavorite } from "../../Redux/Store/Products";
 import EditProductModal from "../../EditProductModal/EditProductModal";
-import { useState } from "react";
 
 function ProductBox({
   id,
@@ -55,54 +53,25 @@ function ProductBox({
         <EditProductModal
           productId={modalId}
           closeModalUpdate={() => setOpenModal(false)}
-          // onSave={handleSave}
         />
       )}
       <div className={style["product-box"]}>
         <div className={style["product-box__top"]}>
-          {/* <div className={style["right-left__arrow"]}>
-          <span className={style["arrow-right"]}>
-            <svg
-              width="9"
-              height="12"
-              viewBox="0 0 9 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.16016 10.59L3.58016 6L8.16016 1.41L6.75016 0L0.750156 6L6.75016 12L8.16016 10.59Z"
-                fill="#363636"
-              />
-            </svg>
-          </span>
-          <span className={style["arrow-left"]}>
-            <svg
-              width="8"
-              height="12"
-              viewBox="0 0 8 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 10.59L4.58 6L0 1.41L1.41 0L7.41 6L1.41 12L0 10.59Z"
-                fill="#363636"
-              />
-            </svg>
-          </span>
-        </div> */}
-          <img src={image} alt="" />
+          <img src={image} alt="" loading="lazy" decoding="async" />
         </div>
         <div className={style["product-box__bottom"]}>
           <div className={style["product-info"]}>
             <div className={style["product__title-price"]}>
-              <h3>{title} </h3>
+              <h3 title={title}>{title}</h3>
               <h4>${price}</h4>
             </div>
-            <div
+            <button
+              type="button"
               className={classNames(
                 style["product-favorite__icon"],
                 isFavorite && style["active"],
               )}
+              aria-pressed={isFavorite}
               onClick={() => addFavoriteProduct(id)}
             >
               <span>
@@ -114,7 +83,7 @@ function ProductBox({
                   <FaRegHeart />
                 )}
               </span>
-            </div>
+            </button>
           </div>
           <div className={style["product__stars-rating"]}>
             <div className={style["product-stars"]}>
