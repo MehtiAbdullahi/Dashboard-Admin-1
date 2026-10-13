@@ -1,1 +1,0 @@
-import{R as e,V as t,j as n}from"./index-C1G6C93L.js";e();var r=n();function i({type:e,label:t,id:n,...i}){return(0,r.jsxs)(r.Fragment,{children:[t&&(0,r.jsx)(`label`,{htmlFor:n,children:t}),(0,r.jsx)(`input`,{id:n,type:e,...i})]})}var a=i;export{a as t};
