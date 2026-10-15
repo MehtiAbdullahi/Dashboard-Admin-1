@@ -5,6 +5,7 @@
   background-color: var(--card-bg7);
   padding: 2rem 3rem;
   border-radius: 1rem;
+  height: 3rem;
   border: 0.1rem solid var(--border3);
   transition: all 0.15s ease-in;
 }
@@ -55,6 +56,10 @@
   display: block;
 }
 
+.todo-title {
+  font-size: 1.5rem;
+}
+
 .todo-title.do {
   color: white;
 }
@@ -77,6 +82,8 @@
 
 .todo-icon__trash svg {
   color: white;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .todo-icon__star,
