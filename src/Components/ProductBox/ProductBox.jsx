@@ -8,7 +8,7 @@ import { FaHeart } from "react-icons/fa6";
 import style from "./ProductBox.module.css";
 import Rating from "../Rating/Rating";
 import { toggleFavorite } from "../../Redux/Store/Products";
-import EditProductModal from "../../EditProductModal/EditProductModal";
+import EditProductModal from "../EditProductModal/EditProductModal";
 
 function ProductBox({
   id,

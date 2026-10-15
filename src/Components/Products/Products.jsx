@@ -2,25 +2,42 @@ import { Link } from "react-router-dom";
 import style from "./Products.module.css";
 import ProductBox from "../ProductBox/ProductBox";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllProducts } from "../../Redux/Store/Products";
+import { getProductsPage } from "../../Redux/Store/Products";
 import Loader from "../Loader/Loader";
 import UpdateProductModal from "../UpdateProductModal/UpdateProductModal";
 import Error from "../ErrorComponent/Error";
 import { useTranslation } from "react-i18next";
+import Pagination from "../Pagination/Pagination";
+import { useCallback, useEffect } from "react";
 
 function Products() {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const { products, loading, error } = useSelector((state) => state.products);
+  const {
+    paginatedProducts,
+    paginationLoading,
+    paginationError,
+    totalProducts,
+    currentPage,
+    pageSize,
+  } = useSelector((state) => state.products);
+
+  const totalPages = Math.ceil(totalProducts / pageSize);
+
+  const handlePageChange = useCallback(
+    (page) => {
+      dispatch(getProductsPage({ page, pageSize }));
+    },
+    [dispatch, pageSize],
+  );
 
   useEffect(() => {
-    dispatch(getAllProducts());
-  }, []);
+    handlePageChange(1);
+  }, [handlePageChange]);
 
   return (
-    <>
+    <div className={style["products-wrapper"]}>
       <h1>{t("products.title")}</h1>
       <div className={style["featured-wrapper"]}>
         <div className={style["featured-texts"]}>
@@ -62,16 +79,24 @@ function Products() {
           </span>
         </div>
       </div>
+      {paginationLoading && <Loader />}
+      {paginationError && <Error titleKey={"noProducts"} />}
       <div className={style["product-boxs"]}>
-        {loading && <Loader />}
-        {error && <Error titleKey={"noProducts"} />}
-        {!loading &&
-          !error &&
-          products?.map((product) => (
+        {!paginationLoading &&
+          !paginationError &&
+          paginatedProducts?.map((product) => (
             <ProductBox key={product.id} {...product} />
           ))}
       </div>
-    </>
+      {!paginationLoading && !paginationError && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          maxVisiblePages={4}
+        />
+      )}
+    </div>
   );
 }
 

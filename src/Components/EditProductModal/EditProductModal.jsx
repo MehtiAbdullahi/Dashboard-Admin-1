@@ -13,8 +13,8 @@ import style from "./EditProductModal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
-import { updateProduct } from "../Redux/Store/Products";
-import AlertError from "../Components/AlertError/AlertError";
+import { updateProduct } from "../../Redux/Store/Products";
+import AlertError from "../AlertError/AlertError";
 import { AnimatePresence } from "framer-motion";
 
 function EditProductModal({ productId, closeModalUpdate }) {

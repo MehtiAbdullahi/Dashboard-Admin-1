@@ -1,0 +1,136 @@
+.pagination {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.6rem, 0.4rem + 0.5vw, 1.2rem);
+  width: 100%;
+  margin-top: clamp(2rem, 1.2rem + 1.6vw, 3.2rem);
+}
+
+.pagination__pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.4rem, 0.2rem + 0.5cqw, 0.8rem);
+}
+
+.pagination__btn {
+  --size: clamp(3.2rem, 2.6rem + 1.4cqw, 4rem);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-width: var(--size);
+  height: var(--size);
+  padding: 0 0.8rem;
+  border: 0.1rem solid var(--border3);
+  border-radius: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: clamp(1.3rem, 1.1rem + 0.5cqw, 1.5rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.pagination__btn--nav {
+  padding-inline: clamp(1rem, 0.8rem + 1cqw, 1.6rem);
+}
+
+.pagination__btn[aria-current="page"] {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: var(--text-white);
+  box-shadow: 0 0.4rem 1rem rgba(72, 128, 255, 0.35);
+}
+
+.pagination__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination__btn[aria-current="page"]:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.pagination__btn:focus-visible {
+  outline: 0.2rem solid var(--primary);
+  outline-offset: 0.2rem;
+}
+
+.pagination__btn:not(:disabled):active {
+  transform: scale(0.96);
+}
+
+.pagination__icon {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+[dir="rtl"] .pagination__icon {
+  transform: scaleX(-1);
+}
+
+@media (hover: hover) {
+  .pagination__btn:not(:disabled):hover {
+    border-color: var(--primary);
+    background-color: var(--card-bg3);
+  }
+}
+
+@media (pointer: coarse) {
+  .pagination__btn {
+    --size: 4rem;
+  }
+}
+
+@container (max-width: 46rem) {
+  .pagination__btn--nav {
+    width: var(--size);
+    padding-inline: 0;
+  }
+
+  .pagination__label {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    margin: -0.1rem;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@container (max-width: 30rem) {
+  .pagination__pages {
+    order: -1;
+    flex: 1 0 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagination__btn {
+    transition: none;
+  }
+
+  .pagination__btn:not(:disabled):active {
+    transform: none;
+  }
+}

@@ -28,6 +28,42 @@ export const getAllProducts = createAsyncThunk(
   },
 );
 
+export const getProductsPage = createAsyncThunk(
+  "products/getProductsPage",
+  async ({ page, pageSize }, { rejectWithValue }) => {
+    const start = (page - 1) * pageSize;
+    const end = start + pageSize - 1;
+
+    const { data, error, count } = await supabase
+      .from("products")
+      .select("*", { count: "exact" })
+      .order("id", { ascending: true })
+      .range(start, end);
+
+    if (error) {
+      return rejectWithValue(error.message);
+    }
+
+    const productsWithImageUrl = data.map((product) => {
+      const { data: imageData } = supabase.storage
+        .from("product-images")
+        .getPublicUrl(product.image);
+
+      return {
+        ...product,
+        image: imageData.publicUrl,
+      };
+    });
+
+    return {
+      products: productsWithImageUrl,
+      totalProducts: count,
+      currentPage: page,
+      pageSize,
+    };
+  },
+);
+
 export const toggleFavorite = createAsyncThunk(
   "add/toggleFavorite",
   async ({ product, userId }, { rejectWithValue, dispatch }) => {
@@ -97,6 +133,14 @@ const initialState = {
   loading: false,
   favoriteLoading: false,
   error: null,
+
+  // Pagination
+  paginatedProducts: [],
+  paginationLoading: false,
+  paginationError: null,
+  totalProducts: 0,
+  currentPage: 1,
+  pageSize: 8,
 };
 
 const productsReducer = createSlice({
@@ -138,6 +182,23 @@ const productsReducer = createSlice({
       .addCase(toggleFavorite.rejected, (state, action) => {
         state.favoriteLoading = false;
         state.error = action.payload;
+      })
+
+      .addCase(getProductsPage.pending, (state) => {
+        state.paginationLoading = true;
+        state.paginationError = null;
+      })
+      .addCase(getProductsPage.fulfilled, (state, action) => {
+        state.paginationLoading = false;
+        state.paginationError = null;
+        state.paginatedProducts = action.payload.products;
+        state.totalProducts = action.payload.totalProducts;
+        state.currentPage = action.payload.currentPage;
+        state.pageSize = action.payload.pageSize;
+      })
+      .addCase(getProductsPage.rejected, (state, action) => {
+        state.paginationLoading = false;
+        state.paginationError = action.payload ?? action.error.message;
       });
   },
 });

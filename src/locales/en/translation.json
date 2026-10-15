@@ -444,5 +444,9 @@
       "title": "You do not have the necessary access to this page!"
     },
     "btn": "Back to login"
+  },
+  "pagination": {
+    "next": "Next",
+    "previous": "Previous"
   }
 }
